@@ -140,9 +140,10 @@ class Order(models.Model):
     amount = models.PositiveSmallIntegerField(default=1)
     price = models.FloatField()
     date = models.DateTimeField(auto_now_add=True)
-    is_active = models.BooleanField(default=True)
     delivery_point = PickUpPoint().address
     promo_code = models.CharField(max_length=8, null=True)
+    is_active = models.BooleanField(default=True)
+
 
     def __str__(self):
         return self.number

@@ -101,6 +101,7 @@ class ReviewCreateView(View):
     def get(self, request, **kwargs):
         if request.user.is_authenticated and not request.user.is_superuser:
             form = ReviewForm()
+            logging.info(f'CONDITION FOR FIRST CUSTOMER: {MyUser.objects.all().filter(username=request.user.username).first().role}')
             return render(request, 'add_review.html', {'form': form})
         return redirect('login')
 
@@ -166,6 +167,11 @@ class LoginUser(BaseViewContextMixin, LoginView):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title="Авторизация")
         return dict(list(context.items()) + list(c_def.items()))
+
+
+def getUserRole(name):
+    role = MyUser.objects.all().filter(username=name).first().role
+    return role
 
 
 # def login_user(request):
@@ -260,7 +266,6 @@ class ProductListView(ListView):
                 'producer_id': product.producer.id,
             })
         return render(request, 'products.html', {'products': products})
-        #return JsonResponse(products_data, safe=False)
 
     @staticmethod
     def filter_products(min_price=None, max_price=None, prod_name=None, cat_name=None):
@@ -306,7 +311,6 @@ class ProductDetailView(DetailView):
                 'producer_id': product.producer.id,
             }
             return render(request, 'product.html', {'product': product})
-            #return JsonResponse(product_data)
         logging.warning('ProductDetailView: page not found')
         return render(request, 'page_not_found.html', status=404)
 
@@ -381,7 +385,6 @@ class OrderListView(View):
                         "is_active": order.is_active,
                     })
                 return render(request, 'orders.html', {'orders': orders})
-                #return JsonResponse(orders_data, safe=False)
             except ObjectDoesNotExist:
                 logging.warning('OrderListView: page not found')
                 return render(request, 'page_not_found.html', status=404)
@@ -436,8 +439,6 @@ class OrderDeleteDetailView(View):
                         "date": timezone.localtime(order.date),
                         "is_active": order.is_active,
                     }
-
-                    #order.product.amount += order.amount
                     order.product.amount = F('amount') + order.amount
                     order.product.save()
                     order.delete()
@@ -449,33 +450,28 @@ class OrderDeleteDetailView(View):
 
 class UserOrderListView(View):
     def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "employee" or\
-                request.user.is_authenticated and request.user.role == "customer" and\
-                self.kwargs.get("pk") == str(request.user.pk) and not User.objects.filter(
-                    pk=self.kwargs.get("pk")).first().is_superuser and not User.objects.filter(
-                    pk=self.kwargs.get("pk")).first().status == 'employee':
-            pk = self.kwargs.get("pk")
+        warning_message = ""
+        if request.user.is_authenticated and getUserRole(request.user.username) == 'customer':
+            current_user = MyUser.objects.all().filter(username=request.user.username).first()
+            user_orders = Order.objects.all().filter(user=current_user)
+            logging.info(f'Заказы для пользователя {MyUser.username}: {[user_order.number for user_order in user_orders]}') 
 
-            orders = Order.objects.filter(user_id=pk)
-            if orders:
+            if user_orders:
                 orders_data = []
-                for order in orders:
+                for order in user_orders:
                     orders_data.append({
                         "number": order.number,
-                        "product_id": order.product.id,
                         "price": order.price,
-                        "promo": order.promo_code,
-                        "amount": order.amount,
-                        "date": timezone.localtime(order.date),
-                        "is_active": order.is_active,
                     })
-                return render(request, 'orders.html', {'orders': orders})
-                #return JsonResponse(orders_data, safe=False)
-            else:
-                logging.warning('UserOrderListView: no orders')
-                return HttpResponse("There are no orders")
-        logging.warning('UserOrderListView: page not found')
-        return render(request, 'page_not_found.html', status=404)
+                logging.info("UserOrderListView: user order list was successfully created")
+                return render(request, 'orders.html', {'orders': orders_data})
+                        
+            warning_message = 'Нет заказов. Перейдите в каталог с товарами\n и найдите для себя что-нибудь интересное'
+        
+        warning_message = 'Пожалуйста, авторизуйтесь для получения списка ваших заказов'
+        
+        logging.warning(f'UserOrderListView: {warning_message}')
+        return render(request, 'warning_message.html', warning_message_text=warning_message)            
 
 
 class PurchaseCreateView(View):
