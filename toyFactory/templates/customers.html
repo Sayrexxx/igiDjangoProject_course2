@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+</head>
+<body>
+    <h1>Customers by Town</h1>
+    {% for town, customers_info in towns_with_customers_info.items %}
+        <h2>{{ town }}</h2>
+        <ul>
+            {% for customer_info in customers_info %}
+                <li>{{ customer_info.0 }} - Total Purchases: ${{ customer_info.1 }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <h2>Min Age: {{ average_age.age__min }} years</h2>
+    <h2>Max Age: {{ average_age.age__max }} years</h2>
+    <h2>Average Age: {{ average_age.age__avg }} years</h2>
+    <h2>Median Age: {{ median_age }} years</h2>
+</body>
+</html> 

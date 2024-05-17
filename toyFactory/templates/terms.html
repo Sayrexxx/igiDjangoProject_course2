@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Terms{% endblock title %}
+{% block header %}Часто задаваемые вопросы{% endblock header %}
+
+{% block content %}
+    {% for term_item in all_terms %}
+        <div>
+            <h2>{{ term_item.question }}</h2>
+            <p>{{ term_item.answer }}</p>
+            <p>{{ term_item.date_added }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
