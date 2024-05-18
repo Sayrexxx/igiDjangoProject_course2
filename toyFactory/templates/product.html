@@ -6,6 +6,6 @@
         <p>name: {{ product.name }}</p>
         <p>price: ${{ product.price }}</p>
         <p>amount: {{ product.amount }}</p>
-        <p>producer :{{ product.producer.name }}</p>
+        <p>producer :{{ product.employee.name }}</p>
         <a href="{% url 'create_order' pk=product.id %}" class="button">Create order</a>
 {% endblock content %}

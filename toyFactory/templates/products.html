@@ -5,11 +5,10 @@
 {% block content %}
 {% for product in products %}
     <div>
-        <a href="{% url 'product' pk=product.id %}" class="button">{{ product.name }}</a>
+        <p>name: {{ product.name }}
         <p>price: ${{ product.price }}</p>
         <p>amount: {{ product.amount }}</p>
-        <p>producer :{{ product.producer.name }}</p>
-        <a href="{% url 'create_order' pk=product.id %}" class="button">Create order</a>
+        <p>producer :{{ product.employee.username }}</p>
     </div>
 {% endfor %}
 {% endblock content %}

@@ -6,5 +6,7 @@ admin.site.register(Article)
 admin.site.register(Term)
 admin.site.register(Vacancy)
 admin.site.register(Review)
+admin.site.register(Product)
+admin.site.register(Category)
 
 # Register your models here.

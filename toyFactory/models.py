@@ -1,8 +1,10 @@
+from datetime import timedelta
+
+from django.utils import timezone
 import random
-import uuid
-from django.core.exceptions import ValidationError
 from django.db import models
-from django.contrib.auth.models import AbstractUser, Group, Permission, User
+from django.core.validators import MinValueValidator
+from django.contrib.auth.models import User
 
 import re
 
@@ -103,13 +105,6 @@ class MyUser(User):
         return self.username
 
 
-class Producer(models.Model):
-    name = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.name
-
-
 class Category(models.Model):
     name = models.CharField(max_length=255)
 
@@ -120,7 +115,7 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=255)
     category = models.ManyToManyField(Category, related_name='products')
-    producer = models.ForeignKey(Producer, related_name='products', on_delete=models.CASCADE)
+    employee = models.ForeignKey(MyUser, related_name='products', on_delete=models.CASCADE,  limit_choices_to={'role': 'employee'}, default=None)
     price = models.FloatField()
     amount = models.PositiveSmallIntegerField()
 
@@ -138,13 +133,24 @@ class PickUpPoint(models.Model):
 class Order(models.Model):
     user = models.ForeignKey(MyUser, related_name='orders', on_delete=models.CASCADE)
     number = models.AutoField(primary_key=True)
-    product = models.ForeignKey(Product, related_name='orders', on_delete=models.CASCADE)
+    product = models.OneToOneField(Product, related_name='orders', on_delete=models.CASCADE)
     amount = models.PositiveSmallIntegerField(default=1)
     price = models.FloatField()
-    date = models.DateTimeField(auto_now_add=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    delivery_date = models.DateField(
+        default=timezone.now() + timedelta(days=3),
+        validators=[MinValueValidator(timezone.now() + timedelta(days=3))]
+    )    
     delivery_point = PickUpPoint().address
     promo_code = models.CharField(max_length=8, null=True)
-    is_active = models.BooleanField(default=True)
+    
+    ROLE_CHOICES = (
+        ("В обработке ", "В обработке"),
+        ("Принят", "Принят"),
+        ("Доставлен", "Доставлен"),
+        ("Отменён", "Отменён"),
+    )
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default="В обработке")
 
 
     def __str__(self):

@@ -3,7 +3,7 @@
 <p>Price: ${{ product.price }}</p>
 <p>Amount: {{ product.amount }}</p>
 
-<form method="post" action="{% url 'create_order' pk=product.pk %}">
+<form method="post" action="{% url 'create_order' product_name=product.name %}">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Place Order</button>

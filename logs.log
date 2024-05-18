@@ -6564,3 +6564,2584 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'cat_facts' not found. 'cat_f
 2024-05-18 18:28:07,675 INFO Got response successfully
 2024-05-18 18:28:20,654 INFO news titles: ['Новость', 'art2']
 2024-05-18 18:30:09,508 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 18:32:42,354 INFO news titles: ['Новость', 'art2']
+2024-05-18 18:34:52,054 INFO news titles: ['Новость', 'art2']
+2024-05-18 18:35:03,086 INFO vacancies titles: []
+2024-05-18 18:35:05,365 INFO company info: Toy Factory Company
+2024-05-18 18:35:28,129 INFO company info: Toy Factory Company
+2024-05-18 18:35:29,078 INFO contacts names: ['emp1', 'emp2', 'emp3', 'test_emp', 'employ']
+2024-05-18 18:35:32,903 INFO news titles: ['Новость', 'art2']
+2024-05-18 18:35:37,886 INFO terms questions: []
+2024-05-18 18:36:03,810 INFO news titles: ['Новость', 'art2']
+2024-05-18 18:36:07,017 INFO Заказы для пользователя <django.db.models.query_utils.DeferredAttribute object at 0x70cb72c962d0>: []
+2024-05-18 18:36:07,017 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-18 18:37:10,941 INFO news titles: ['Новость', 'art2']
+2024-05-18 18:37:12,764 INFO Заказы для пользователя <django.db.models.query_utils.DeferredAttribute object at 0x70cb72c962d0>: []
+2024-05-18 18:37:12,764 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-18 18:38:12,632 INFO news titles: ['Новость', 'art2']
+2024-05-18 18:38:14,592 INFO Заказы для пользователя <django.db.models.query_utils.DeferredAttribute object at 0x70cb72c962d0>: []
+2024-05-18 18:38:14,592 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-18 18:41:52,923 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-18 18:42:27,072 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-18 18:51:28,978 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-18 18:57:00,119 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-18 19:05:37,992 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_order.date_created
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 480, in get
+    logging.info(f'Заказы для пользователя {MyUser.username}: {[user_order.number for user_order in user_orders]}')
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_order.date_created
+2024-05-18 20:16:52,202 INFO Заказы для пользователя <django.db.models.query_utils.DeferredAttribute object at 0x77062e002310>: []
+2024-05-18 20:16:52,203 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-18 20:16:53,881 INFO news titles: ['Новость', 'art2']
+2024-05-18 20:16:55,365 INFO Заказы для пользователя <django.db.models.query_utils.DeferredAttribute object at 0x77062e002310>: []
+2024-05-18 20:16:55,365 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-18 20:17:05,142 INFO news titles: ['Новость', 'art2']
+2024-05-18 20:27:35,124 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 279, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 20:37:16,821 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 279, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 21:35:08,629 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 21:49:54,332 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-05-18 21:56:51,100 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 21:56:56,745 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-05-18 21:57:00,073 WARNING Not Found: /favicon.ico
+2024-05-18 21:57:03,443 INFO news titles: ['Новость', 'art2']
+2024-05-18 21:57:07,067 INFO news titles: ['Новость', 'art2']
+2024-05-18 21:57:09,301 INFO news titles: ['Новость', 'art2']
+2024-05-18 22:01:07,277 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-05-18 22:07:55,690 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:15:21,962 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:24:50,010 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:25:08,758 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:25:10,109 INFO news titles: ['Новость', 'art2']
+2024-05-18 22:25:19,130 WARNING Not Found: /favicon.ico
+2024-05-18 22:25:50,688 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/admin.py changed, reloading.
+2024-05-18 22:25:54,179 WARNING Not Found: /favicon.ico
+2024-05-18 22:25:55,874 WARNING Not Found: /favicon.ico
+2024-05-18 22:31:06,105 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/admin.py changed, reloading.
+2024-05-18 22:31:15,853 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/admin.py changed, reloading.
+2024-05-18 22:31:22,283 WARNING Not Found: /favicon.ico
+2024-05-18 22:31:24,092 WARNING Not Found: /favicon.ico
+2024-05-18 22:31:40,352 WARNING Not Found: /favicon.ico
+2024-05-18 22:31:42,162 WARNING Not Found: /favicon.ico
+2024-05-18 22:31:47,403 WARNING Not Found: /favicon.ico
+2024-05-18 22:31:59,282 WARNING Not Found: /favicon.ico
+2024-05-18 22:32:01,110 WARNING Not Found: /favicon.ico
+2024-05-18 22:32:32,915 WARNING Not Found: /favicon.ico
+2024-05-18 22:32:34,160 WARNING Not Found: /favicon.ico
+2024-05-18 22:32:44,693 WARNING Not Found: /favicon.ico
+2024-05-18 22:32:46,236 WARNING Not Found: /favicon.ico
+2024-05-18 22:36:38,124 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-18 22:37:16,269 ERROR Internal Server Error: /admin/toyFactory/product/add/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1746, in changeform_view
+    with transaction.atomic(using=router.db_for_write(self.model)):
+  File "/usr/lib/python3/dist-packages/django/db/transaction.py", line 263, in __exit__
+    connection.commit()
+  File "/usr/lib/python3/dist-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 337, in commit
+    self._commit()
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 312, in _commit
+    with debug_transaction(self, "COMMIT"), self.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: FOREIGN KEY constraint failed
+2024-05-18 22:38:23,337 WARNING Not Found: /favicon.ico
+2024-05-18 22:38:32,416 ERROR Internal Server Error: /admin/toyFactory/product/add/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1746, in changeform_view
+    with transaction.atomic(using=router.db_for_write(self.model)):
+  File "/usr/lib/python3/dist-packages/django/db/transaction.py", line 263, in __exit__
+    connection.commit()
+  File "/usr/lib/python3/dist-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 337, in commit
+    self._commit()
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 312, in _commit
+    with debug_transaction(self, "COMMIT"), self.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: FOREIGN KEY constraint failed
+2024-05-18 22:38:32,911 WARNING Not Found: /favicon.ico
+2024-05-18 22:39:59,921 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:40:02,632 ERROR Internal Server Error: /admin/toyFactory/product/add/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1746, in changeform_view
+    with transaction.atomic(using=router.db_for_write(self.model)):
+  File "/usr/lib/python3/dist-packages/django/db/transaction.py", line 263, in __exit__
+    connection.commit()
+  File "/usr/lib/python3/dist-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 337, in commit
+    self._commit()
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 312, in _commit
+    with debug_transaction(self, "COMMIT"), self.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: FOREIGN KEY constraint failed
+2024-05-18 22:40:45,006 ERROR Internal Server Error: /admin/toyFactory/product/add/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1746, in changeform_view
+    with transaction.atomic(using=router.db_for_write(self.model)):
+  File "/usr/lib/python3/dist-packages/django/db/transaction.py", line 263, in __exit__
+    connection.commit()
+  File "/usr/lib/python3/dist-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 337, in commit
+    self._commit()
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 312, in _commit
+    with debug_transaction(self, "COMMIT"), self.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: FOREIGN KEY constraint failed
+2024-05-18 22:41:26,257 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-18 22:45:38,986 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-18 22:45:43,083 WARNING Not Found: /favicon.ico
+2024-05-18 22:46:14,472 ERROR Internal Server Error: /admin/toyFactory/product/add/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1746, in changeform_view
+    with transaction.atomic(using=router.db_for_write(self.model)):
+  File "/usr/lib/python3/dist-packages/django/db/transaction.py", line 263, in __exit__
+    connection.commit()
+  File "/usr/lib/python3/dist-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 337, in commit
+    self._commit()
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 312, in _commit
+    with debug_transaction(self, "COMMIT"), self.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: FOREIGN KEY constraint failed
+2024-05-18 22:47:07,286 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-18 22:48:17,643 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 276, in get
+    'producer_id': product.producer.id,
+                   ^^^^^^^^^^^^^^^^
+AttributeError: 'Product' object has no attribute 'producer'
+2024-05-18 22:48:53,891 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:48:55,285 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 277, in get
+    return render(request, 'products.html', {'products': products_data})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product' with keyword arguments '{'pk': ''}' not found. 1 pattern(s) tried: ['products/(?P<product_id>\\d+)/$']
+2024-05-18 22:50:51,975 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 277, in get
+    return render(request, 'products.html', {'products': products_data})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_order' with keyword arguments '{'pk': ''}' not found. 1 pattern(s) tried: ['products/(?P<product_id>\\d+)/order/create/']
+2024-05-18 22:53:57,213 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:54:34,124 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:56:06,489 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:56:08,076 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 269, in get
+    product.category = categories
+    ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/fields/related_descriptors.py", line 626, in __set__
+    raise TypeError(
+TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use category.set() instead.
+2024-05-18 22:56:52,483 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:57:01,367 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 269, in get
+    product.category = categories.set()
+                       ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'set'
+2024-05-18 22:57:08,466 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:57:24,229 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:57:25,657 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 269, in get
+    product.category = categories
+    ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/fields/related_descriptors.py", line 626, in __set__
+    raise TypeError(
+TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use category.set() instead.
+2024-05-18 22:58:15,224 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 22:58:44,064 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-18 22:58:45,435 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 265, in get
+    return render(request, 'products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:05:03,733 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 265, in get
+    return render(request, 'products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:05:38,193 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 265, in get
+    return render(request, 'products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:05:40,343 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 265, in get
+    return render(request, 'products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:05:40,661 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 265, in get
+    return render(request, 'products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:05:44,425 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 265, in get
+    return render(request, 'products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:08:42,022 INFO news titles: ['Новость', 'art2']
+2024-05-18 23:08:43,040 INFO reviews: ['Could be better', 'niceeee', 'not bad, bud not perfect', 'cool, but could be more effective', 'тоха']
+2024-05-18 23:08:44,253 INFO news titles: ['Новость', 'art2']
+2024-05-18 23:08:45,761 INFO terms questions: []
+2024-05-18 23:08:46,557 INFO contacts names: ['emp1', 'emp2', 'emp3', 'test_emp', 'employ']
+2024-05-18 23:08:47,177 INFO company info: Toy Factory Company
+2024-05-18 23:08:48,474 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 265, in get
+    return render(request, 'products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:08:50,338 INFO reviews: ['Could be better', 'niceeee', 'not bad, bud not perfect', 'cool, but could be more effective', 'тоха']
+2024-05-18 23:08:51,936 INFO news titles: ['Новость', 'art2']
+2024-05-18 23:08:52,964 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 265, in get
+    return render(request, 'products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:09:16,024 INFO news titles: ['Новость', 'art2']
+2024-05-18 23:09:17,639 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 265, in get
+    return render(request, 'products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:09:20,405 INFO news titles: ['Новость', 'art2']
+2024-05-18 23:10:40,294 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 23:10:42,422 INFO news titles: ['Новость', 'art2']
+2024-05-18 23:10:44,579 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 265, in get
+    return render(request, 'products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:12:34,804 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-18 23:12:37,958 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:14:15,782 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:14:16,303 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:14:16,548 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:14:16,745 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:14:16,964 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:14:17,149 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:14:17,364 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:18:13,777 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:18:14,506 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:18:14,724 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id
+2024-05-18 23:18:16,941 ERROR Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_product.employee_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 267, in get
+    for product in products:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_product.employee_id

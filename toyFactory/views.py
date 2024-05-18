@@ -95,18 +95,6 @@ def random_joke(request):
     return JsonResponse(joke, safe=False)
 
 
-def profile(request):
-    if request.user.is_authenticated and request.user.role == 'customer':
-        form = PhoneNumberChangeForm(request.POST or None, instance=request.user)
-        if request.method == 'POST':
-            if form.is_valid():
-                form.save()
-                return redirect('profile')
-        return render(request, 'profile.html', {'form': form})
-    logging.warning('profile view: page not found')
-    return render(request, 'page_not_found.html', status=404)
-
-
 # class ReviewListView(ListView):
 #     model = Review
 #     queryset = Review.objects.all()
@@ -280,15 +268,13 @@ class ProductListView(ListView):
             categories = list(product.category.all().values_list('name', flat=True))
 
             products_data.append({
-                'id': product.id,
                 'name': product.name,
                 'price': product.price,
                 'amount': product.amount,
                 'category': categories,
-                'producer_name': producer_name,
-                'producer_id': product.producer.id,
+                'producer_name': product.employee.username,
             })
-        return render(request, 'products.html', {'products': products})
+        return render(request, 'products.html', {'products': products_data})
 
     @staticmethod
     def filter_products(min_price=None, max_price=None, prod_name=None, cat_name=None):
@@ -301,9 +287,9 @@ class ProductListView(ListView):
                 category = Category.objects.get(name=cat_name)
                 products = products.filter(category=category)
         if prod_name:
-            if Producer.objects.filter(name=prod_name).exists():
-                producer = Producer.objects.get(name=prod_name)
-                products = products.filter(producer=producer)
+            if MyUser.objects.filter(role='employee', name=prod_name).exists():
+                current_employee = MyUser.objects.filter(role='employee', name=prod_name)
+                products = products.filter(employee=current_employee)
 
         if min_price is not None and max_price is not None:
             filtered_products = products.filter(price__gte=min_price, price__lte=max_price)
@@ -321,17 +307,16 @@ class ProductDetailView(DetailView):
     model = Product
 
     def get(self, request, *args, **kwargs):
-        if Product.objects.filter(pk=self.kwargs.get("pk")).exists():
-            product = self.get_object()
+        if Product.objects.filter(name=self.kwargs.get("name")).exists():
+            product = Product.objects.all().filter(name=self.kwargs.get("name")).first()
             categories = list(product.category.all().values_list('name', flat=True))
 
             product_data = {
-                'id': product.id,
                 'name': product.name,
                 'price': product.price,
                 'category': categories,
-                'producer_name': product.producer.name,
-                'producer_id': product.producer.id,
+                'producer_name': product.employee.name,
+                'producer_id': product.employee.id,
             }
             return render(request, 'product.html', {'product': product})
         logging.warning('ProductDetailView: page not found')
@@ -339,10 +324,10 @@ class ProductDetailView(DetailView):
 
 
 class OrderCreateView(View):
-    def get(self, request, pk, *args, **kwargs):
+    def get(self, request, current_product, *args, **kwargs):
         if request.user.is_authenticated and request.user.role == "customer" and \
-                Product.objects.filter(pk=pk).exists():
-            product = Product.objects.get(pk=pk)
+                Product.objects.filter(name=current_product.name).exists():
+            product = Product.objects.get(product=current_product)
             form = OrderForm()
             context = {
                 'product': product,
@@ -352,10 +337,10 @@ class OrderCreateView(View):
         logging.warning('OrderCreateView: page not found')
         return render(request, 'page_not_found.html', status=404)
 
-    def post(self, request, pk, *args, **kwargs):
+    def post(self, request, current_product, *args, **kwargs):
         if request.user.is_authenticated and request.user.role == "customer" and \
-                Product.objects.filter(pk=pk).exists():
-            product = Product.objects.get(pk=pk)
+                Product.objects.filter(name=current_product.name).exists():
+            product = Product.objects.get(product=current_product)
             form = OrderForm(request.POST)
 
             if form.is_valid():
