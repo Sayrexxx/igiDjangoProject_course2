@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block header %}Cat Facts{% endblock %}
+
+{% block content %}
+    {% for fact in facts %}
+
+            <p>Fact: {{ fact }}</p>
+        
+    {% endfor %}
+{% endblock %}

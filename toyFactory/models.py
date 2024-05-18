@@ -1,3 +1,5 @@
+import random
+import uuid
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.contrib.auth.models import AbstractUser, Group, Permission, User
@@ -161,6 +163,7 @@ class Order(models.Model):
 
 
 class Purchase(models.Model):
+    purchase_id = models.IntegerField(default=random.randint(1, 100000))
     user = models.ForeignKey(MyUser, related_name='purchases', on_delete=models.CASCADE)
     order = models.OneToOneField(Order, on_delete=models.CASCADE)
     purchase_date = models.DateTimeField(auto_now_add=True)

@@ -1,3 +1,4 @@
+from warnings import WarningMessage
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_protect
 import datetime
@@ -33,6 +34,14 @@ logging.basicConfig(level=logging.INFO, filename='logs.log', filemode='a',
                     format='%(asctime)s %(levelname)s %(message)s')
 
 
+def getUserRole(name):
+    if name != None:
+        user = MyUser.objects.all().filter(username=name).first()
+        if user != None:
+            role = MyUser.objects.all().filter(username=name).first().role
+            return role
+
+
 def about_company(request):
     company_info_text = 'Toy Factory Company'
     logging.info(f'company info: {company_info_text}')
@@ -41,8 +50,15 @@ def about_company(request):
 
 def news(request):
     all_news = Article.objects.all()
+    name = request.user.username
+    
+    context = {
+        'all_news': all_news,
+        'getUserRole': getUserRole(name)
+    }
+    
     logging.info(f'news titles: {[new.title for new in all_news]}')
-    return render(request, 'news.html', {'all_news': all_news})
+    return render(request, 'news.html', context)
 
 
 def terms(request):
@@ -91,17 +107,29 @@ def profile(request):
     return render(request, 'page_not_found.html', status=404)
 
 
-class ReviewListView(ListView):
-    model = Review
-    queryset = Review.objects.all()
-    template_name = 'reviews.html'
+# class ReviewListView(ListView):
+#     model = Review
+#     queryset = Review.objects.all()
+#     template_name = 'reviews.html'
+
+
+def reviews(request):
+    all_reviews = Review.objects.all()
+    name = request.user.username
+    
+    context = {
+        'object_list': all_reviews,
+        'getUserRole': getUserRole(name)
+    }
+    
+    logging.info(f'reviews: {[review.text for review in all_reviews]}')
+    return render(request, 'reviews.html', context)
 
 
 class ReviewCreateView(View):
     def get(self, request, **kwargs):
         if request.user.is_authenticated and not request.user.is_superuser:
             form = ReviewForm()
-            logging.info(f'CONDITION FOR FIRST CUSTOMER: {MyUser.objects.all().filter(username=request.user.username).first().role}')
             return render(request, 'add_review.html', {'form': form})
         return redirect('login')
 
@@ -167,11 +195,6 @@ class LoginUser(BaseViewContextMixin, LoginView):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title="Авторизация")
         return dict(list(context.items()) + list(c_def.items()))
-
-
-def getUserRole(name):
-    role = MyUser.objects.all().filter(username=name).first().role
-    return role
 
 
 # def login_user(request):
@@ -368,7 +391,7 @@ class OrderCreateView(View):
 
 class OrderListView(View):
     def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "employee":
+        if request.user.is_authenticated and request.user.is_superuser:
             try:
                 orders = Order.objects.all()
 
@@ -449,8 +472,8 @@ class OrderDeleteDetailView(View):
 
 
 class UserOrderListView(View):
-    def get(self, request, *args, **kwargs):
-        warning_message = ""
+    def get(self, request):
+        warning_message_text = ""
         if request.user.is_authenticated and getUserRole(request.user.username) == 'customer':
             current_user = MyUser.objects.all().filter(username=request.user.username).first()
             user_orders = Order.objects.all().filter(user=current_user)
@@ -465,13 +488,12 @@ class UserOrderListView(View):
                     })
                 logging.info("UserOrderListView: user order list was successfully created")
                 return render(request, 'orders.html', {'orders': orders_data})
-                        
-            warning_message = 'Нет заказов. Перейдите в каталог с товарами\n и найдите для себя что-нибудь интересное'
-        
-        warning_message = 'Пожалуйста, авторизуйтесь для получения списка ваших заказов'
-        
-        logging.warning(f'UserOrderListView: {warning_message}')
-        return render(request, 'warning_message.html', warning_message_text=warning_message)            
+            else:
+                warning_message_text = 'Нет заказов. Перейдите в каталог с товарами\n и найдите для себя что-нибудь интересное'
+        else:
+            warning_message_text = 'Пожалуйста, авторизуйтесь для получения списка ваших заказов'
+        logging.warning(f'UserOrderListView: {warning_message_text}')
+        return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})            
 
 
 class PurchaseCreateView(View):

@@ -21,6 +21,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from toyFactory import views
+from toyFactory.apiUsage import apiViews
+
 from toyFactory import statistic_views
 
 
@@ -34,7 +36,7 @@ urlpatterns = [
     path('terms/', views.terms, name='terms'),
     path('contacts/', views.contacts, name='contacts'),
     path('vacancies/', views.vacancies, name='vacancies'),
-    path('reviews/', views.ReviewListView.as_view(), name='reviews'),
+    path('reviews/', views.reviews, name='reviews'),
     path('add_review/', views.ReviewCreateView.as_view(), name='add_review'),
     path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
 
@@ -51,24 +53,28 @@ urlpatterns = [
     path('logout/', views.LogoutUser.as_view(), name='logout'),
     path('profile/', views.profile, name='profile'),
     path('products/', views.ProductListView.as_view(), name='products'),
-    re_path(r'products/(?P<pk>\d+)/$', views.ProductDetailView.as_view(), name='product'),
-    re_path(r'products/(?P<pk>\d+)/order/create/', views.OrderCreateView.as_view(), name='create_order'),
+    re_path(r'products/(?P<product_id>\d+)/$', views.ProductDetailView.as_view(), name='product'),
+    re_path(r'products/(?P<product_id>\d+)/order/create/', views.OrderCreateView.as_view(), name='create_order'),
     path('orders/', views.OrderListView.as_view(), name='orders'),
-    re_path(r'orders/(?P<pk>\d+)/$', views.OrderDeleteDetailView.as_view(), name='order'),
+    re_path(r'orders/(?P<number>\d+)/$', views.OrderDeleteDetailView.as_view(), name='order'),
     path('users/', views.UserListView.as_view(), name='users'),
-    re_path(r'users/(?P<pk>\d+)/$', views.UserDetailView.as_view(), name='user'),
+    re_path(r'users/(?P<username>\d+)/$', views.UserDetailView.as_view(), name='user'),
     
     
     # ORDER FOR CURRENT USER
-    re_path(r'user/(?P<pk>\d+)/orders/', views.UserOrderListView.as_view(), name='user_orders'),
+    re_path(r'user/?username=request.user.username/orders/', views.UserOrderListView.as_view(), name='user_orders'),
     
     
     
-    re_path(r'orders/(?P<pk>\d+)/purchase/create/', views.PurchaseCreateView.as_view(), name='create_purchase'),
+    re_path(r'orders/(?P<username>\d+)/purchase/create/', views.PurchaseCreateView.as_view(), name='create_purchase'),
     path('purchases/', views.PurchaseListView.as_view(), name='purchases'),
-    re_path(r'purchases/(?P<pk>\d+)/$', views.PurchaseDetailView.as_view(), name='purchase'),
+    re_path(r'purchases/(?P<purchase_id>\d+)/$', views.PurchaseDetailView.as_view(), name='purchase'),
     path('promos/', views.PromoListView.as_view(), name='promos'),
     path('pick_up_points/', views.PickUpPointListView.as_view(), name='pick_up_points'),
+    
+    
+    path('cat_facts', apiViews.cats, name='cat_facts'),
+    path('random_joke', apiViews.random_joke, name='random_joke')
 ]
 
 if settings.DEBUG:

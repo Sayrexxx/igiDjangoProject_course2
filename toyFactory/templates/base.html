@@ -8,10 +8,10 @@
     <a href="{%url 'home' %}">Главная</a>
     {% if request.user.is_authenticated %}
             <li> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
-            {% comment %} {% if MyUser.objects.first().filter(username=request.user.username).role != 'customer' %} {% endcomment %}
-                {% comment %} <a href="{%url 'orders'%}" class="button">Текущие заказы</a> {% endcomment %}
-            <a href="{%url 'add_review' %}"><li>Оставить отзыв</li></a>
-            {% comment %} {% endif %} {% endcomment %}
+            {% if getUserRole == 'customer' %}
+                <a href="{%url 'user_orders'%}" class="button">Текущие заказы</a>
+                <a href="{%url 'add_review' %}"><li>Оставить отзыв</li></a>
+            {% endif %}
     {% else %}
             <a href="{% url 'register_customer' %}"><li>Регистрация для клиентов</li></a>
             <a href="{% url 'register_employee' %}"><li>Регистрация для сотрудников</li></a>
@@ -22,6 +22,9 @@
     <a href="{%url 'vacancies' %}">Вакансии</a> | <a href="{%url 'about' %}">О компании</a> | <a href="{%url 'contacts' %}">Контакты</a><br>
     <a href="{%url 'news' %}">Новости</a> | <a href="{%url 'terms' %}">FAQ</a><br>
     <a href="{%url 'privacy_policy' %}">Политика конфиденциальности</a>
+    <br><br>
+    <a href="{%url 'cat_facts' %}">Факты о котах</a> |
+    <a href="{%url 'random_joke' %}">Случайная шутка</a>
     <h1>{% block header %}{% endblock header %}</h1>
     <div>{% block content%}{% endblock content %}</div>
 </body>
