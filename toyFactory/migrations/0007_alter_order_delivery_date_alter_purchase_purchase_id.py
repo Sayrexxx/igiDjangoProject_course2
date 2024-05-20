@@ -8,18 +8,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('toyFactory', '0007_alter_order_delivery_date_alter_purchase_purchase_id'),
+        ('toyFactory', '0006_alter_order_delivery_date_alter_purchase_purchase_id'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='order',
             name='delivery_date',
-            field=models.DateField(default=datetime.datetime(2024, 5, 22, 11, 57, 49, 564150, tzinfo=datetime.timezone.utc), validators=[django.core.validators.MinValueValidator(datetime.datetime(2024, 5, 22, 11, 57, 49, 564163, tzinfo=datetime.timezone.utc))]),
+            field=models.DateField(default=datetime.datetime(2024, 5, 22, 11, 57, 41, 960326, tzinfo=datetime.timezone.utc), validators=[django.core.validators.MinValueValidator(datetime.datetime(2024, 5, 22, 11, 57, 41, 960338, tzinfo=datetime.timezone.utc))]),
         ),
         migrations.AlterField(
             model_name='purchase',
             name='purchase_id',
-            field=models.IntegerField(default=41301),
+            field=models.IntegerField(default=96752),
         ),
     ]

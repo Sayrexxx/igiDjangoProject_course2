@@ -6,9 +6,13 @@
 {% for product in products %}
     <div>
         <p>name: {{ product.name }}
+        <p>category: {{ product.category }}
         <p>price: ${{ product.price }}</p>
         <p>amount: {{ product.amount }}</p>
-        <p>producer :{{ product.employee.username }}</p>
+        <p>producer:{{ product.employee.username }}</p>
+        <form action="{% url 'create_order' product.name %}" method="get">
+            <button type="submit">Buy</button>
+        </form>
     </div>
 {% endfor %}
 {% endblock content %}

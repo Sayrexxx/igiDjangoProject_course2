@@ -137,20 +137,20 @@ class Order(models.Model):
     amount = models.PositiveSmallIntegerField(default=1)
     price = models.FloatField()
     date_created = models.DateTimeField(auto_now_add=True)
-    delivery_date = models.DateField(
+    delivery_date = models.DateTimeField(
         default=timezone.now() + timedelta(days=3),
         validators=[MinValueValidator(timezone.now() + timedelta(days=3))]
     )    
     delivery_point = PickUpPoint().address
     promo_code = models.CharField(max_length=8, null=True)
     
-    ROLE_CHOICES = (
+    STATUS_CHOICES = (
         ("В обработке ", "В обработке"),
         ("Принят", "Принят"),
         ("Доставлен", "Доставлен"),
         ("Отменён", "Отменён"),
     )
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default="В обработке")
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="В обработке")
 
 
     def __str__(self):

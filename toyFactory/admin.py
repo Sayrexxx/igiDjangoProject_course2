@@ -8,5 +8,6 @@ admin.site.register(Vacancy)
 admin.site.register(Review)
 admin.site.register(Product)
 admin.site.register(Category)
+admin.site.register(Order)
 
 # Register your models here.

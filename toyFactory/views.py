@@ -263,18 +263,17 @@ class ProductListView(ListView):
 
         products = self.filter_products(min_price, max_price, producer_name, category_name)
 
-        products_data = []
-        for product in products:
-            categories = list(product.category.all().values_list('name', flat=True))
-
-            products_data.append({
-                'name': product.name,
-                'price': product.price,
-                'amount': product.amount,
-                'category': categories,
-                'producer_name': product.employee.username,
-            })
-        return render(request, 'products.html', {'products': products_data})
+# =        for product in products:
+#             logging.info(f'EMPLOYEE USERNAME: {product.employee.username}')
+#             # products_data.append({
+#             #     'name': product.name,
+#             #     'price': product.price,
+#             #     'amount': product.amount,
+#             #     'category': categories,
+#             #     'employee_name': product.employee.username,
+#             # })
+            
+        return render(request, 'products.html', {'products': products})
 
     @staticmethod
     def filter_products(min_price=None, max_price=None, prod_name=None, cat_name=None):
@@ -302,76 +301,66 @@ class ProductListView(ListView):
             return filtered_products
         return products
 
-
-class ProductDetailView(DetailView):
-    model = Product
-
-    def get(self, request, *args, **kwargs):
-        if Product.objects.filter(name=self.kwargs.get("name")).exists():
-            product = Product.objects.all().filter(name=self.kwargs.get("name")).first()
-            categories = list(product.category.all().values_list('name', flat=True))
-
-            product_data = {
-                'name': product.name,
-                'price': product.price,
-                'category': categories,
-                'producer_name': product.employee.name,
-                'producer_id': product.employee.id,
-            }
-            return render(request, 'product.html', {'product': product})
-        logging.warning('ProductDetailView: page not found')
-        return render(request, 'page_not_found.html', status=404)
-
-
 class OrderCreateView(View):
-    def get(self, request, current_product, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "customer" and \
-                Product.objects.filter(name=current_product.name).exists():
-            product = Product.objects.get(product=current_product)
-            form = OrderForm()
+    def get(self, request, product_name, *args, **kwargs):
+        if request.user.is_authenticated and getUserRole(request.user.username) == 'customer' and \
+                Product.objects.filter(name=product_name).exists():
+            product = Product.objects.get(name=product_name)
+            form = OrderForm(available_amount=product.amount)
             context = {
                 'product': product,
                 'form': form,
             }
             return render(request, 'order_form.html', context)
-        logging.warning('OrderCreateView: page not found')
-        return render(request, 'page_not_found.html', status=404)
+        else:
+            warning_message_text = 'Пожалуйста, авторизуйтесь, чтобы оформить заказ'
+        logging.warning(f'UserOrderListView: {warning_message_text}')
+        return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
 
-    def post(self, request, current_product, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "customer" and \
-                Product.objects.filter(name=current_product.name).exists():
-            product = Product.objects.get(product=current_product)
+    def post(self, request, product_name, *args, **kwargs):
+        warning_message_text = ""
+        if request.user.is_authenticated and getUserRole(request.user.username) == 'customer' and \
+                Product.objects.filter(name=product_name).exists():
+            product = Product.objects.get(name=product_name)
             form = OrderForm(request.POST)
 
             if form.is_valid():
+                available_amount = form.cleaned_data['available_amount']
                 amount = form.cleaned_data['amount']
 
-                if product.amount - amount >= 0:
-                    order = Order.objects.create(user=request.user, product=product, amount=amount,
-                                                 price=amount * product.price)
-
+                if amount - available_amount >= 0:
+                    # order = Order.objects.create(
+                    #     user=request.user,
+                    #     product=product,
+                    #     amount=amount,
+                    #     price=amount * product.price
+                    # )
+                    order = form.save(commit=False)
+                    order.user = request.user
+                    order.price = amount * product.price
+                    order.save()
+                    
                     order_data = {
                         "user": order.user.username,
                         "number": order.number,
-                        "product_id": order.product.id,
                         "price": order.price,
                         "promo": order.promo_code,
                         "amount": order.amount,
-                        "date": timezone.localtime(order.date),
-                        "is_active": order.is_active,
+                        "date_created": timezone.localtime(order.date_created),
+                        "status": order.status,
                     }
 
                     product.amount -= amount
                     product.save()
                     logging.info('created Order object')
-                    return JsonResponse(order_data, safe=False)
-                return HttpResponse('There are not enough products in stock to place an order')
-        elif request.user.is_authenticated and request.user.role == "employee":
-            logging.warning('OrderCreateView: page not found')
-            return render(request, 'page_not_found.html', status=404)
+                    redirect(news)
+                    # return JsonResponse(order_data, safe=False)
+                else:
+                    warning_message_text = 'Недостаточно товаров'
         else:
-            logging.warning('OrderCreateView: user is not authenticated')
-            return HttpResponse('please, login for making order!')
+            warning_message_text = 'Пожалуйста, авторизуйтесь, чтобы оформить заказ'
+        logging.warning(f'UserOrderListView: {warning_message_text}')
+        return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
 
 
 class OrderListView(View):

@@ -54,18 +54,16 @@ urlpatterns = [
     
     
     #todo
-    re_path(r'products/(?P<product_id>\d+)/$', views.ProductDetailView.as_view(), name='product'),
-    re_path(r'products/(?P<product_id>\d+)/order/create/', views.OrderCreateView.as_view(), name='create_order'),
+    path(r'products/<str:product_name>/order/create/', views.OrderCreateView.as_view(), name='create_order'),
     path('orders/', views.OrderListView.as_view(), name='orders'),
     re_path(r'orders/(?P<number>\d+)/$', views.OrderDeleteDetailView.as_view(), name='order'),
     re_path(r'users/(?P<username>\d+)/$', views.UserDetailView.as_view(), name='user'),
     re_path(r'orders/(?P<username>\d+)/purchase/create/', views.PurchaseCreateView.as_view(), name='create_purchase'),
-    path('purchases/', views.PurchaseListView.as_view(), name='purchases'),
+    # path('purchases/', views.PurchaseListView.as_view(), name='purchases'),
     re_path(r'purchases/(?P<purchase_id>\d+)/$', views.PurchaseDetailView.as_view(), name='purchase'),
     path('promos/', views.PromoListView.as_view(), name='promos'),
     path('pick_up_points/', views.PickUpPointListView.as_view(), name='pick_up_points'),
     path('price_list', statistic_views.price_list, name='price_list'),
-    path('customers', statistic_views.customers, name='customers'),
     path('demand_analysis', statistic_views.demand_analysis, name='demand_analysis'),
     path('monthly_sales_volume', statistic_views.monthly_sales_volume, name='monthly_sales_volume'),
     path('linear_trend', statistic_views.linear_sales_trend, name='linear_trend'),

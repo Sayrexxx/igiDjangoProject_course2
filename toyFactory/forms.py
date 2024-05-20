@@ -120,7 +120,22 @@ class LoginUserForm(AuthenticationForm):
 
 
 class OrderForm(forms.Form):
+    available_amount = forms.IntegerField(widget=forms.HiddenInput(), required=False)
     amount = forms.IntegerField(min_value=1)
+
+    def __init__(self, available_amount=0, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['available_amount'].initial = available_amount
+
+    def clean(self):
+        cleaned_data = super().clean()
+        available_amount = cleaned_data.get('available_amount')
+        amount = cleaned_data.get('amount')
+
+        if available_amount is not None and amount > available_amount:
+            raise forms.ValidationError(f"Amount cannot be greater than the available amount of {available_amount}.")
+
+        return cleaned_data
 
 
 class OrderDeleteForm(forms.Form):
