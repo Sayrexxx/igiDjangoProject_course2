@@ -95,7 +95,7 @@ class MyUser(User):
     
     user_ptr = models.OneToOneField(User, on_delete=models.CASCADE, parent_link=True, primary_key=True, default=None)
     
-    #todo
+    
     image = models.ImageField(upload_to='images/')
         
     description = models.CharField(max_length=1000, default='')

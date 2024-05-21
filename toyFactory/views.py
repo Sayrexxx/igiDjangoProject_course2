@@ -17,6 +17,8 @@ from django.urls import reverse, reverse_lazy
 
 from django.views import View
 
+from django.db.models import Prefetch
+
 from django.views.generic import *
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -54,7 +56,7 @@ def news(request):
     
     context = {
         'all_news': all_news,
-        'getUserRole': getUserRole(name)
+        'getUserRole': getUserRole(name),
     }
     
     logging.info(f'news titles: {[new.title for new in all_news]}')
@@ -253,8 +255,11 @@ class UserDetailView(View):
 
 class ProductListView(ListView):
     model = Product
-    queryset = Product.objects.all()
-
+    
+    def get_queryset(self):
+        return Product.objects.prefetch_related(
+                    Prefetch('category', queryset=Category.objects.all().values_list('name'))
+                )
     def get(self, request, *args, **kwargs):
         min_price = request.GET.get('min_price')
         max_price = request.GET.get('max_price')
@@ -262,7 +267,18 @@ class ProductListView(ListView):
         producer_name = request.GET.get('prod_name')
 
         products = self.filter_products(min_price, max_price, producer_name, category_name)
-
+        # list_of_categories = []
+        # for product in products:
+        #     current_categories = product.category.all()
+        #     list_of_categories.append({'product': product.name,
+        #                                'categories':current_categories})
+            
+            
+        logging.info(f'PRODUCT CATEGORIES: {[product.category.all() for product in products ]}')
+        
+        
+        #need to give argument to template like categories for each product
+            
 # =        for product in products:
 #             logging.info(f'EMPLOYEE USERNAME: {product.employee.username}')
 #             # products_data.append({
@@ -277,7 +293,7 @@ class ProductListView(ListView):
 
     @staticmethod
     def filter_products(min_price=None, max_price=None, prod_name=None, cat_name=None):
-        products = Product.objects.all()
+        products = Product.objects.prefetch_related('category')
 
         filtered_products = None
 

@@ -5,6 +5,15 @@
     <title>{% block title %}Default title{% endblock title %}</title>
 </head>
 <body>
+    {% if request.user.is_authenticated %}
+        {% load tz %}
+        {% get_current_timezone as TIME_ZONE %}
+        User's TIMEZONE: {{ TIME_ZONE }}
+        <br>
+        {% now "Y-m-d H:i:s" as current_time %}
+        Current Time: {{ current_time }}
+        <br>
+    {% endif %}
     <a href="{%url 'home' %}">Главная</a>
     {% if request.user.is_authenticated %}
             <li> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
