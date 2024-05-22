@@ -235,22 +235,24 @@ class UserListView(View):
         return render(request, 'page_not_found.html', status=404)
 
 
-class UserDetailView(View):
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "employee" and \
-                User.objects.filter(pk=self.kwargs.get("pk"), is_superuser=False):
-            pk = self.kwargs.get("pk")
-            user = User.objects.get(pk=pk)
-            if user.role != "employee":
-                user_data = {
-                    "id": user.id,
-                    "username": user.username,
-                    "phone_number": user.phone_number,
-                    "email": user.email,
-                }
-                return JsonResponse(user_data, safe=False)
-            logging.warning('UserDetailView: page not found')
-        return render(request, 'page_not_found.html', status=404)
+def edit_profile_view(request):
+    user = request.user
+    if not isinstance(user, MyUser):
+        user = MyUser.objects.get(username=request.user.username)
+
+    if getUserRole(user.username) == 'employee':
+        form_class = EmployeeProfileForm
+    else:
+        form_class = CustomerProfileForm
+
+    if request.method == 'POST':
+        form = form_class(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = form_class(instance=user)
+    return render(request, 'edit_profile.html', {'form': form})
 
 
 class ProductListView(ListView):
@@ -267,27 +269,9 @@ class ProductListView(ListView):
         producer_name = request.GET.get('prod_name')
 
         products = self.filter_products(min_price, max_price, producer_name, category_name)
-        # list_of_categories = []
-        # for product in products:
-        #     current_categories = product.category.all()
-        #     list_of_categories.append({'product': product.name,
-        #                                'categories':current_categories})
             
             
         logging.info(f'PRODUCT CATEGORIES: {[product.category.all() for product in products ]}')
-        
-        
-        #need to give argument to template like categories for each product
-            
-# =        for product in products:
-#             logging.info(f'EMPLOYEE USERNAME: {product.employee.username}')
-#             # products_data.append({
-#             #     'name': product.name,
-#             #     'price': product.price,
-#             #     'amount': product.amount,
-#             #     'category': categories,
-#             #     'employee_name': product.employee.username,
-#             # })
             
         return render(request, 'products.html', {'products': products})
 
@@ -318,10 +302,15 @@ class ProductListView(ListView):
         return products
 
 class OrderCreateView(View):
+    warning_message_text = ""
+
+    
     def get(self, request, product_name, *args, **kwargs):
+        warning_message_text = ""
         if request.user.is_authenticated and getUserRole(request.user.username) == 'customer' and \
                 Product.objects.filter(name=product_name).exists():
             product = Product.objects.get(name=product_name)
+            # Initialize the form with available_amount
             form = OrderForm(available_amount=product.amount)
             context = {
                 'product': product,
@@ -338,41 +327,29 @@ class OrderCreateView(View):
         if request.user.is_authenticated and getUserRole(request.user.username) == 'customer' and \
                 Product.objects.filter(name=product_name).exists():
             product = Product.objects.get(name=product_name)
-            form = OrderForm(request.POST)
+            form = OrderForm(request.POST, available_amount=product.amount)
 
             if form.is_valid():
-                available_amount = form.cleaned_data['available_amount']
                 amount = form.cleaned_data['amount']
+                delivery_date = form.cleaned_data['delivery_date']
 
-                if amount - available_amount >= 0:
-                    # order = Order.objects.create(
-                    #     user=request.user,
-                    #     product=product,
-                    #     amount=amount,
-                    #     price=amount * product.price
-                    # )
-                    order = form.save(commit=False)
-                    order.user = request.user
-                    order.price = amount * product.price
-                    order.save()
-                    
-                    order_data = {
-                        "user": order.user.username,
-                        "number": order.number,
-                        "price": order.price,
-                        "promo": order.promo_code,
-                        "amount": order.amount,
-                        "date_created": timezone.localtime(order.date_created),
-                        "status": order.status,
-                    }
-
+                if amount <= product.amount:
+                    order = Order.objects.create(
+                        user=MyUser.objects.get(username=request.user.username),
+                        product=product,
+                        amount=amount,
+                        price=amount * product.price,
+                        delivery_date=delivery_date
+                    )
                     product.amount -= amount
                     product.save()
+                    order.save()
                     logging.info('created Order object')
-                    redirect(news)
-                    # return JsonResponse(order_data, safe=False)
+                    return redirect('news')
                 else:
                     warning_message_text = 'Недостаточно товаров'
+            else:
+                warning_message_text = 'Форма не валидна'
         else:
             warning_message_text = 'Пожалуйста, авторизуйтесь, чтобы оформить заказ'
         logging.warning(f'UserOrderListView: {warning_message_text}')

@@ -7,7 +7,7 @@
     <div>
         <h2>Номер заказа: {{ order.number }}</h2>
         <p>Стоимость: ${{ order.price }}</p>
-        <a href="{% url 'order_detail.html' number=order.number %}" class="button">details</a>
+        <p>Статус: {{ order.status }}
     </div>
 {% endfor %}
 {% endblock content %}

@@ -138,8 +138,7 @@ class Order(models.Model):
     price = models.FloatField()
     date_created = models.DateTimeField(auto_now_add=True)
     delivery_date = models.DateTimeField(
-        default=timezone.now() + timedelta(days=3),
-        validators=[MinValueValidator(timezone.now() + timedelta(days=3))]
+        default=timezone.now() + timedelta(days=3)
     )    
     delivery_point = PickUpPoint().address
     promo_code = models.CharField(max_length=8, null=True)
@@ -154,7 +153,7 @@ class Order(models.Model):
 
 
     def __str__(self):
-        return self.number
+        return self.product.name
 
     def apply_promo(self, promo):
         if PromoUsage.objects.filter(user_id=self.user, promo_id=promo).exists():

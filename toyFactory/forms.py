@@ -1,6 +1,12 @@
+from datetime import timedelta
+from django.utils import timezone
 from django import forms
+from requests import request
 
-from .models import MyUser, Review
+from .models import MyUser, Review, Order
+from django.core.validators import MinValueValidator
+from django.core.exceptions import ValidationError
+
 
 from django.conf import settings
 
@@ -119,23 +125,37 @@ class LoginUserForm(AuthenticationForm):
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
 
 
-class OrderForm(forms.Form):
-    available_amount = forms.IntegerField(widget=forms.HiddenInput(), required=False)
-    amount = forms.IntegerField(min_value=1)
+from django.forms import ModelForm
 
-    def __init__(self, available_amount=0, *args, **kwargs):
+class OrderForm(ModelForm):
+    class Meta:
+        model = Order
+        fields = ['amount', 'delivery_date']
+        widgets = {
+            'amount': forms.NumberInput(attrs={'min': 1}),  # Minimum quantity validation
+            'delivery_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        self.available_amount = kwargs.pop('available_amount', None)  # Remove from kwargs
         super().__init__(*args, **kwargs)
-        self.fields['available_amount'].initial = available_amount
 
-    def clean(self):
-        cleaned_data = super().clean()
-        available_amount = cleaned_data.get('available_amount')
-        amount = cleaned_data.get('amount')
+    def clean_amount(self):
+        amount = self.cleaned_data['amount']
+        logging.info(f"Amount: {amount}")  # Add this line for debugging
+        if amount > self.available_amount:
+            raise ValidationError(f"Выберите количество, не превосходящее {self.available_amount}.")
+        return amount
 
-        if available_amount is not None and amount > available_amount:
-            raise forms.ValidationError(f"Amount cannot be greater than the available amount of {available_amount}.")
-
-        return cleaned_data
+    def clean_delivery_date(self):
+        delivery_date = self.cleaned_data['delivery_date']
+        user_time_zone = timezone.get_current_timezone()
+        delivery_date_user_tz = timezone.localtime(delivery_date, user_time_zone)
+    
+        if delivery_date_user_tz < timezone.now() + timedelta(days=3):
+            raise ValidationError("Заказ можно будет забрать МИНИМУМ через 3 дня")
+        return delivery_date_user_tz
+        
 
 
 class OrderDeleteForm(forms.Form):
@@ -151,3 +171,15 @@ class PhoneNumberChangeForm(forms.ModelForm):
     class Meta:
         model = MyUser
         fields = ['username']
+        
+
+class EmployeeProfileForm(forms.ModelForm):
+    class Meta:
+        model = MyUser
+        fields = ['image', 'email', 'phone_number', 'description']
+
+
+class CustomerProfileForm(forms.ModelForm):
+    class Meta:
+        model = MyUser
+        fields = ['image', 'email', 'phone_number']

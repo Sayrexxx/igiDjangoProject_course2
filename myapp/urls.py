@@ -45,6 +45,7 @@ urlpatterns = [
     path('login/', views.LoginUser.as_view(), name='login'),
     path('logout/', views.LogoutUser.as_view(), name='logout'),
     re_path(r'user/?username=request.user.username/orders/', views.UserOrderListView.as_view(), name='user_orders'),    
+    re_path(r'user/?username=request.user.username/edit_profile/', views.edit_profile_view, name='edit_profile'),
     
     path('cat_facts', apiViews.cats, name='cat_facts'),
     path('random_joke', apiViews.random_joke, name='random_joke'),
@@ -57,7 +58,6 @@ urlpatterns = [
     path(r'products/<str:product_name>/order/create/', views.OrderCreateView.as_view(), name='create_order'),
     path('orders/', views.OrderListView.as_view(), name='orders'),
     re_path(r'orders/(?P<number>\d+)/$', views.OrderDeleteDetailView.as_view(), name='order'),
-    re_path(r'users/(?P<username>\d+)/$', views.UserDetailView.as_view(), name='user'),
     re_path(r'orders/(?P<username>\d+)/purchase/create/', views.PurchaseCreateView.as_view(), name='create_purchase'),
     # path('purchases/', views.PurchaseListView.as_view(), name='purchases'),
     re_path(r'purchases/(?P<purchase_id>\d+)/$', views.PurchaseDetailView.as_view(), name='purchase'),
