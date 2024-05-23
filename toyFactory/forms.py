@@ -128,9 +128,10 @@ class LoginUserForm(AuthenticationForm):
 from django.forms import ModelForm
 
 class OrderForm(ModelForm):
+    promo_code = forms.CharField(max_length=8, required=False)
     class Meta:
         model = Order
-        fields = ['amount', 'delivery_date']
+        fields = ['amount', 'delivery_date', 'promo_code']
         widgets = {
             'amount': forms.NumberInput(attrs={'min': 1}),  # Minimum quantity validation
             'delivery_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
@@ -155,7 +156,12 @@ class OrderForm(ModelForm):
         if delivery_date_user_tz < timezone.now() + timedelta(days=3):
             raise ValidationError("Заказ можно будет забрать МИНИМУМ через 3 дня")
         return delivery_date_user_tz
-        
+    
+    def clean_promo_code(self):
+        promo_code = self.cleaned_data['promo_code']
+        if promo_code and len(promo_code) > 8:
+            raise ValidationError("Длина промокода не может превышать 8 символов")
+        return promo_code
 
 
 class OrderDeleteForm(forms.Form):
@@ -183,3 +189,8 @@ class CustomerProfileForm(forms.ModelForm):
     class Meta:
         model = MyUser
         fields = ['image', 'email', 'phone_number']
+        
+
+
+class PromoCodeForm(forms.Form):
+    promo_code = forms.CharField(label='Promo Code', max_length=20, required=False)

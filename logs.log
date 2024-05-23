@@ -3936,3 +3936,415 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 24: 'o
 2024-05-23 20:52:02,595 INFO ORDER NUMBER: 3
 2024-05-23 20:52:02,597 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}]
 2024-05-23 20:52:02,597 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 22:23:54,383 INFO news titles: []
+2024-05-23 22:23:56,962 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 22:24:06,222 INFO Amount: 2
+2024-05-23 22:24:06,280 ERROR Internal Server Error: /products/мишка1/order/create/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 334, in post
+    promo_code = form.cleaned_data['promo_code']
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'promo_code'
+2024-05-23 22:24:21,158 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 22:24:24,423 INFO Amount: 2
+2024-05-23 22:24:24,438 INFO created Order object
+2024-05-23 22:24:24,479 INFO news titles: []
+2024-05-23 22:24:26,479 INFO ORDER NUMBER: 1
+2024-05-23 22:24:26,479 INFO ORDER NUMBER: 2
+2024-05-23 22:24:26,480 INFO ORDER NUMBER: 3
+2024-05-23 22:24:26,480 INFO ORDER NUMBER: 6
+2024-05-23 22:24:26,484 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}]
+2024-05-23 22:24:26,484 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 22:28:42,558 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-23 22:29:15,319 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 22:32:33,123 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 22:33:51,275 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-23 22:34:19,995 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 22:34:24,473 INFO news titles: []
+2024-05-23 22:34:26,998 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 22:36:12,677 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 22:36:58,671 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 22:37:02,177 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 22:37:08,358 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 22:37:10,015 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 22:38:48,445 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 22:42:20,579 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 22:43:32,704 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 22:43:36,847 INFO news titles: []
+2024-05-23 22:43:38,004 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_order.promo_code_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 460, in get
+    if user_orders:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 412, in __bool__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_order.promo_code_id
+2024-05-23 22:48:35,545 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_order.promo_code_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 460, in get
+    if user_orders:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 412, in __bool__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_order.promo_code_id
+2024-05-23 22:48:36,102 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_order.promo_code_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 460, in get
+    if user_orders:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 412, in __bool__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_order.promo_code_id
+2024-05-23 22:48:37,902 INFO news titles: []
+2024-05-23 22:48:39,166 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_order.promo_code_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 460, in get
+    if user_orders:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 412, in __bool__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_order.promo_code_id
+2024-05-23 22:56:33,506 INFO ORDER NUMBER: 1
+2024-05-23 22:56:33,506 INFO ORDER NUMBER: 2
+2024-05-23 22:56:33,506 INFO ORDER NUMBER: 3
+2024-05-23 22:56:33,506 INFO ORDER NUMBER: 6
+2024-05-23 22:56:33,507 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}]
+2024-05-23 22:56:33,507 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 22:56:36,504 INFO news titles: []
+2024-05-23 22:56:37,491 INFO ORDER NUMBER: 1
+2024-05-23 22:56:37,492 INFO ORDER NUMBER: 2
+2024-05-23 22:56:37,492 INFO ORDER NUMBER: 3
+2024-05-23 22:56:37,492 INFO ORDER NUMBER: 6
+2024-05-23 22:56:37,493 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}]
+2024-05-23 22:56:37,493 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 22:56:38,786 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 22:57:21,174 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/admin.py changed, reloading.
+2024-05-23 22:58:17,985 WARNING Forbidden (CSRF token from POST incorrect.): /products/мишка1/order/create/
+2024-05-23 22:58:23,182 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 22:58:24,464 INFO news titles: []
+2024-05-23 22:58:31,938 INFO news titles: []
+2024-05-23 22:58:33,351 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 22:58:42,255 INFO Amount: 5
+2024-05-23 22:58:42,256 WARNING UserOrderListView: <ul class="errorlist"><li>promo_code<ul class="errorlist"><li>This field cannot be null.</li></ul></li></ul>
+2024-05-23 22:59:02,667 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-23 22:59:06,822 INFO Amount: 5
+2024-05-23 22:59:06,824 WARNING UserOrderListView: <ul class="errorlist"><li>promo_code<ul class="errorlist"><li>This field cannot be null.</li></ul></li></ul>
+2024-05-23 22:59:56,723 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 23:01:07,474 INFO Amount: 5
+2024-05-23 23:01:07,476 WARNING UserOrderListView: <ul class="errorlist"><li>promo_code<ul class="errorlist"><li>This field cannot be null.</li></ul></li></ul>
+2024-05-23 23:01:09,513 INFO news titles: []
+2024-05-23 23:01:13,722 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 23:01:15,521 INFO news titles: []
+2024-05-23 23:01:16,993 INFO news titles: []
+2024-05-23 23:01:18,207 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 23:01:25,347 INFO Amount: 5
+2024-05-23 23:01:25,348 WARNING UserOrderListView: <ul class="errorlist"><li>delivery_date<ul class="errorlist"><li>Заказ можно будет забрать МИНИМУМ через 3 дня</li></ul></li><li>promo_code<ul class="errorlist"><li>This field cannot be null.</li></ul></li></ul>
+2024-05-23 23:01:28,987 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 23:01:38,106 INFO Amount: 4
+2024-05-23 23:01:38,106 WARNING UserOrderListView: <ul class="errorlist"><li>promo_code<ul class="errorlist"><li>This field cannot be null.</li></ul></li></ul>
+2024-05-23 23:02:09,976 INFO news titles: []
+2024-05-23 23:02:11,337 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 23:02:18,062 INFO Amount: 5
+2024-05-23 23:02:18,062 WARNING UserOrderListView: <ul class="errorlist"><li>delivery_date<ul class="errorlist"><li>Заказ можно будет забрать МИНИМУМ через 3 дня</li></ul></li><li>promo_code<ul class="errorlist"><li>This field cannot be null.</li></ul></li></ul>
+2024-05-23 23:02:45,956 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 23:02:55,681 INFO Amount: 5
+2024-05-23 23:02:55,687 INFO created Order object
+2024-05-23 23:02:55,700 INFO news titles: []
+2024-05-23 23:02:57,940 INFO ORDER NUMBER: 1
+2024-05-23 23:02:57,940 INFO ORDER NUMBER: 2
+2024-05-23 23:02:57,940 INFO ORDER NUMBER: 3
+2024-05-23 23:02:57,940 INFO ORDER NUMBER: 6
+2024-05-23 23:02:57,940 INFO ORDER NUMBER: 7
+2024-05-23 23:02:57,941 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'В обработке'}]
+2024-05-23 23:02:57,941 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 23:04:00,153 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 23:04:03,184 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 23:04:17,335 INFO Amount: 1
+2024-05-23 23:04:17,340 INFO created Order object
+2024-05-23 23:04:17,348 INFO news titles: []
+2024-05-23 23:04:19,123 INFO ORDER NUMBER: 1
+2024-05-23 23:04:19,123 INFO ORDER NUMBER: 2
+2024-05-23 23:04:19,123 INFO ORDER NUMBER: 3
+2024-05-23 23:04:19,123 INFO ORDER NUMBER: 6
+2024-05-23 23:04:19,123 INFO ORDER NUMBER: 7
+2024-05-23 23:04:19,123 INFO ORDER NUMBER: 8
+2024-05-23 23:04:19,124 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'В обработке'}, {'number': 8, 'price': 120.0, 'status': 'В обработке'}]
+2024-05-23 23:04:19,124 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 23:05:20,496 INFO ORDER NUMBER: 1
+2024-05-23 23:05:20,496 INFO ORDER NUMBER: 2
+2024-05-23 23:05:20,496 INFO ORDER NUMBER: 3
+2024-05-23 23:05:20,496 INFO ORDER NUMBER: 6
+2024-05-23 23:05:20,497 INFO ORDER NUMBER: 7
+2024-05-23 23:05:20,497 INFO ORDER NUMBER: 8
+2024-05-23 23:05:20,498 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'Отменён'}, {'number': 8, 'price': 120.0, 'status': 'В обработке'}]
+2024-05-23 23:05:20,498 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 23:05:51,698 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 23:06:15,424 INFO ORDER NUMBER: 1
+2024-05-23 23:06:15,424 INFO ORDER NUMBER: 2
+2024-05-23 23:06:15,424 INFO ORDER NUMBER: 3
+2024-05-23 23:06:15,424 INFO ORDER NUMBER: 6
+2024-05-23 23:06:15,424 INFO ORDER NUMBER: 7
+2024-05-23 23:06:15,424 INFO ORDER NUMBER: 8
+2024-05-23 23:06:15,425 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'Отменён'}, {'number': 8, 'price': 120.0, 'status': 'В обработке'}]
+2024-05-23 23:06:15,425 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 23:06:18,595 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 23:06:29,813 INFO Amount: 3
+2024-05-23 23:06:29,814 WARNING UserOrderListView: <ul class="errorlist"><li>promo_code<ul class="errorlist"><li>This field cannot be null.</li></ul></li></ul>
+2024-05-23 23:09:49,391 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 23:10:54,653 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-23 23:13:45,414 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 23:14:08,267 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-23 23:15:00,370 INFO news titles: []
+2024-05-23 23:15:01,738 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 23:15:57,586 INFO Amount: 3
+2024-05-23 23:15:57,592 INFO created Order object
+2024-05-23 23:15:57,599 INFO news titles: []
+2024-05-23 23:15:59,801 INFO ORDER NUMBER: 1
+2024-05-23 23:15:59,801 INFO ORDER NUMBER: 2
+2024-05-23 23:15:59,801 INFO ORDER NUMBER: 3
+2024-05-23 23:15:59,801 INFO ORDER NUMBER: 6
+2024-05-23 23:15:59,801 INFO ORDER NUMBER: 7
+2024-05-23 23:15:59,801 INFO ORDER NUMBER: 8
+2024-05-23 23:15:59,801 INFO ORDER NUMBER: 9
+2024-05-23 23:15:59,802 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'Отменён'}, {'number': 8, 'price': 120.0, 'status': 'В обработке'}, {'number': 9, 'price': 225.0, 'status': 'В обработке'}]
+2024-05-23 23:15:59,803 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 23:19:03,174 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 23:19:15,865 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 23:19:18,470 WARNING UserOrderListView: Пожалуйста, авторизуйтесь, чтобы оформить заказ
+2024-05-23 23:19:20,684 INFO news titles: []
+2024-05-23 23:19:26,840 INFO news titles: []
+2024-05-23 23:19:29,270 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 23:19:39,100 INFO Amount: 5
+2024-05-23 23:19:39,105 INFO created Order object
+2024-05-23 23:19:39,105 INFO PROMOCODE: None
+2024-05-23 23:19:39,113 INFO news titles: []
+2024-05-23 23:20:04,215 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-23 23:20:09,634 INFO Amount: 5
+2024-05-23 23:20:09,641 INFO created Order object
+2024-05-23 23:20:09,641 INFO PROMOCODE: 
+2024-05-23 23:20:09,655 INFO news titles: []
+2024-05-23 23:20:11,290 INFO ORDER NUMBER: 1
+2024-05-23 23:20:11,290 INFO ORDER NUMBER: 2
+2024-05-23 23:20:11,291 INFO ORDER NUMBER: 3
+2024-05-23 23:20:11,291 INFO ORDER NUMBER: 6
+2024-05-23 23:20:11,291 INFO ORDER NUMBER: 7
+2024-05-23 23:20:11,291 INFO ORDER NUMBER: 8
+2024-05-23 23:20:11,291 INFO ORDER NUMBER: 9
+2024-05-23 23:20:11,291 INFO ORDER NUMBER: 10
+2024-05-23 23:20:11,291 INFO ORDER NUMBER: 11
+2024-05-23 23:20:11,292 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'Отменён'}, {'number': 8, 'price': 120.0, 'status': 'В обработке'}, {'number': 9, 'price': 225.0, 'status': 'В обработке'}, {'number': 10, 'price': 500.0, 'status': 'В обработке'}, {'number': 11, 'price': 500.0, 'status': 'В обработке'}]
+2024-05-23 23:20:11,292 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 23:21:30,498 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 23:21:34,553 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 23:21:45,225 INFO Amount: 3
+2024-05-23 23:21:45,231 INFO created Order object
+2024-05-23 23:21:45,231 INFO PROMOCODE: qqq50
+2024-05-23 23:21:45,238 INFO news titles: []

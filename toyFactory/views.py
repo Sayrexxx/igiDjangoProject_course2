@@ -303,7 +303,6 @@ class ProductListView(ListView):
 
 class OrderCreateView(View):
     warning_message_text = ""
-
     
     def get(self, request, product_name, *args, **kwargs):
         warning_message_text = ""
@@ -332,18 +331,30 @@ class OrderCreateView(View):
             if form.is_valid():
                 amount = form.cleaned_data['amount']
                 delivery_date = form.cleaned_data['delivery_date']
-
+                promo_code = form.cleaned_data['promo_code']
                 if amount <= product.amount:
-                    order = Order.objects.create(
-                        user=MyUser.objects.get(username=request.user.username),
-                        product=product,
-                        amount=amount,
-                        price=amount * product.price,
-                        delivery_date=delivery_date
-                    )
+                    if not promo_code:
+                        Order.objects.create(
+                            user=MyUser.objects.get(username=request.user.username),
+                            product=product,
+                            amount=amount,
+                            price=amount * product.price,
+                            delivery_date=delivery_date
+                        )
+                    else:
+                        promo = Promo.objects.get(code=promo_code)
+                        order = Order.objects.create(
+                            user=MyUser.objects.get(username=request.user.username),
+                            product=product,
+                            amount=amount,
+                            promo_code = promo,
+                            price=amount * product.price * ((100 - promo.discount) / 100),
+                            delivery_date=delivery_date
+                        )
                     product.amount -= amount
                     product.save()
                     logging.info('created Order object')
+                    logging.info(f"PROMOCODE: {order.promo_code}")
                     return redirect('news')
                 else:
                     warning_message_text = 'Недостаточно товаров'

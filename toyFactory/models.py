@@ -130,6 +130,14 @@ class PickUpPoint(models.Model):
     def __str__(self):
         return self.address
     
+    
+class Promo(models.Model):
+    code = models.CharField(max_length=8)
+    discount = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return self.code
+    
 
 class Order(models.Model):
     user = models.ForeignKey(MyUser, related_name='orders', on_delete=models.CASCADE)
@@ -142,8 +150,8 @@ class Order(models.Model):
         default=timezone.now() + timedelta(days=3)
     )    
     delivery_point = PickUpPoint().address
-    promo_code = models.CharField(max_length=8, null=True)
-    
+    promo_code = models.CharField(max_length=8, blank=True)
+            
     STATUS_CHOICES = (
         ("В обработке ", "В обработке"),
         ("Принят", "Принят"),
@@ -155,39 +163,3 @@ class Order(models.Model):
 
     def __str__(self):
         return self.product.name
-
-    def apply_promo(self, promo):
-        if PromoUsage.objects.filter(user_id=self.user, promo_id=promo).exists():
-            return
-        self.price *= 1 - promo.discount/100
-        self.promo_code = promo.code
-        self.save()
-
-        logging.warning(f'applied promo for {self.number} order')
-
-        PromoUsage.objects.create(promo=promo, user=self.user)
-
-
-class Purchase(models.Model):
-    purchase_id = models.IntegerField(default=random.randint(1, 100000))
-    user = models.ForeignKey(MyUser, related_name='purchases', on_delete=models.CASCADE)
-    order = models.OneToOneField(Order, on_delete=models.CASCADE)
-    purchase_date = models.DateTimeField(auto_now_add=True)
-    town = models.CharField(max_length=50)
-    delivery_date = models.DateTimeField()
-
-    def __str__(self):
-        return self.order
-
-
-class Promo(models.Model):
-    code = models.CharField(max_length=8)
-    discount = models.PositiveSmallIntegerField()
-
-    def __str__(self):
-        return self.code
-
-
-class PromoUsage(models.Model):
-    promo = models.ForeignKey(Promo, on_delete=models.CASCADE)
-    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
