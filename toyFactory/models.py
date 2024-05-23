@@ -1,4 +1,5 @@
 from datetime import timedelta
+import uuid
 
 from django.utils import timezone
 import random
@@ -133,7 +134,8 @@ class PickUpPoint(models.Model):
 class Order(models.Model):
     user = models.ForeignKey(MyUser, related_name='orders', on_delete=models.CASCADE)
     number = models.AutoField(primary_key=True)
-    product = models.OneToOneField(Product, related_name='orders', on_delete=models.CASCADE)
+    # number = models.IntegerField(random.randint(1, 1000000))
+    product = models.ForeignKey(Product, related_name='orders', on_delete=models.CASCADE)
     amount = models.PositiveSmallIntegerField(default=1)
     price = models.FloatField()
     date_created = models.DateTimeField(auto_now_add=True)

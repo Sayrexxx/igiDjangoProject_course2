@@ -343,13 +343,12 @@ class OrderCreateView(View):
                     )
                     product.amount -= amount
                     product.save()
-                    order.save()
                     logging.info('created Order object')
                     return redirect('news')
                 else:
                     warning_message_text = 'Недостаточно товаров'
             else:
-                warning_message_text = 'Форма не валидна'
+                warning_message_text = form.errors
         else:
             warning_message_text = 'Пожалуйста, авторизуйтесь, чтобы оформить заказ'
         logging.warning(f'UserOrderListView: {warning_message_text}')
@@ -438,13 +437,13 @@ class OrderDeleteDetailView(View):
         return render(request, 'page_not_found.html', status=404)
 
 
-class UserOrderListView(View):
+class CustomerOrderListView(View):
     def get(self, request):
         warning_message_text = ""
         if request.user.is_authenticated and getUserRole(request.user.username) == 'customer':
             current_user = MyUser.objects.all().filter(username=request.user.username).first()
             user_orders = Order.objects.all().filter(user=current_user)
-            logging.info(f'Заказы для пользователя {MyUser.username}: {[user_order.number for user_order in user_orders]}') 
+            # logging.info(f'Заказы для пользователя {MyUser.username}: {[user_order.number for user_order in user_orders]}') 
 
             if user_orders:
                 orders_data = []
@@ -452,6 +451,7 @@ class UserOrderListView(View):
                     orders_data.append({
                         "number": order.number,
                         "price": order.price,
+                        "status": order.status
                     })
                 logging.info("UserOrderListView: user order list was successfully created")
                 return render(request, 'orders.html', {'orders': orders_data})
@@ -461,6 +461,32 @@ class UserOrderListView(View):
             warning_message_text = 'Пожалуйста, авторизуйтесь для получения списка ваших заказов'
         logging.warning(f'UserOrderListView: {warning_message_text}')
         return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})            
+
+
+class EmployeeOrderListView(View):
+    def get(self, request):
+        warning_message_text = ""
+        if request.user.is_authenticated and getUserRole(request.user.username) == 'employee':
+            current_user = MyUser.objects.all().filter(username=request.user.username).first()
+            user_orders = Order.objects.all().filter(product = Product.objects.get(employee=current_user))
+            # logging.info(f'Заказы для пользователя {MyUser.username}: {[user_order.number for user_order in user_orders]}') 
+
+            if user_orders:
+                orders_data = []
+                for order in user_orders:
+                    orders_data.append({
+                        "number": order.number,
+                        "price": order.price,
+                        "status": order.status
+                    })
+                logging.info("UserOrderListView: user order list was successfully created")
+                return render(request, 'orders.html', {'orders': orders_data})
+            else:
+                warning_message_text = 'Нет заказов. Перейдите в каталог с товарами\n и найдите для себя что-нибудь интересное'
+        else:
+            warning_message_text = 'Пожалуйста, авторизуйтесь для получения списка ваших заказов'
+        logging.warning(f'UserOrderListView: {warning_message_text}')
+        return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
 
 
 class PurchaseCreateView(View):

@@ -44,7 +44,10 @@ urlpatterns = [
     path('register_employee/', views.register_employee, name='register_employee'),
     path('login/', views.LoginUser.as_view(), name='login'),
     path('logout/', views.LogoutUser.as_view(), name='logout'),
-    re_path(r'user/?username=request.user.username/orders/', views.UserOrderListView.as_view(), name='user_orders'),    
+    re_path(r'customer/?username=request.user.username/orders/', views.CustomerOrderListView.as_view(), name='user_orders'),  
+    re_path(r'employee/?username=request.user.username/orders/', views.EmployeeOrderListView.as_view(), name='employee_orders'),  
+
+    
     re_path(r'user/?username=request.user.username/edit_profile/', views.edit_profile_view, name='edit_profile'),
     
     path('cat_facts', apiViews.cats, name='cat_facts'),

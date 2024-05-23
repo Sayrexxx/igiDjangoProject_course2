@@ -18,8 +18,10 @@
     {% if request.user.is_authenticated %}
             <li> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
             {% if getUserRole == 'customer' %}
-                <a href="{%url 'user_orders'%}" class="button">Текущие заказы</a>
+                <a href="{%url 'user_orders'%}">Текущие заказы</a>
                 <a href="{%url 'add_review' %}"><li>Оставить отзыв</li></a>
+            {% else %}
+                <a href="{%url 'employee_orders'%}">Список заказов</a>
             {% endif %}
     {% else %}
             <a href="{% url 'register_customer' %}"><li>Регистрация для клиентов</li></a>
