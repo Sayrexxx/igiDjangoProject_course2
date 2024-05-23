@@ -6,14 +6,14 @@
 {% for order in orders %}
     {% if getUserRole == 'employee' %}
         <div>
-            <h2>Номер заказа: {{order.number}}</h2>
-            <p>покупатель: {{order.user.username}}</p>
-            <p>количество: {{order.amount}}</p>
-            <p>стоимость: {{order.price}}</p>
-            <p>дата создания: {{order.date_created}}</p>
-            <p>дата желаемой доставки: {{order.delivery_date}}</p>
-            <p>пункт выдачи: {{order.delivery_point}}</p>
-            <p>промокод: {{order.promo_code}}</p>
+            <h2>Номер заказа: {{ order.number }} </h2>
+            <p>покупатель: {{ user.username }}</p>
+            <p>количество: {{ order.amount }}</p>
+            <p>стоимость: {{ order.price }}</p>
+            <p>дата создания: {{ order.date_created }}</p>
+            <p>дата желаемой доставки: {{ order.delivery_date }}</p>
+            <p>пункт выдачи: {{ order.delivery_point }}</p>
+            <p>промокод: {{ order.promo_code }}</p>
         </div>
     {% else %}
         <div>
@@ -21,6 +21,12 @@
             <p>Стоимость: ${{ order.price }}</p>
             <p>Статус: {{ order.status }}
         </div>
+        {% if order.status == "В обработке" %}
+            <form action="{% url 'cancel_order' order.number%}" method="post">
+                {% csrf_token %}
+                <button type="submit">Cancel order</button>
+            </form>
+        {% endif %}
     {% endif %}
 {% endfor %}
 {% endblock content %}

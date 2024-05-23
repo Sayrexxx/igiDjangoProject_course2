@@ -7,7 +7,7 @@ from .models import *
 from .forms import *
 
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 
 from django.utils import timezone
 
@@ -443,7 +443,7 @@ class UserOrderListView(View):
         if request.user.is_authenticated :
             if not request.user.is_superuser:
                 
-                current_user = MyUser.objects.all().filter(username=request.user.username).first()
+                current_user = MyUser.objects.get(username=request.user.username)
 
                 if getUserRole(request.user.username) == 'customer':
                     user_orders = Order.objects.all().filter(user=current_user)
@@ -452,16 +452,19 @@ class UserOrderListView(View):
                         orders_data = []
                         for order in user_orders:
                             orders_data.append({
-                                "Номер заказа": order.number,
-                                "стоимость": order.price,
-                                "статус": order.status
+                                "number": order.number,
+                                "price": order.price,
+                                "status": order.status
                             })
+                            logging.info(f"ORDER NUMBER: {order.number}")
                         context = {
                             'orders': orders_data, 
                             'getUserRole': getUserRole(current_user.username),
                         }
+                        logging.info(f"ORDERS: {orders_data}")
+
                         logging.info("UserOrderListView: customer order list was successfully created")
-                        return render(request, 'orders.html', context)
+                        return render(request, 'orders.html', context=context)
                     else:
                         warning_message_text = 'Нет заказов. Перейдите в каталог с товарами\n и найдите для себя что-нибудь интересное'
                 else:
@@ -471,28 +474,37 @@ class UserOrderListView(View):
                         orders_data = []
                         for order in user_orders:
                             orders_data.append({
-                                "Номер заказа:": order.number,
-                                "покупатель:": order.user.username,
-                                "количество:": order.amount,
-                                "стоимость:": order.price,
-                                "дата создания:": order.date_created,
-                                "дата желаемой доставки:": order.delivery_date,
-                                "пункт выдачи:": order.delivery_point,
-                                "промокод": order.promo_code
+                                "number": order.number,
+                                "user": order.user,
+                                "amount": order.amount,
+                                "price": order.price,
+                                "date_created": order.date_created,
+                                "delivery_date": order.delivery_date,
+                                "delivery_point": order.delivery_point,
+                                "promo_code": order.promo_code
                             })
+                            logging.info(f"ORDER NUMBER: {order.number}")
                         context = {
                             'orders': orders_data, 
                             'getUserRole': getUserRole(current_user.username),
                         }
+                        logging.info(f"ORDERS: {orders_data}")
                         logging.info("UserOrderListView: employee order list was successfully created")
-                        return render(request, 'orders.html', context)
-
-                    
-            
+                        return render(request, 'orders.html', context=context)
+                    else:
+                        warning_message_text = 'Для ваших товаров не найдено ни одного заказа'
         else:
             warning_message_text = 'Пожалуйста, авторизуйтесь для получения списка ваших заказов'
         logging.warning(f'UserOrderListView: {warning_message_text}')
         return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})            
+
+
+def cancel_order(request, number):
+    order = get_object_or_404(Order, number=number)
+    if request.method == 'POST':
+        order.status = "Отменён"
+        order.save()
+    return redirect('user_orders')
 
 
 class PurchaseCreateView(View):

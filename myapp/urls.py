@@ -52,7 +52,7 @@ urlpatterns = [
     path('random_joke', apiViews.random_joke, name='random_joke'),
     
     path('products/', views.ProductListView.as_view(), name='products'),
-
+    re_path(r'orders/(?P<number>\d+)/cancel/', views.cancel_order, name='cancel_order'),    
     
     
     #todo
