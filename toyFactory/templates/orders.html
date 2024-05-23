@@ -4,10 +4,23 @@
 
 {% block content %}
 {% for order in orders %}
-    <div>
-        <h2>Номер заказа: {{ order.number }}</h2>
-        <p>Стоимость: ${{ order.price }}</p>
-        <p>Статус: {{ order.status }}
-    </div>
+    {% if getUserRole == 'employee' %}
+        <div>
+            <h2>Номер заказа: {{order.number}}</h2>
+            <p>покупатель: {{order.user.username}}</p>
+            <p>количество: {{order.amount}}</p>
+            <p>стоимость: {{order.price}}</p>
+            <p>дата создания: {{order.date_created}}</p>
+            <p>дата желаемой доставки: {{order.delivery_date}}</p>
+            <p>пункт выдачи: {{order.delivery_point}}</p>
+            <p>промокод: {{order.promo_code}}</p>
+        </div>
+    {% else %}
+        <div>
+            <h2>Номер заказа: {{ order.number }}</h2>
+            <p>Стоимость: ${{ order.price }}</p>
+            <p>Статус: {{ order.status }}
+        </div>
+    {% endif %}
 {% endfor %}
 {% endblock content %}

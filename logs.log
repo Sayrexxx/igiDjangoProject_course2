@@ -2326,3 +2326,420 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'employee_orders' not found. 
 2024-05-23 03:23:15,191 INFO UserOrderListView: user order list was successfully created
 2024-05-23 03:23:20,379 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
 2024-05-23 03:23:21,087 WARNING Not Found: /userusername=request.user.username/orders/
+2024-05-23 03:45:28,829 INFO news titles: []
+2024-05-23 03:45:31,101 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:45:31,131 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 461, in get
+    return render(request, 'orders.html', {'orders': orders_data})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'employee_orders' not found. 'employee_orders' is not a valid view function or pattern name.
+2024-05-23 03:47:38,702 INFO news titles: []
+2024-05-23 03:47:39,608 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:49:25,576 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 03:51:13,982 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 03:51:22,600 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 03:52:06,457 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-23 03:52:20,111 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-05-23 03:52:42,889 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 03:52:49,409 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:52:50,061 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:52:50,262 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:52:52,269 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:52:53,316 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:52:53,836 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:52:54,493 INFO news titles: []
+2024-05-23 03:52:55,421 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:53:10,407 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:53:10,492 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:53:11,952 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:53:55,440 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:53:55,458 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 461, in get
+    return render(request, 'orders.html', {'orders': orders_data})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_orders' with arguments '('cust1',)' not found. 1 pattern(s) tried: ['user/?username=request.user.username/orders/']
+2024-05-23 03:54:12,280 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 03:55:28,226 INFO news titles: []
+2024-05-23 03:55:29,033 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:56:05,807 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:56:48,263 INFO news titles: []
+2024-05-23 03:56:55,083 INFO news titles: []
+2024-05-23 03:56:57,162 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-23 03:57:01,178 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-23 03:57:21,821 WARNING UserOrderListView: 
+2024-05-23 03:57:23,051 WARNING UserOrderListView: 
+2024-05-23 03:57:26,243 WARNING UserOrderListView: 
+2024-05-23 03:57:27,799 INFO news titles: []
+2024-05-23 03:58:05,337 WARNING Forbidden (CSRF token from POST incorrect.): /login/
+2024-05-23 03:58:23,047 INFO news titles: []
+2024-05-23 03:58:24,489 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-23 03:58:44,648 INFO news titles: []
+2024-05-23 03:58:45,773 INFO news titles: []
+2024-05-23 03:58:52,381 INFO news titles: []
+2024-05-23 03:58:54,011 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:58:57,943 INFO news titles: []
+2024-05-23 03:59:00,138 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:59:06,124 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 03:59:06,671 INFO news titles: []
+2024-05-23 03:59:26,755 INFO news titles: []
+2024-05-23 03:59:28,048 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 03:59:33,070 INFO news titles: []
+2024-05-23 03:59:41,430 INFO news titles: []
+2024-05-23 03:59:48,120 INFO news titles: []
+2024-05-23 03:59:50,935 INFO news titles: []
+2024-05-23 03:59:51,432 INFO news titles: []
+2024-05-23 03:59:51,638 INFO news titles: []
+2024-05-23 03:59:51,970 INFO news titles: []
+2024-05-23 03:59:52,271 INFO news titles: []
+2024-05-23 03:59:52,622 INFO news titles: []
+2024-05-23 04:01:39,596 INFO news titles: []
+2024-05-23 04:01:44,506 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:02:02,647 INFO news titles: []
+2024-05-23 04:02:08,956 INFO news titles: []
+2024-05-23 04:02:09,967 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-23 04:02:11,570 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 04:02:20,381 INFO Amount: 2
+2024-05-23 04:02:20,385 INFO created Order object
+2024-05-23 04:02:20,395 INFO news titles: []
+2024-05-23 04:02:21,779 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:02:31,966 INFO news titles: []
+2024-05-23 04:02:33,013 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:03:20,745 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:03:20,764 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 460, in get
+    return render(request, 'orders.html', {'orders': orders_data})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 973, in do_if
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Malformed template tag at line 13: "else if getUserRole == 'employee'"
+2024-05-23 04:04:13,106 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:04:14,681 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:04:15,455 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:04:16,855 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:06:32,198 WARNING UserOrderListView: 
+2024-05-23 04:06:34,057 INFO news titles: []
+2024-05-23 04:06:40,682 INFO news titles: []
+2024-05-23 04:06:41,776 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:06:58,447 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:06:58,912 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:07:51,438 INFO news titles: []
+2024-05-23 04:07:58,254 INFO news titles: []
+2024-05-23 04:07:59,443 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:08:29,708 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:08:30,769 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:08:51,618 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:08:52,098 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:08:52,297 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:09:00,907 INFO news titles: []
+2024-05-23 04:09:15,835 INFO news titles: []
+2024-05-23 04:09:17,780 INFO contacts names: ['emp1', 'emp2', 'emp3']
+2024-05-23 04:09:25,337 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-23 04:09:45,824 INFO Amount: 7
+2024-05-23 04:09:45,833 INFO created Order object
+2024-05-23 04:09:45,840 INFO news titles: []
+2024-05-23 04:09:47,875 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:10:22,991 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 04:10:30,698 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 04:10:31,686 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 444, in get
+    if request.user.is_not_superuser:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/functional.py", line 268, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'is_not_superuser'
+2024-05-23 04:11:41,824 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 04:11:45,727 INFO UserOrderListView: customer order list was successfully created
+2024-05-23 04:12:24,486 INFO news titles: []
+2024-05-23 04:12:37,641 INFO news titles: []
+2024-05-23 04:12:38,925 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:12:48,904 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 04:13:13,703 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 04:13:15,311 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 04:13:17,732 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:13:18,279 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:13:18,482 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:13:18,661 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:13:18,858 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:13:19,040 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:13:48,179 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 04:13:49,611 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:13:50,186 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:13:50,369 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:13:50,553 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:14:41,167 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 04:14:46,809 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 469, in get
+    logging.ingo(f"123: {user_orders.first()}")
+    ^^^^^^^^^^^^
+AttributeError: module 'logging' has no attribute 'ingo'
+2024-05-23 04:14:52,876 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-23 04:14:54,535 INFO 123: лего1
+2024-05-23 04:14:54,536 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:14:56,255 INFO 123: лего1
+2024-05-23 04:14:56,257 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:15:04,936 INFO 123: лего1
+2024-05-23 04:15:04,938 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:15:05,423 INFO 123: лего1
+2024-05-23 04:15:05,425 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:15:05,634 INFO 123: лего1
+2024-05-23 04:15:05,635 INFO UserOrderListView: employee order list was successfully created
+2024-05-23 04:15:43,878 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.

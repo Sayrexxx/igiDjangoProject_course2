@@ -355,30 +355,30 @@ class OrderCreateView(View):
         return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
 
 
-class OrderListView(View):
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.is_superuser:
-            try:
-                orders = Order.objects.all()
+# class OrderListView(View):
+#     def get(self, request, *args, **kwargs):
+#         if request.user.is_authenticated and request.user.is_superuser:
+#             try:
+#                 orders = Order.objects.all()
 
-                orders_data = []
-                for order in orders:
-                    orders_data.append({
-                        "user": order.user.username,
-                        "number": order.number,
-                        "product_id": order.product.id,
-                        "price": order.price,
-                        "promo": order.promo_code,
-                        "amount": order.amount,
-                        "date": timezone.localtime(order.date),
-                        "is_active": order.is_active,
-                    })
-                return render(request, 'orders.html', {'orders': orders})
-            except ObjectDoesNotExist:
-                logging.warning('OrderListView: page not found')
-                return render(request, 'page_not_found.html', status=404)
-        logging.warning('OrderListView: page not found')
-        return render(request, 'page_not_found.html', status=404)
+#                 orders_data = []
+#                 for order in orders:
+#                     orders_data.append({
+#                         "user": order.user.username,
+#                         "number": order.number,
+#                         "product_id": order.product.id,
+#                         "price": order.price,
+#                         "promo": order.promo_code,
+#                         "amount": order.amount,
+#                         "date": timezone.localtime(order.date),
+#                         "is_active": order.is_active,
+#                     })
+#                 return render(request, 'orders.html', {'orders': orders})
+#             except ObjectDoesNotExist:
+#                 logging.warning('OrderListView: page not found')
+#                 return render(request, 'page_not_found.html', status=404)
+#         logging.warning('OrderListView: page not found')
+#         return render(request, 'page_not_found.html', status=404)
 
 
 class OrderDeleteDetailView(View):
@@ -437,56 +437,62 @@ class OrderDeleteDetailView(View):
         return render(request, 'page_not_found.html', status=404)
 
 
-class CustomerOrderListView(View):
+class UserOrderListView(View):
     def get(self, request):
         warning_message_text = ""
-        if request.user.is_authenticated and getUserRole(request.user.username) == 'customer':
-            current_user = MyUser.objects.all().filter(username=request.user.username).first()
-            user_orders = Order.objects.all().filter(user=current_user)
-            # logging.info(f'Заказы для пользователя {MyUser.username}: {[user_order.number for user_order in user_orders]}') 
+        if request.user.is_authenticated :
+            if not request.user.is_superuser:
+                
+                current_user = MyUser.objects.all().filter(username=request.user.username).first()
 
-            if user_orders:
-                orders_data = []
-                for order in user_orders:
-                    orders_data.append({
-                        "number": order.number,
-                        "price": order.price,
-                        "status": order.status
-                    })
-                logging.info("UserOrderListView: user order list was successfully created")
-                return render(request, 'orders.html', {'orders': orders_data})
-            else:
-                warning_message_text = 'Нет заказов. Перейдите в каталог с товарами\n и найдите для себя что-нибудь интересное'
+                if getUserRole(request.user.username) == 'customer':
+                    user_orders = Order.objects.all().filter(user=current_user)
+
+                    if user_orders:
+                        orders_data = []
+                        for order in user_orders:
+                            orders_data.append({
+                                "Номер заказа": order.number,
+                                "стоимость": order.price,
+                                "статус": order.status
+                            })
+                        context = {
+                            'orders': orders_data, 
+                            'getUserRole': getUserRole(current_user.username),
+                        }
+                        logging.info("UserOrderListView: customer order list was successfully created")
+                        return render(request, 'orders.html', context)
+                    else:
+                        warning_message_text = 'Нет заказов. Перейдите в каталог с товарами\n и найдите для себя что-нибудь интересное'
+                else:
+                    user_orders = Order.objects.all().filter(product = Product.objects.get(employee=current_user))
+                    logging.info(f"123: {user_orders.first()}")
+                    if user_orders:
+                        orders_data = []
+                        for order in user_orders:
+                            orders_data.append({
+                                "Номер заказа:": order.number,
+                                "покупатель:": order.user.username,
+                                "количество:": order.amount,
+                                "стоимость:": order.price,
+                                "дата создания:": order.date_created,
+                                "дата желаемой доставки:": order.delivery_date,
+                                "пункт выдачи:": order.delivery_point,
+                                "промокод": order.promo_code
+                            })
+                        context = {
+                            'orders': orders_data, 
+                            'getUserRole': getUserRole(current_user.username),
+                        }
+                        logging.info("UserOrderListView: employee order list was successfully created")
+                        return render(request, 'orders.html', context)
+
+                    
+            
         else:
             warning_message_text = 'Пожалуйста, авторизуйтесь для получения списка ваших заказов'
         logging.warning(f'UserOrderListView: {warning_message_text}')
         return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})            
-
-
-class EmployeeOrderListView(View):
-    def get(self, request):
-        warning_message_text = ""
-        if request.user.is_authenticated and getUserRole(request.user.username) == 'employee':
-            current_user = MyUser.objects.all().filter(username=request.user.username).first()
-            user_orders = Order.objects.all().filter(product = Product.objects.get(employee=current_user))
-            # logging.info(f'Заказы для пользователя {MyUser.username}: {[user_order.number for user_order in user_orders]}') 
-
-            if user_orders:
-                orders_data = []
-                for order in user_orders:
-                    orders_data.append({
-                        "number": order.number,
-                        "price": order.price,
-                        "status": order.status
-                    })
-                logging.info("UserOrderListView: user order list was successfully created")
-                return render(request, 'orders.html', {'orders': orders_data})
-            else:
-                warning_message_text = 'Нет заказов. Перейдите в каталог с товарами\n и найдите для себя что-нибудь интересное'
-        else:
-            warning_message_text = 'Пожалуйста, авторизуйтесь для получения списка ваших заказов'
-        logging.warning(f'UserOrderListView: {warning_message_text}')
-        return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
 
 
 class PurchaseCreateView(View):
