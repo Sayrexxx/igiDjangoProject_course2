@@ -187,52 +187,10 @@ class LoginUser(BaseViewContextMixin, LoginView):
         return dict(list(context.items()) + list(c_def.items()))
 
 
-# def login_user(request):
-#     """
-#     Logs in a user and redirects to the home page if successful.
-#     """
-#     form = LoginUserForm(request)
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             username = form.cleaned_data.get('username')
-#             password = form.cleaned_data.get('password')
-#             user = authenticate(request, username=username, password=password)
-#             if user:
-#                 if user.is_active:
-#                     login(request, user)
-#                     return redirect('home')
-#                 else:
-#                     logging.warning('Inactive user attempted to login')
-#                     return HttpResponse('Error')
-#             else:   
-#                 logging.warning('Invalid login attempt')
-#                 return HttpResponse('Invalid login')
-#         else:
-#             logging.warning('Invalid form submission')
-#     return render(request, 'login.html', {'form': form})
-
 class LogoutUser(View):
     def get(self, request, *args, **kwargs):
         logout(request)
         return redirect('home') 
-
-
-class UserListView(View):
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "employee":
-            users = User.objects.filter(status="customer", is_superuser=False)
-
-            users_data = []
-            for user in users:
-                users_data.append({
-                    # "id": user.id,
-                    "username": user.username,
-                    "phone_number": user.phone_number,
-                    "email": user.email,
-                })
-            return JsonResponse(users_data, safe=False)
-        logging.warning('UserListView: page not found')
-        return render(request, 'page_not_found.html', status=404)
 
 
 def edit_profile_view(request):
@@ -332,6 +290,7 @@ class OrderCreateView(View):
                 amount = form.cleaned_data['amount']
                 delivery_date = form.cleaned_data['delivery_date']
                 promo_code = form.cleaned_data['promo_code']
+                delivery_point = form.cleaned_data['delivery_point']
                 if amount <= product.amount:
                     if not promo_code:
                         Order.objects.create(
@@ -339,9 +298,14 @@ class OrderCreateView(View):
                             product=product,
                             amount=amount,
                             price=amount * product.price,
-                            delivery_date=delivery_date
+                            delivery_date=delivery_date,
+                            delivery_point=delivery_point
                         )
                     else:
+                        if not Promo.objects.all().filter(code=promo_code).exists():
+                            warning_message_text = "Такого промокода нет"
+                            return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
+                        
                         promo = Promo.objects.get(code=promo_code)
                         order = Order.objects.create(
                             user=MyUser.objects.get(username=request.user.username),
@@ -349,12 +313,12 @@ class OrderCreateView(View):
                             amount=amount,
                             promo_code = promo,
                             price=amount * product.price * ((100 - promo.discount) / 100),
-                            delivery_date=delivery_date
+                            delivery_date=delivery_date,
+                            delivery_point=delivery_point
                         )
                     product.amount -= amount
                     product.save()
                     logging.info('created Order object')
-                    logging.info(f"PROMOCODE: {order.promo_code}")
                     return redirect('news')
                 else:
                     warning_message_text = 'Недостаточно товаров'
@@ -364,88 +328,6 @@ class OrderCreateView(View):
             warning_message_text = 'Пожалуйста, авторизуйтесь, чтобы оформить заказ'
         logging.warning(f'UserOrderListView: {warning_message_text}')
         return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
-
-
-# class OrderListView(View):
-#     def get(self, request, *args, **kwargs):
-#         if request.user.is_authenticated and request.user.is_superuser:
-#             try:
-#                 orders = Order.objects.all()
-
-#                 orders_data = []
-#                 for order in orders:
-#                     orders_data.append({
-#                         "user": order.user.username,
-#                         "number": order.number,
-#                         "product_id": order.product.id,
-#                         "price": order.price,
-#                         "promo": order.promo_code,
-#                         "amount": order.amount,
-#                         "date": timezone.localtime(order.date),
-#                         "is_active": order.is_active,
-#                     })
-#                 return render(request, 'orders.html', {'orders': orders})
-#             except ObjectDoesNotExist:
-#                 logging.warning('OrderListView: page not found')
-#                 return render(request, 'page_not_found.html', status=404)
-#         logging.warning('OrderListView: page not found')
-#         return render(request, 'page_not_found.html', status=404)
-
-
-class OrderDeleteDetailView(View):
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "employee" \
-                and Order.objects.filter(pk=self.kwargs.get("pk")).exists():
-            pk = self.kwargs.get("pk")
-            order = Order.objects.get(pk=pk)
-
-            order_data = {
-                "user": order.user.username,
-                "number": order.number,
-                "product_id": order.product.id,
-                "price": order.price,
-                "promo": order.promo_code,
-                "amount": order.amount,
-                "date": timezone.localtime(order.date),
-                "is_active": order.is_active,
-            }
-            return JsonResponse(order_data, safe=False)
-        elif request.user.is_authenticated and request.user.role == "customer" \
-                and Order.objects.filter(pk=self.kwargs.get("pk"), user_id=request.user.id).exists():
-            pk = self.kwargs.get("pk")
-            order = Order.objects.get(pk=pk, user_id=request.user.id)
-            form = OrderDeleteForm()
-            return render(request, 'order_detail.html', {'form': form, 'order': order})
-        logging.warning('OrderDeleteView: page not found')
-        return render(request, 'page_not_found.html', status=404)
-
-    def post(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "customer" \
-                and Order.objects.filter(pk=self.kwargs.get("pk"), is_active=True).exists():
-            form = OrderDeleteForm(request.POST)
-
-            if form.is_valid():
-                order_id = self.kwargs.get("pk")
-                order = Order.objects.filter(pk=order_id, user=request.user).first()
-
-                if order:
-                    order_data = {
-                        "user": order.user.username,
-                        "number": order.number,
-                        "product_id": order.product.id,
-                        "price": order.price,
-                        "promo": order.promo_code,
-                        "amount": order.amount,
-                        "date": timezone.localtime(order.date),
-                        "is_active": order.is_active,
-                    }
-                    order.product.amount = F('amount') + order.amount
-                    order.product.save()
-                    order.delete()
-                    logging.warning('deleted Order object')
-                    return JsonResponse(order_data, safe=False)
-        logging.warning('OrderDeleteView: page not found')
-        return render(request, 'page_not_found.html', status=404)
 
 
 class UserOrderListView(View):
@@ -465,9 +347,10 @@ class UserOrderListView(View):
                             orders_data.append({
                                 "number": order.number,
                                 "price": order.price,
-                                "status": order.status
+                                "point": order.delivery_point,
+                                "status": order.status,
                             })
-                            logging.info(f"ORDER NUMBER: {order.number}")
+                            logging.info(f"ORDER NUMBER: {order.number}\nORDER DELIVERY POINT: {order.delivery_point}")
                         context = {
                             'orders': orders_data, 
                             'getUserRole': getUserRole(current_user.username),
@@ -486,18 +369,20 @@ class UserOrderListView(View):
                         for order in user_orders:
                             orders_data.append({
                                 "number": order.number,
-                                "user": order.user,
+                                "customer": order.user,
                                 "amount": order.amount,
                                 "price": order.price,
                                 "date_created": order.date_created,
                                 "delivery_date": order.delivery_date,
                                 "delivery_point": order.delivery_point,
-                                "promo_code": order.promo_code
+                                "promo_code": order.promo_code,
+                                "status": order.status
                             })
                             logging.info(f"ORDER NUMBER: {order.number}")
                         context = {
                             'orders': orders_data, 
                             'getUserRole': getUserRole(current_user.username),
+                            'STATUS_CHOICES': order.STATUS_CHOICES
                         }
                         logging.info(f"ORDERS: {orders_data}")
                         logging.info("UserOrderListView: employee order list was successfully created")
@@ -517,147 +402,17 @@ def cancel_order(request, number):
         order.save()
     return redirect('user_orders')
 
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponseForbidden
 
-class PurchaseCreateView(View):
-    def get(self, request, pk, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "customer" \
-                and Order.objects.filter(pk=self.kwargs.get("pk"), user=request.user, is_active=True).exists():
-            order = Order.objects.get(pk=pk)
-            form = PurchaseCreateForm()
-            context = {
-                'order': order,
-                'form': form,
-            }
-            return render(request, 'purchase_form.html', context)
-        logging.warning('PurchaseCreateView: page not found')
-        return render(request, 'page_not_found.html', status=404)
-
-    def post(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "customer" \
-                and Order.objects.filter(pk=self.kwargs.get("pk"), user=request.user, is_active=True).exists():
-            form = PurchaseCreateForm(request.POST)
-
-            if form.is_valid():
-                pk = self.kwargs.get("pk")
-                order = Order.objects.get(pk=pk, user=request.user, is_active=True)
-
-                delivery_datetime = datetime.datetime.now() + datetime.timedelta(days=1)
-                delivery_datetime = delivery_datetime.replace(hour=17, minute=0, second=0, microsecond=0)
-
-                promo_code = form.cleaned_data["promo_code"]
-                promo = Promo.objects.filter(code=promo_code).first()
-
-                if promo:
-                    order.apply_promo(promo)
-
-                purchase = Purchase.objects.create(
-                    user=request.user,
-                    order=order,
-                    town=form.cleaned_data["town"],
-                    delivery_date=delivery_datetime
-                )
-
-                order.is_active = False
-                order.save()
-
-                logging.info('created Purchase object')
-
-                purchase_data = {
-                    "order_id": order.number,
-                    "user_id": request.user.id,
-                    "town": form.cleaned_data["town"],
-                    "purchase_date": timezone.localtime(purchase.purchase_date),
-                    "delivery_date": purchase.delivery_date,
-                }
-                return JsonResponse(purchase_data, safe=False)
-        logging.warning('PurchaseCreateView: page not found')
-        return render(request, 'page_not_found.html', status=404)
-
-
-class PurchaseListView(View):
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "employee":
-            try:
-                purchases = Purchase.objects.all()
-
-                purchases_data = []
-                for purchase in purchases:
-                    purchases_data.append({
-                        "order_id": purchase.order.number,
-                        "user_id": purchase.order.user.id,
-                        "username": purchase.order.user.username,
-                        "town": purchase.town,
-                        "purchase_date": timezone.localtime(purchase.purchase_date),
-                        "delivery_date": timezone.localtime(purchase.delivery_date),
-                    })
-                return JsonResponse(purchases_data, safe=False)
-            except ObjectDoesNotExist:
-                logging.warning('PurchaseListView: page not found')
-                return render(request, 'page_not_found.html', status=404)
-        logging.warning('purchaseListView: page not found')
-        return render(request, 'page_not_found.html', status=404)
-
-
-class PurchaseDetailView(View):
-
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.role == "employee" \
-                and Purchase.objects.filter(pk=self.kwargs.get("pk")).exists():
-            pk = self.kwargs.get("pk")
-            purchase = Purchase.objects.get(pk=pk)
-
-            purchase_data = {
-                "order_id": purchase.order.number,
-                "user_id": purchase.order.user.id,
-                "username": purchase.order.user.username,
-                "town": purchase.town,
-                "purchase_date": timezone.localtime(purchase.purchase_date),
-                "delivery_date": timezone.localtime(purchase.delivery_date),
-            }
-            return JsonResponse(purchase_data, safe=False)
-        elif request.user.is_authenticated and request.user.role == "customer" \
-                and Purchase.objects.filter(pk=self.kwargs.get("pk"), user_id=request.user.id).exists():
-            pk = self.kwargs.get("pk")
-            purchase = Purchase.objects.get(pk=pk, user_id=request.user.id)
-
-            purchase_data = {
-                "order_id": purchase.order.number,
-                "user_id": purchase.order.user.id,
-                "username": purchase.order.user.username,
-                "town": purchase.town,
-                "purchase_date": timezone.localtime(purchase.purchase_date),
-                "delivery_date": timezone.localtime(purchase.delivery_date),
-            }
-            return JsonResponse(purchase_data, safe=False)
-        logging.warning('PurchaseDetailView: page not found')
-        return render(request, 'page_not_found.html', status=404)
-
-
-class PromoListView(View):
-    def get(self, request, *args, **kwargs):
-        promos = Promo.objects.all()
-        promos_data = []
-
-        for promo in promos:
-            promos_data.append({
-                "code": promo.code,
-                "discount": promo.discount,
-            })
-        return JsonResponse(promos_data, safe=False)
-
-
-class PickUpPointListView(View):
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            pick_up_points = PickUpPoint.objects.all()
-            if pick_up_points:
-                pick_up_points_data = []
-                for pick_up_point in pick_up_points:
-                    pick_up_points_data.append({
-                        'address': pick_up_point.address,
-                    })
-                return JsonResponse(pick_up_points_data, safe=False)
-            logging.warning('PickUpPointsListView: no pick up points')
-            return render(request, 'page_not_found.html', status=404)
-        logging.warning('PickUpPointsListView: page not found')
-        return render(request, 'page_not_found.html', status=404)
+def edit_order_status(request, number):
+    order = get_object_or_404(Order, number=number)
+    if request.method == 'POST':
+        selected_status = request.POST.get('status')
+        if selected_status in dict(order.STATUS_CHOICES).keys():
+            order.status = selected_status
+            order.save()
+            return redirect('user_orders')
+        else:
+            return HttpResponseForbidden("Неверный статус")
+    return render(request, 'news.html')

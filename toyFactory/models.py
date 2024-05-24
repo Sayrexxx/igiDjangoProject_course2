@@ -149,7 +149,7 @@ class Order(models.Model):
     delivery_date = models.DateTimeField(
         default=timezone.now() + timedelta(days=3)
     )    
-    delivery_point = PickUpPoint().address
+    delivery_point = models.CharField(max_length=50, blank=True)
     promo_code = models.CharField(max_length=8, blank=True)
             
     STATUS_CHOICES = (

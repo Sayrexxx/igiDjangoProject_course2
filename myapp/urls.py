@@ -45,24 +45,16 @@ urlpatterns = [
     path('login/', views.LoginUser.as_view(), name='login'),
     path('logout/', views.LogoutUser.as_view(), name='logout'),
     re_path(r'user/?username=request.user.username/orders/', views.UserOrderListView.as_view(), name='user_orders'),  
-    
-    re_path(r'user/?username=request.user.username/edit_profile/', views.edit_profile_view, name='edit_profile'),
-    
+    re_path(r'user/?username=request.user.username/edit_profile/', views.edit_profile_view, name='edit_profile'),  
     path('cat_facts', apiViews.cats, name='cat_facts'),
     path('random_joke', apiViews.random_joke, name='random_joke'),
-    
     path('products/', views.ProductListView.as_view(), name='products'),
-    re_path(r'orders/(?P<number>\d+)/cancel/', views.cancel_order, name='cancel_order'),    
+    re_path(r'orders/(?P<number>\d+)/cancel/', views.cancel_order, name='cancel_order'),   
+    # re_path(r'orders/(?P<number>\d+)/edit_status/(?P<selected_status>\w+)/', views.edit_order_status, name='edit_order_status'),    
+    path('edit_order_status/<int:number>/', views.edit_order_status, name='edit_order_status'),
     
-    
-    #todo
     path(r'products/<str:product_name>/order/create/', views.OrderCreateView.as_view(), name='create_order'),
-    re_path(r'orders/(?P<number>\d+)/$', views.OrderDeleteDetailView.as_view(), name='order'),
-    re_path(r'orders/(?P<username>\d+)/purchase/create/', views.PurchaseCreateView.as_view(), name='create_purchase'),
-    # path('purchases/', views.PurchaseListView.as_view(), name='purchases'),
-    re_path(r'purchases/(?P<purchase_id>\d+)/$', views.PurchaseDetailView.as_view(), name='purchase'),
-    path('promos/', views.PromoListView.as_view(), name='promos'),
-    path('pick_up_points/', views.PickUpPointListView.as_view(), name='pick_up_points'),
+    
     path('price_list', statistic_views.price_list, name='price_list'),
     path('demand_analysis', statistic_views.demand_analysis, name='demand_analysis'),
     path('monthly_sales_volume', statistic_views.monthly_sales_volume, name='monthly_sales_volume'),

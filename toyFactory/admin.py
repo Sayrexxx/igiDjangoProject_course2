@@ -10,5 +10,6 @@ admin.site.register(Product)
 admin.site.register(Category)
 admin.site.register(Order)
 admin.site.register(Promo)
+admin.site.register(PickUpPoint)
 
 # Register your models here.

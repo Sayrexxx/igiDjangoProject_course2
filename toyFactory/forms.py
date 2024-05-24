@@ -3,7 +3,7 @@ from django.utils import timezone
 from django import forms
 from requests import request
 
-from .models import MyUser, Review, Order
+from .models import MyUser, Review, Order, PickUpPoint
 from django.core.validators import MinValueValidator
 from django.core.exceptions import ValidationError
 
@@ -127,11 +127,16 @@ class LoginUserForm(AuthenticationForm):
 
 from django.forms import ModelForm
 
-class OrderForm(ModelForm):
+
+class OrderForm(ModelForm):    
     promo_code = forms.CharField(max_length=8, required=False)
+    delivery_point = forms.ChoiceField(
+        choices=[(address, address) for address in PickUpPoint.objects.values_list('address', flat=True)],
+        label='Выберите пункт самовывоза'
+    )
     class Meta:
         model = Order
-        fields = ['amount', 'delivery_date', 'promo_code']
+        fields = ['amount', 'delivery_date', 'delivery_point', 'promo_code']
         widgets = {
             'amount': forms.NumberInput(attrs={'min': 1}),  # Minimum quantity validation
             'delivery_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
@@ -162,21 +167,6 @@ class OrderForm(ModelForm):
         if promo_code and len(promo_code) > 8:
             raise ValidationError("Длина промокода не может превышать 8 символов")
         return promo_code
-
-
-class OrderDeleteForm(forms.Form):
-    confirm_delete = forms.BooleanField(label='Confirm delete', required=True)
-
-
-class PurchaseCreateForm(forms.Form):
-    promo_code = forms.CharField(max_length=8, required=False)
-    town = forms.CharField(max_length=50)
-
-
-class PhoneNumberChangeForm(forms.ModelForm):
-    class Meta:
-        model = MyUser
-        fields = ['username']
         
 
 class EmployeeProfileForm(forms.ModelForm):
@@ -189,8 +179,3 @@ class CustomerProfileForm(forms.ModelForm):
     class Meta:
         model = MyUser
         fields = ['image', 'email', 'phone_number']
-        
-
-
-class PromoCodeForm(forms.Form):
-    promo_code = forms.CharField(label='Promo Code', max_length=20, required=False)

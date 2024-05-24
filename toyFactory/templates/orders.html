@@ -7,18 +7,30 @@
     {% if getUserRole == 'employee' %}
         <div>
             <h2>Номер заказа: {{ order.number }} </h2>
-            <p>покупатель: {{ user.username }}</p>
+            <p>покупатель: {{ order.customer }}</p>
             <p>количество: {{ order.amount }}</p>
             <p>стоимость: {{ order.price }}</p>
             <p>дата создания: {{ order.date_created }}</p>
             <p>дата желаемой доставки: {{ order.delivery_date }}</p>
             <p>пункт выдачи: {{ order.delivery_point }}</p>
             <p>промокод: {{ order.promo_code }}</p>
+            <p>статус заказа: {{ order.status }}</p>
+            <form method="post" action="{% url 'edit_order_status' order.number %}">
+                {% csrf_token %}
+                <label for="status">Изменить статус:</label>
+                <select id="status" name="status">
+                    {% for status_code, status_label in STATUS_CHOICES %}
+                        <option value="{{ status_code }}" {% if order.status == status_code %}selected{% endif %}>{{ status_label }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Сохранить</button>
+            </form>
         </div>
     {% else %}
         <div>
             <h2>Номер заказа: {{ order.number }}</h2>
             <p>Стоимость: ${{ order.price }}</p>
+            <p>Пункт выдачи: {{ order.point }}</p>
             <p>Статус: {{ order.status }}
         </div>
         {% if order.status == "В обработке" %}

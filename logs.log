@@ -4348,3 +4348,1205 @@ django.db.utils.OperationalError: no such column: toyFactory_order.promo_code_id
 2024-05-23 23:21:45,231 INFO created Order object
 2024-05-23 23:21:45,231 INFO PROMOCODE: qqq50
 2024-05-23 23:21:45,238 INFO news titles: []
+2024-05-24 01:36:21,874 INFO news titles: []
+2024-05-24 01:36:23,257 INFO news titles: []
+2024-05-24 01:36:23,965 INFO news titles: []
+2024-05-24 01:36:54,942 INFO news titles: []
+2024-05-24 01:36:57,381 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-24 01:37:01,947 INFO contacts names: ['emp1', 'emp2', 'emp3']
+2024-05-24 01:37:05,801 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 01:37:18,003 INFO Amount: 15
+2024-05-24 01:37:18,004 WARNING UserOrderListView: <ul class="errorlist"><li>amount<ul class="errorlist"><li>Выберите количество, не превосходящее 13.</li></ul></li></ul>
+2024-05-24 01:37:23,507 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 01:37:36,250 INFO Amount: 3
+2024-05-24 01:37:36,250 WARNING UserOrderListView: <ul class="errorlist"><li>delivery_date<ul class="errorlist"><li>Заказ можно будет забрать МИНИМУМ через 3 дня</li></ul></li></ul>
+2024-05-24 01:37:38,367 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 01:37:50,875 INFO Amount: 3
+2024-05-24 01:37:50,880 INFO created Order object
+2024-05-24 01:37:50,880 INFO PROMOCODE: qqq50
+2024-05-24 01:37:50,888 INFO news titles: []
+2024-05-24 01:37:57,208 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 01:38:10,244 INFO Amount: 2
+2024-05-24 01:38:10,248 INFO created Order object
+2024-05-24 01:38:10,262 ERROR Internal Server Error: /products/мишка1/order/create/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 357, in post
+    logging.info(f"PROMOCODE: {order.promo_code}")
+                               ^^^^^
+UnboundLocalError: cannot access local variable 'order' where it is not associated with a value
+2024-05-24 01:38:46,585 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 01:38:57,748 INFO Amount: 2
+2024-05-24 01:38:57,753 INFO created Order object
+2024-05-24 01:38:57,765 INFO news titles: []
+2024-05-24 01:38:59,103 INFO ORDER NUMBER: 13
+2024-05-24 01:38:59,103 INFO ORDER NUMBER: 14
+2024-05-24 01:38:59,103 INFO ORDER NUMBER: 15
+2024-05-24 01:38:59,104 INFO ORDERS: [{'number': 13, 'price': 300.0, 'status': 'В обработке'}, {'number': 14, 'price': 240.0, 'status': 'В обработке'}, {'number': 15, 'price': 240.0, 'status': 'В обработке'}]
+2024-05-24 01:38:59,104 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 01:39:54,844 INFO ORDER NUMBER: 13
+2024-05-24 01:39:54,844 INFO ORDER NUMBER: 14
+2024-05-24 01:39:54,844 INFO ORDER NUMBER: 15
+2024-05-24 01:39:54,845 INFO ORDERS: [{'number': 13, 'price': 300.0, 'status': 'В обработке'}, {'number': 14, 'price': 240.0, 'status': 'Отменён'}, {'number': 15, 'price': 240.0, 'status': 'В обработке'}]
+2024-05-24 01:39:54,845 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 01:39:59,610 INFO news titles: []
+2024-05-24 01:40:06,750 INFO news titles: []
+2024-05-24 01:40:07,699 INFO 123: лего1
+2024-05-24 01:40:07,700 INFO ORDER NUMBER: 2
+2024-05-24 01:40:07,700 INFO ORDER NUMBER: 9
+2024-05-24 01:40:07,701 INFO ORDERS: [{'number': 2, 'user': <MyUser: cust1>, 'amount': 10, 'price': 1500.0, 'date_created': datetime.datetime(2024, 5, 23, 0, 6, 43, 418666, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 27, 0, 5, 18, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': None}, {'number': 9, 'user': <MyUser: cust1>, 'amount': 3, 'price': 225.0, 'date_created': datetime.datetime(2024, 5, 23, 20, 15, 57, 588310, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 27, 20, 14, 8, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': None}]
+2024-05-24 01:40:07,701 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 01:40:27,669 INFO Got response successfully
+2024-05-24 01:40:37,401 INFO Get response successfully
+2024-05-24 01:40:41,070 INFO Get response successfully
+2024-05-24 01:40:42,289 INFO Get response successfully
+2024-05-24 01:40:44,079 INFO Get response successfully
+2024-05-24 01:40:45,641 INFO Get response successfully
+2024-05-24 01:40:47,461 INFO Get response successfully
+2024-05-24 01:40:49,421 INFO Get response successfully
+2024-05-24 01:40:52,733 INFO reviews: []
+2024-05-24 01:40:54,653 INFO news titles: []
+2024-05-24 01:40:55,294 INFO news titles: []
+2024-05-24 01:40:57,180 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 01:40:58,581 WARNING UserOrderListView: Пожалуйста, авторизуйтесь, чтобы оформить заказ
+2024-05-24 01:41:05,444 INFO reviews: []
+2024-05-24 01:48:55,722 WARNING Forbidden (CSRF token from POST incorrect.): /login/
+2024-05-24 01:48:59,136 INFO reviews: []
+2024-05-24 01:49:00,372 INFO news titles: []
+2024-05-24 01:49:00,921 INFO news titles: []
+2024-05-24 01:49:14,733 INFO news titles: []
+2024-05-24 01:49:16,011 INFO ORDER NUMBER: 1
+2024-05-24 01:49:16,011 INFO ORDER NUMBER: 2
+2024-05-24 01:49:16,011 INFO ORDER NUMBER: 3
+2024-05-24 01:49:16,011 INFO ORDER NUMBER: 6
+2024-05-24 01:49:16,011 INFO ORDER NUMBER: 7
+2024-05-24 01:49:16,011 INFO ORDER NUMBER: 8
+2024-05-24 01:49:16,011 INFO ORDER NUMBER: 9
+2024-05-24 01:49:16,011 INFO ORDER NUMBER: 10
+2024-05-24 01:49:16,011 INFO ORDER NUMBER: 11
+2024-05-24 01:49:16,011 INFO ORDER NUMBER: 12
+2024-05-24 01:49:16,012 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'Отменён'}, {'number': 8, 'price': 120.0, 'status': 'В обработке'}, {'number': 9, 'price': 225.0, 'status': 'В обработке'}, {'number': 10, 'price': 500.0, 'status': 'В обработке'}, {'number': 11, 'price': 500.0, 'status': 'В обработке'}, {'number': 12, 'price': 180.0, 'status': 'В обработке'}]
+2024-05-24 01:49:16,012 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 01:49:20,906 INFO ORDER NUMBER: 1
+2024-05-24 01:49:20,906 INFO ORDER NUMBER: 2
+2024-05-24 01:49:20,906 INFO ORDER NUMBER: 3
+2024-05-24 01:49:20,906 INFO ORDER NUMBER: 6
+2024-05-24 01:49:20,906 INFO ORDER NUMBER: 7
+2024-05-24 01:49:20,906 INFO ORDER NUMBER: 8
+2024-05-24 01:49:20,906 INFO ORDER NUMBER: 9
+2024-05-24 01:49:20,906 INFO ORDER NUMBER: 10
+2024-05-24 01:49:20,906 INFO ORDER NUMBER: 11
+2024-05-24 01:49:20,906 INFO ORDER NUMBER: 12
+2024-05-24 01:49:20,907 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'Отменён'}, {'number': 8, 'price': 120.0, 'status': 'В обработке'}, {'number': 9, 'price': 225.0, 'status': 'В обработке'}, {'number': 10, 'price': 500.0, 'status': 'Отменён'}, {'number': 11, 'price': 500.0, 'status': 'В обработке'}, {'number': 12, 'price': 180.0, 'status': 'В обработке'}]
+2024-05-24 01:49:20,908 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 14:28:54,522 INFO news titles: []
+2024-05-24 14:28:56,595 INFO ORDER NUMBER: 1
+2024-05-24 14:28:56,595 INFO ORDER NUMBER: 2
+2024-05-24 14:28:56,595 INFO ORDER NUMBER: 3
+2024-05-24 14:28:56,595 INFO ORDER NUMBER: 6
+2024-05-24 14:28:56,595 INFO ORDER NUMBER: 7
+2024-05-24 14:28:56,595 INFO ORDER NUMBER: 8
+2024-05-24 14:28:56,595 INFO ORDER NUMBER: 9
+2024-05-24 14:28:56,595 INFO ORDER NUMBER: 10
+2024-05-24 14:28:56,595 INFO ORDER NUMBER: 11
+2024-05-24 14:28:56,595 INFO ORDER NUMBER: 12
+2024-05-24 14:28:56,596 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'Отменён'}, {'number': 8, 'price': 120.0, 'status': 'В обработке'}, {'number': 9, 'price': 225.0, 'status': 'В обработке'}, {'number': 10, 'price': 500.0, 'status': 'Отменён'}, {'number': 11, 'price': 500.0, 'status': 'В обработке'}, {'number': 12, 'price': 180.0, 'status': 'В обработке'}]
+2024-05-24 14:28:56,596 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 14:29:48,963 INFO news titles: []
+2024-05-24 14:30:02,587 INFO news titles: []
+2024-05-24 14:30:05,141 INFO news titles: []
+2024-05-24 14:30:14,560 INFO news titles: []
+2024-05-24 14:30:15,692 INFO 123: лего1
+2024-05-24 14:30:15,693 INFO ORDER NUMBER: 2
+2024-05-24 14:30:15,693 INFO ORDER NUMBER: 9
+2024-05-24 14:30:15,695 INFO ORDERS: [{'number': 2, 'user': <MyUser: cust1>, 'amount': 10, 'price': 1500.0, 'date_created': datetime.datetime(2024, 5, 23, 0, 6, 43, 418666, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 27, 0, 5, 18, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': None}, {'number': 9, 'user': <MyUser: cust1>, 'amount': 3, 'price': 225.0, 'date_created': datetime.datetime(2024, 5, 23, 20, 15, 57, 588310, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 27, 20, 14, 8, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': None}]
+2024-05-24 14:30:15,695 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 14:30:56,519 INFO news titles: []
+2024-05-24 14:31:05,033 INFO news titles: []
+2024-05-24 14:31:06,226 INFO 123: вертолет
+2024-05-24 14:31:06,227 INFO ORDER NUMBER: 5
+2024-05-24 14:31:06,227 INFO ORDER NUMBER: 10
+2024-05-24 14:31:06,228 INFO ORDER NUMBER: 11
+2024-05-24 14:31:06,228 INFO ORDER NUMBER: 13
+2024-05-24 14:31:06,229 INFO ORDERS: [{'number': 5, 'user': <MyUser: cust2>, 'amount': 7, 'price': 1400.0, 'date_created': datetime.datetime(2024, 5, 23, 1, 9, 45, 825093, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 27, 1, 4, 11, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': None}, {'number': 10, 'user': <MyUser: cust1>, 'amount': 5, 'price': 500.0, 'date_created': datetime.datetime(2024, 5, 23, 20, 19, 39, 101760, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 27, 20, 19, 3, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': None}, {'number': 11, 'user': <MyUser: cust1>, 'amount': 5, 'price': 500.0, 'date_created': datetime.datetime(2024, 5, 23, 20, 20, 9, 636144, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 27, 20, 19, 3, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': ''}, {'number': 13, 'user': <MyUser: toha>, 'amount': 3, 'price': 300.0, 'date_created': datetime.datetime(2024, 5, 23, 22, 37, 50, 876995, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 22, 36, 12, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': 'qqq50'}]
+2024-05-24 14:31:06,229 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 15:43:04,836 INFO news titles: []
+2024-05-24 15:43:17,797 INFO news titles: []
+2024-05-24 15:43:18,913 INFO ORDER NUMBER: 1
+2024-05-24 15:43:18,913 INFO ORDER NUMBER: 2
+2024-05-24 15:43:18,913 INFO ORDER NUMBER: 3
+2024-05-24 15:43:18,913 INFO ORDER NUMBER: 6
+2024-05-24 15:43:18,913 INFO ORDER NUMBER: 7
+2024-05-24 15:43:18,913 INFO ORDER NUMBER: 8
+2024-05-24 15:43:18,913 INFO ORDER NUMBER: 9
+2024-05-24 15:43:18,914 INFO ORDER NUMBER: 10
+2024-05-24 15:43:18,914 INFO ORDER NUMBER: 11
+2024-05-24 15:43:18,914 INFO ORDER NUMBER: 12
+2024-05-24 15:43:18,915 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'Отменён'}, {'number': 8, 'price': 120.0, 'status': 'В обработке'}, {'number': 9, 'price': 225.0, 'status': 'В обработке'}, {'number': 10, 'price': 500.0, 'status': 'Отменён'}, {'number': 11, 'price': 500.0, 'status': 'В обработке'}, {'number': 12, 'price': 180.0, 'status': 'В обработке'}]
+2024-05-24 15:43:18,915 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 15:43:23,011 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 15:44:00,468 INFO news titles: []
+2024-05-24 15:44:03,399 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 15:44:16,205 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 15:44:25,826 INFO Amount: 1
+2024-05-24 15:44:25,831 INFO created Order object
+2024-05-24 15:44:25,838 INFO news titles: []
+2024-05-24 15:44:28,583 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 1
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 2
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 3
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 6
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 7
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 8
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 9
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 10
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 11
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 12
+2024-05-24 15:44:34,924 INFO ORDER NUMBER: 16
+2024-05-24 15:44:34,925 INFO ORDERS: [{'number': 1, 'price': 1440.0, 'status': 'Отменён'}, {'number': 2, 'price': 1500.0, 'status': 'В обработке'}, {'number': 3, 'price': 1200.0, 'status': 'В обработке'}, {'number': 6, 'price': 240.0, 'status': 'В обработке'}, {'number': 7, 'price': 600.0, 'status': 'Отменён'}, {'number': 8, 'price': 120.0, 'status': 'В обработке'}, {'number': 9, 'price': 225.0, 'status': 'В обработке'}, {'number': 10, 'price': 500.0, 'status': 'Отменён'}, {'number': 11, 'price': 500.0, 'status': 'В обработке'}, {'number': 12, 'price': 180.0, 'status': 'В обработке'}, {'number': 16, 'price': 120.0, 'status': 'В обработке'}]
+2024-05-24 15:44:34,925 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 15:44:40,369 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 15:56:25,872 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-24 15:57:33,199 INFO news titles: []
+2024-05-24 15:57:35,165 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 16:01:36,765 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-24 16:01:55,498 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-24 16:10:37,070 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-24 16:10:40,892 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: конструкторы>]>]
+2024-05-24 16:11:15,551 INFO news titles: []
+2024-05-24 16:11:42,331 INFO news titles: []
+2024-05-24 16:11:49,201 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/admin.py changed, reloading.
+2024-05-24 16:14:38,260 WARNING UserOrderListView: Пожалуйста, авторизуйтесь, чтобы оформить заказ
+2024-05-24 16:14:40,218 INFO news titles: []
+2024-05-24 16:14:49,209 INFO news titles: []
+2024-05-24 16:14:50,803 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_order.delivery_point_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 461, in get
+    if user_orders:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 412, in __bool__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_order.delivery_point_id
+2024-05-24 16:15:58,392 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_order.delivery_point_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 461, in get
+    if user_orders:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 412, in __bool__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_order.delivery_point_id
+2024-05-24 16:16:00,657 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_order.delivery_point_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 461, in get
+    if user_orders:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 412, in __bool__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_order.delivery_point_id
+2024-05-24 16:16:51,332 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-24 16:17:05,056 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-05-24 16:17:34,986 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_order.delivery_point
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 461, in get
+    if user_orders:
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 412, in __bool__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_order.delivery_point
+2024-05-24 16:44:59,972 WARNING UserOrderListView: Пожалуйста, авторизуйтесь для получения списка ваших заказов
+2024-05-24 16:45:02,899 INFO news titles: []
+2024-05-24 16:45:04,076 INFO PRODUCT CATEGORIES: []
+2024-05-24 16:45:07,309 INFO news titles: []
+2024-05-24 16:49:18,723 INFO {'_state': <django.db.models.base.ModelState object at 0x7138f1393b50>, 'id': None, 'password': 'pbkdf2_sha256$600000$mbWgNN4jTMRAvEj7q0buoe$ovvMh+MBXkv/QshTnWvvnXcvBBUTcvC4bJMUoYCnV8A=', 'last_login': None, 'is_superuser': False, 'username': 'emp1', 'first_name': '', 'last_name': '', 'email': 'emp1@gmail.com', 'is_staff': False, 'is_active': True, 'date_joined': datetime.datetime(2024, 5, 24, 13, 49, 18, 601652, tzinfo=datetime.timezone.utc), 'role': 'employee', 'phone_number': '+375447896514', 'age': 34, 'user_ptr_id': None, 'image': <InMemoryUploadedFile: teddy.jpeg (image/jpeg)>, 'description': 'Продавец плюшевых медведей', 'secret_key': '12345678qwerty!', '_password': 'qwerty123!'}
+2024-05-24 16:49:18,743 INFO news titles: []
+2024-05-24 16:49:20,891 INFO news titles: []
+2024-05-24 16:50:08,692 INFO {'_state': <django.db.models.base.ModelState object at 0x7138f00caed0>, 'id': None, 'password': 'pbkdf2_sha256$600000$Ei3TVDC68Bk8lf6UKrnMvt$F6d5noO49hS9QFHTn+OvDSM/+y7XmHQ1vpC1oNx4Wdg=', 'last_login': None, 'is_superuser': False, 'username': 'emp2', 'first_name': '', 'last_name': '', 'email': 'emp2@gmail.com', 'is_staff': False, 'is_active': True, 'date_joined': datetime.datetime(2024, 5, 24, 13, 50, 8, 587988, tzinfo=datetime.timezone.utc), 'role': 'employee', 'phone_number': '+375296547133', 'age': 41, 'user_ptr_id': None, 'image': <InMemoryUploadedFile: lego.jpeg (image/jpeg)>, 'description': 'Продавец лего', 'secret_key': '12345678qwerty!', '_password': 'qwerty123!'}
+2024-05-24 16:50:08,712 INFO news titles: []
+2024-05-24 16:50:10,103 INFO news titles: []
+2024-05-24 16:51:05,024 INFO {'_state': <django.db.models.base.ModelState object at 0x7138f146c0d0>, 'id': None, 'password': 'pbkdf2_sha256$600000$kqHqtxbTmg0ghWIVS8XrQc$dVC9wNYyybj7FY13OgJtHnNecJsZ64mXoexN9fN6454=', 'last_login': None, 'is_superuser': False, 'username': 'emp3', 'first_name': '', 'last_name': '', 'email': 'emp3@gmail.com', 'is_staff': False, 'is_active': True, 'date_joined': datetime.datetime(2024, 5, 24, 13, 51, 4, 922131, tzinfo=datetime.timezone.utc), 'role': 'employee', 'phone_number': '+375337819864', 'age': 57, 'user_ptr_id': None, 'image': <InMemoryUploadedFile: helicopter.jpeg (image/jpeg)>, 'description': 'Продавец радио-моделей', 'secret_key': '12345678qwerty!', '_password': 'qwerty123!'}
+2024-05-24 16:51:05,048 INFO news titles: []
+2024-05-24 16:51:06,951 INFO news titles: []
+2024-05-24 16:51:53,643 INFO contacts names: ['emp1', 'emp2', 'emp3']
+2024-05-24 16:52:56,460 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 16:53:03,676 INFO news titles: []
+2024-05-24 16:53:07,628 WARNING UserOrderListView: Пожалуйста, авторизуйтесь, чтобы оформить заказ
+2024-05-24 16:53:09,292 INFO news titles: []
+2024-05-24 16:53:40,156 INFO news titles: []
+2024-05-24 16:53:41,739 INFO news titles: []
+2024-05-24 16:54:22,444 INFO news titles: []
+2024-05-24 16:54:27,376 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-24 16:54:29,174 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 16:54:52,671 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-24 16:55:12,593 INFO Amount: 3
+2024-05-24 16:55:12,594 WARNING UserOrderListView: <ul class="errorlist"><li>delivery_date<ul class="errorlist"><li>Заказ можно будет забрать МИНИМУМ через 3 дня</li></ul></li></ul>
+2024-05-24 16:55:15,526 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 16:55:26,833 INFO Amount: 3
+2024-05-24 16:55:26,847 ERROR Internal Server Error: /products/мишка1/order/create/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 303, in post
+    promo = Promo.objects.get(code=promo_code)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+toyFactory.models.Promo.DoesNotExist: Promo matching query does not exist.
+2024-05-24 17:05:28,179 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:06:13,840 WARNING Forbidden (CSRF token from POST incorrect.): /products/мишка1/order/create/
+2024-05-24 17:06:16,523 INFO news titles: []
+2024-05-24 17:06:17,285 INFO news titles: []
+2024-05-24 17:06:30,465 INFO news titles: []
+2024-05-24 17:07:36,670 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-24 17:07:38,707 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:07:50,691 INFO Amount: 3
+2024-05-24 17:07:50,694 INFO created Order object
+2024-05-24 17:07:50,703 INFO news titles: []
+2024-05-24 17:07:51,895 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-24 17:09:15,693 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:09:18,435 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-24 17:09:19,235 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:09:48,204 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:09:51,189 INFO news titles: []
+2024-05-24 17:10:37,972 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:12:04,369 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:12:14,976 INFO news titles: []
+2024-05-24 17:12:15,953 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-24 17:12:17,497 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:12:27,349 INFO Amount: 3
+2024-05-24 17:12:35,239 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:12:41,281 INFO Amount: 3
+2024-05-24 17:13:23,264 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:13:25,367 WARNING Not Found: /favicon.ico
+2024-05-24 17:13:28,887 INFO news titles: []
+2024-05-24 17:13:30,377 INFO news titles: []
+2024-05-24 17:13:36,272 INFO news titles: []
+2024-05-24 17:13:37,323 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-24 17:13:39,505 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:13:45,780 INFO Amount: 3
+2024-05-24 17:13:45,786 INFO created Order object
+2024-05-24 17:13:45,793 INFO news titles: []
+2024-05-24 17:13:47,235 INFO ORDER NUMBER: 1
+2024-05-24 17:13:47,236 INFO ORDERS: [{'number': 1, 'price': 360.0, 'status': 'В обработке'}]
+2024-05-24 17:13:47,237 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:14:31,082 WARNING UserOrderListView: 
+2024-05-24 17:14:31,884 INFO news titles: []
+2024-05-24 17:14:37,815 INFO news titles: []
+2024-05-24 17:14:39,241 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:14:50,141 INFO Amount: 3
+2024-05-24 17:14:50,142 WARNING UserOrderListView: <ul class="errorlist"><li>delivery_date<ul class="errorlist"><li>Заказ можно будет забрать МИНИМУМ через 3 дня</li></ul></li></ul>
+2024-05-24 17:14:52,458 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:14:59,939 INFO Amount: 3
+2024-05-24 17:14:59,944 INFO created Order object
+2024-05-24 17:14:59,953 INFO news titles: []
+2024-05-24 17:15:01,378 INFO ORDER NUMBER: 1
+2024-05-24 17:15:01,378 INFO ORDER NUMBER: 2
+2024-05-24 17:15:01,380 INFO ORDERS: [{'number': 1, 'price': 360.0, 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'status': 'В обработке'}]
+2024-05-24 17:15:01,380 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:15:41,220 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:15:43,571 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:16:03,637 INFO Amount: 3
+2024-05-24 17:16:03,652 ERROR Internal Server Error: /products/лего1/order/create/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 303, in post
+    if Promo.objects.get(code=promo_code) == None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+toyFactory.models.Promo.DoesNotExist: Promo matching query does not exist.
+2024-05-24 17:16:35,307 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:16:38,672 INFO Amount: 3
+2024-05-24 17:16:53,110 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:16:55,610 INFO Amount: 3
+2024-05-24 17:16:55,624 ERROR Internal Server Error: /products/лего1/order/create/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 307, in post
+    promo = Promo.objects.get(code=promo_code)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+toyFactory.models.Promo.DoesNotExist: Promo matching query does not exist.
+2024-05-24 17:17:00,915 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:17:17,748 INFO Amount: 3
+2024-05-24 17:17:23,733 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:17:26,892 INFO Amount: 3
+2024-05-24 17:17:26,899 INFO created Order object
+2024-05-24 17:17:26,912 INFO news titles: []
+2024-05-24 17:17:28,577 INFO ORDER NUMBER: 1
+2024-05-24 17:17:28,577 INFO ORDER NUMBER: 2
+2024-05-24 17:17:28,577 INFO ORDER NUMBER: 3
+2024-05-24 17:17:28,578 INFO ORDERS: [{'number': 1, 'price': 360.0, 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'status': 'В обработке'}]
+2024-05-24 17:17:28,578 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:17:33,610 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:18:00,604 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:18:09,861 INFO Amount: 1
+2024-05-24 17:18:09,868 INFO created Order object
+2024-05-24 17:18:09,883 INFO news titles: []
+2024-05-24 17:18:11,554 INFO ORDER NUMBER: 1
+2024-05-24 17:18:11,554 INFO ORDER NUMBER: 2
+2024-05-24 17:18:11,554 INFO ORDER NUMBER: 3
+2024-05-24 17:18:11,554 INFO ORDER NUMBER: 4
+2024-05-24 17:18:11,555 INFO ORDERS: [{'number': 1, 'price': 360.0, 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'status': 'В обработке'}]
+2024-05-24 17:18:11,555 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:18:17,027 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:18:32,106 INFO Amount: 3
+2024-05-24 17:18:38,683 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:18:45,518 INFO Amount: 2
+2024-05-24 17:18:45,523 INFO created Order object
+2024-05-24 17:18:45,530 INFO news titles: []
+2024-05-24 17:18:46,998 INFO ORDER NUMBER: 1
+2024-05-24 17:18:46,998 INFO ORDER NUMBER: 2
+2024-05-24 17:18:46,998 INFO ORDER NUMBER: 3
+2024-05-24 17:18:46,998 INFO ORDER NUMBER: 4
+2024-05-24 17:18:46,998 INFO ORDER NUMBER: 5
+2024-05-24 17:18:46,999 INFO ORDERS: [{'number': 1, 'price': 360.0, 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'status': 'В обработке'}]
+2024-05-24 17:18:46,999 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:18:52,082 INFO news titles: []
+2024-05-24 17:19:22,877 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:20:04,634 INFO ORDER NUMBER: 1
+2024-05-24 17:20:04,634 INFO ORDER NUMBER: 2
+2024-05-24 17:20:04,634 INFO ORDER NUMBER: 3
+2024-05-24 17:20:04,634 INFO ORDER NUMBER: 4
+2024-05-24 17:20:04,634 INFO ORDER NUMBER: 5
+2024-05-24 17:20:04,636 INFO ORDERS: [{'number': 1, 'price': 360.0, 'delivery_point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'delivery_point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'delivery_point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'delivery_point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'delivery_point': '', 'status': 'В обработке'}]
+2024-05-24 17:20:04,636 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:20:46,288 INFO ORDER NUMBER: 1
+2024-05-24 17:20:46,288 INFO ORDER NUMBER: 2
+2024-05-24 17:20:46,288 INFO ORDER NUMBER: 3
+2024-05-24 17:20:46,288 INFO ORDER NUMBER: 4
+2024-05-24 17:20:46,288 INFO ORDER NUMBER: 5
+2024-05-24 17:20:46,289 INFO ORDERS: [{'number': 1, 'price': 360.0, 'delivery_point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'delivery_point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'delivery_point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'delivery_point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'delivery_point': '', 'status': 'В обработке'}]
+2024-05-24 17:20:46,290 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:21:55,673 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:22:00,973 INFO ORDER NUMBER: 1
+2024-05-24 17:22:00,973 INFO ORDER NUMBER: 2
+2024-05-24 17:22:00,973 INFO ORDER NUMBER: 3
+2024-05-24 17:22:00,973 INFO ORDER NUMBER: 4
+2024-05-24 17:22:00,973 INFO ORDER NUMBER: 5
+2024-05-24 17:22:00,974 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}]
+2024-05-24 17:22:00,974 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:22:01,470 INFO ORDER NUMBER: 1
+2024-05-24 17:22:01,470 INFO ORDER NUMBER: 2
+2024-05-24 17:22:01,470 INFO ORDER NUMBER: 3
+2024-05-24 17:22:01,471 INFO ORDER NUMBER: 4
+2024-05-24 17:22:01,471 INFO ORDER NUMBER: 5
+2024-05-24 17:22:01,471 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}]
+2024-05-24 17:22:01,471 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:22:01,701 INFO ORDER NUMBER: 1
+2024-05-24 17:22:01,701 INFO ORDER NUMBER: 2
+2024-05-24 17:22:01,701 INFO ORDER NUMBER: 3
+2024-05-24 17:22:01,701 INFO ORDER NUMBER: 4
+2024-05-24 17:22:01,701 INFO ORDER NUMBER: 5
+2024-05-24 17:22:01,702 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}]
+2024-05-24 17:22:01,702 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:22:01,877 INFO ORDER NUMBER: 1
+2024-05-24 17:22:01,877 INFO ORDER NUMBER: 2
+2024-05-24 17:22:01,877 INFO ORDER NUMBER: 3
+2024-05-24 17:22:01,877 INFO ORDER NUMBER: 4
+2024-05-24 17:22:01,877 INFO ORDER NUMBER: 5
+2024-05-24 17:22:01,878 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}]
+2024-05-24 17:22:01,878 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:22:02,082 INFO ORDER NUMBER: 1
+2024-05-24 17:22:02,082 INFO ORDER NUMBER: 2
+2024-05-24 17:22:02,082 INFO ORDER NUMBER: 3
+2024-05-24 17:22:02,082 INFO ORDER NUMBER: 4
+2024-05-24 17:22:02,082 INFO ORDER NUMBER: 5
+2024-05-24 17:22:02,084 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}]
+2024-05-24 17:22:02,084 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:22:24,642 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:22:34,889 INFO news titles: []
+2024-05-24 17:22:41,372 INFO news titles: []
+2024-05-24 17:22:43,242 INFO 123: мишка1
+2024-05-24 17:22:43,243 INFO ORDER NUMBER: 1
+2024-05-24 17:22:43,244 INFO ORDER NUMBER: 2
+2024-05-24 17:22:43,245 INFO ORDER NUMBER: 5
+2024-05-24 17:22:43,246 INFO ORDERS: [{'number': 1, 'user': <MyUser: cust1>, 'amount': 3, 'price': 360.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 13, 45, 781610, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 13, 23, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': ''}, {'number': 2, 'user': <MyUser: cust1>, 'amount': 3, 'price': 180.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 14, 59, 940266, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 13, 23, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': 'qqq50'}, {'number': 5, 'user': <MyUser: cust1>, 'amount': 2, 'price': 240.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 18, 45, 519220, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 18, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': ''}]
+2024-05-24 17:22:43,246 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 17:24:31,221 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:24:33,328 INFO 123: мишка1
+2024-05-24 17:24:33,329 INFO ORDER NUMBER: 1
+2024-05-24 17:24:33,329 INFO ORDER NUMBER: 2
+2024-05-24 17:24:33,330 INFO ORDER NUMBER: 5
+2024-05-24 17:24:33,331 INFO ORDERS: [{'number': 1, 'user': <MyUser: cust1>, 'amount': 3, 'price': 360.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 13, 45, 781610, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 13, 23, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': ''}, {'number': 2, 'user': <MyUser: cust1>, 'amount': 3, 'price': 180.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 14, 59, 940266, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 13, 23, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': 'qqq50'}, {'number': 5, 'user': <MyUser: cust1>, 'amount': 2, 'price': 240.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 18, 45, 519220, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 18, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': ''}]
+2024-05-24 17:24:33,331 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 17:24:39,509 INFO 123: мишка1
+2024-05-24 17:24:39,510 INFO ORDER NUMBER: 1
+2024-05-24 17:24:39,510 INFO ORDER NUMBER: 2
+2024-05-24 17:24:39,511 INFO ORDER NUMBER: 5
+2024-05-24 17:24:39,512 INFO ORDERS: [{'number': 1, 'user': <MyUser: cust1>, 'amount': 3, 'price': 360.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 13, 45, 781610, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 13, 23, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': ''}, {'number': 2, 'user': <MyUser: cust1>, 'amount': 3, 'price': 180.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 14, 59, 940266, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 13, 23, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': 'qqq50'}, {'number': 5, 'user': <MyUser: cust1>, 'amount': 2, 'price': 240.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 18, 45, 519220, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 18, tzinfo=datetime.timezone.utc), 'delivery_point': '', 'promo_code': ''}]
+2024-05-24 17:24:39,512 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 17:24:39,607 WARNING Not Found: /favicon.ico
+2024-05-24 17:24:40,101 INFO news titles: []
+2024-05-24 17:24:46,491 INFO news titles: []
+2024-05-24 17:24:47,663 INFO ORDER NUMBER: 1
+ORDER DELIVERY POINT: 
+2024-05-24 17:24:47,663 INFO ORDER NUMBER: 2
+ORDER DELIVERY POINT: 
+2024-05-24 17:24:47,663 INFO ORDER NUMBER: 3
+ORDER DELIVERY POINT: 
+2024-05-24 17:24:47,663 INFO ORDER NUMBER: 4
+ORDER DELIVERY POINT: 
+2024-05-24 17:24:47,663 INFO ORDER NUMBER: 5
+ORDER DELIVERY POINT: 
+2024-05-24 17:24:47,664 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}]
+2024-05-24 17:24:47,664 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:26:32,675 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 17:26:34,726 INFO ORDER NUMBER: 1
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:34,726 INFO ORDER NUMBER: 2
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:34,726 INFO ORDER NUMBER: 3
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:34,726 INFO ORDER NUMBER: 4
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:34,726 INFO ORDER NUMBER: 5
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:34,727 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}]
+2024-05-24 17:26:34,727 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:26:35,337 INFO ORDER NUMBER: 1
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:35,337 INFO ORDER NUMBER: 2
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:35,337 INFO ORDER NUMBER: 3
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:35,337 INFO ORDER NUMBER: 4
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:35,337 INFO ORDER NUMBER: 5
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:35,338 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}]
+2024-05-24 17:26:35,339 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:26:37,027 INFO ORDER NUMBER: 1
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:37,027 INFO ORDER NUMBER: 2
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:37,027 INFO ORDER NUMBER: 3
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:37,027 INFO ORDER NUMBER: 4
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:37,027 INFO ORDER NUMBER: 5
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:37,028 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}]
+2024-05-24 17:26:37,028 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:26:38,979 INFO news titles: []
+2024-05-24 17:26:39,671 INFO ORDER NUMBER: 1
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:39,671 INFO ORDER NUMBER: 2
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:39,671 INFO ORDER NUMBER: 3
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:39,671 INFO ORDER NUMBER: 4
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:39,671 INFO ORDER NUMBER: 5
+ORDER DELIVERY POINT: 
+2024-05-24 17:26:39,672 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}]
+2024-05-24 17:26:39,672 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:27:29,892 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:27:31,309 INFO news titles: []
+2024-05-24 17:27:37,172 INFO news titles: []
+2024-05-24 17:27:38,821 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 17:27:51,345 INFO Amount: 7
+2024-05-24 17:27:51,351 INFO created Order object
+2024-05-24 17:27:51,356 INFO news titles: []
+2024-05-24 17:27:52,811 INFO ORDER NUMBER: 1
+ORDER DELIVERY POINT: 
+2024-05-24 17:27:52,811 INFO ORDER NUMBER: 2
+ORDER DELIVERY POINT: 
+2024-05-24 17:27:52,811 INFO ORDER NUMBER: 3
+ORDER DELIVERY POINT: 
+2024-05-24 17:27:52,811 INFO ORDER NUMBER: 4
+ORDER DELIVERY POINT: 
+2024-05-24 17:27:52,811 INFO ORDER NUMBER: 5
+ORDER DELIVERY POINT: 
+2024-05-24 17:27:52,811 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-05-24 17:27:52,812 INFO ORDERS: [{'number': 1, 'price': 360.0, 'point': '', 'status': 'В обработке'}, {'number': 2, 'price': 180.0, 'point': '', 'status': 'В обработке'}, {'number': 3, 'price': 300.0, 'point': '', 'status': 'В обработке'}, {'number': 4, 'price': 100.0, 'point': '', 'status': 'В обработке'}, {'number': 5, 'price': 240.0, 'point': '', 'status': 'В обработке'}, {'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке'}]
+2024-05-24 17:27:52,812 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:28:08,811 WARNING Not Found: /favicon.ico
+2024-05-24 17:28:21,924 WARNING Not Found: /favicon.ico
+2024-05-24 17:28:25,037 WARNING UserOrderListView: 
+2024-05-24 17:28:26,663 INFO news titles: []
+2024-05-24 17:28:33,502 INFO news titles: []
+2024-05-24 17:28:34,476 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-05-24 17:28:34,477 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке'}]
+2024-05-24 17:28:34,477 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:28:50,195 INFO contacts names: ['emp1', 'emp2', 'emp3']
+2024-05-24 17:28:53,188 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-05-24 17:28:53,189 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке'}]
+2024-05-24 17:28:53,189 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 17:28:54,661 INFO news titles: []
+2024-05-24 17:29:01,018 INFO news titles: []
+2024-05-24 17:29:02,751 INFO news titles: []
+2024-05-24 17:29:16,716 INFO news titles: []
+2024-05-24 17:29:18,091 INFO 123: мишка1
+2024-05-24 17:29:18,091 INFO ORDER NUMBER: 6
+2024-05-24 17:29:18,092 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 17:29:18,093 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 17:35:01,348 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-05-24 17:56:01,376 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 18:02:48,055 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 18:03:12,899 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 18:03:27,576 INFO news titles: []
+2024-05-24 18:03:29,801 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 18:03:34,638 INFO 123: мишка1
+2024-05-24 18:03:34,639 INFO ORDER NUMBER: 6
+2024-05-24 18:03:34,640 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:03:34,640 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:03:34,664 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 388, in get
+    return render(request, 'orders.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'edit_order_status' with arguments '(6, '')' not found. 1 pattern(s) tried: ['orders/(?P<number>\\d+)/edit_status/']
+2024-05-24 18:05:05,405 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-05-24 18:05:44,276 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-05-24 18:07:26,537 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-05-24 18:08:27,596 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-05-24 18:08:32,386 INFO 123: мишка1
+2024-05-24 18:08:32,387 INFO ORDER NUMBER: 6
+2024-05-24 18:08:32,388 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:08:32,388 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:08:32,418 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 388, in get
+    return render(request, 'orders.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'edit_order_status' with arguments '(6, '')' not found. 1 pattern(s) tried: ['orders/(?P<number>\\d+)/edit_status/(?P<status>\\w+)/']
+2024-05-24 18:11:31,676 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 18:11:35,063 INFO 123: мишка1
+2024-05-24 18:11:35,064 INFO ORDER NUMBER: 6
+2024-05-24 18:11:35,065 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:11:35,065 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:11:35,094 ERROR Internal Server Error: /userusername=request.user.username/orders/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 388, in get
+    return render(request, 'orders.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'edit_order_status' with arguments '(6, '')' not found. 1 pattern(s) tried: ['orders/(?P<number>\\d+)/edit_status/(?P<status>\\w+)/']
+2024-05-24 18:19:25,212 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-05-24 18:19:53,007 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 18:19:59,378 INFO 123: мишка1
+2024-05-24 18:19:59,379 INFO ORDER NUMBER: 6
+2024-05-24 18:19:59,380 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:19:59,380 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:20:07,545 WARNING Forbidden: /edit_order_status/6/
+2024-05-24 18:21:08,273 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 18:21:10,583 INFO 123: мишка1
+2024-05-24 18:21:10,584 INFO ORDER NUMBER: 6
+2024-05-24 18:21:10,585 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:21:10,585 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:21:37,454 INFO 123: мишка1
+2024-05-24 18:21:37,455 INFO ORDER NUMBER: 6
+2024-05-24 18:21:37,456 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:21:37,456 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:21:37,989 INFO 123: мишка1
+2024-05-24 18:21:37,990 INFO ORDER NUMBER: 6
+2024-05-24 18:21:37,991 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:21:37,991 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:21:38,165 INFO 123: мишка1
+2024-05-24 18:21:38,166 INFO ORDER NUMBER: 6
+2024-05-24 18:21:38,167 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:21:38,167 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:21:38,347 INFO 123: мишка1
+2024-05-24 18:21:38,347 INFO ORDER NUMBER: 6
+2024-05-24 18:21:38,349 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:21:38,349 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:23:00,735 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 18:23:26,266 INFO 123: мишка1
+2024-05-24 18:23:26,268 INFO ORDER NUMBER: 6
+2024-05-24 18:23:26,269 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:23:26,269 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:23:28,261 WARNING Forbidden: /edit_order_status/6/
+2024-05-24 18:23:33,647 INFO news titles: []
+2024-05-24 18:23:34,625 INFO 123: мишка1
+2024-05-24 18:23:34,625 INFO ORDER NUMBER: 6
+2024-05-24 18:23:34,626 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:23:34,626 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:23:39,105 WARNING Forbidden: /edit_order_status/6/
+2024-05-24 18:24:07,304 INFO 123: мишка1
+2024-05-24 18:24:07,304 INFO ORDER NUMBER: 6
+2024-05-24 18:24:07,305 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:24:07,305 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:24:15,687 INFO 123: мишка1
+2024-05-24 18:24:15,688 INFO ORDER NUMBER: 6
+2024-05-24 18:24:15,689 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:24:15,689 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:24:23,189 INFO 123: мишка1
+2024-05-24 18:24:23,190 INFO ORDER NUMBER: 6
+2024-05-24 18:24:23,190 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:24:23,191 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:24:24,235 INFO news titles: []
+2024-05-24 18:24:25,855 INFO reviews: []
+2024-05-24 18:24:26,330 INFO 123: мишка1
+2024-05-24 18:24:26,331 INFO ORDER NUMBER: 6
+2024-05-24 18:24:26,332 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:24:26,332 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:26:07,198 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-24 18:26:08,412 WARNING UserOrderListView: Пожалуйста, авторизуйтесь, чтобы оформить заказ
+2024-05-24 18:26:10,889 INFO news titles: []
+2024-05-24 18:26:12,359 INFO 123: мишка1
+2024-05-24 18:26:12,361 INFO ORDER NUMBER: 6
+2024-05-24 18:26:12,362 INFO ORDERS: [{'number': 6, 'user': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:26:12,362 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:29:46,429 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 18:30:06,956 INFO 123: мишка1
+2024-05-24 18:30:06,956 INFO ORDER NUMBER: 6
+2024-05-24 18:30:06,957 INFO ORDERS: [{'number': 6, 'customer': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:30:06,958 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:30:11,469 INFO 123: мишка1
+2024-05-24 18:30:11,471 INFO ORDER NUMBER: 6
+2024-05-24 18:30:11,472 INFO ORDERS: [{'number': 6, 'customer': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:30:11,472 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:30:16,518 INFO 123: мишка1
+2024-05-24 18:30:16,519 INFO ORDER NUMBER: 6
+2024-05-24 18:30:16,521 INFO ORDERS: [{'number': 6, 'customer': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:30:16,521 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:30:50,744 INFO news titles: []
+2024-05-24 18:31:01,771 INFO news titles: []
+2024-05-24 18:31:03,041 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-05-24 18:31:03,042 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'Доставлен'}]
+2024-05-24 18:31:03,042 INFO UserOrderListView: customer order list was successfully created
+2024-05-24 18:31:10,661 INFO news titles: []
+2024-05-24 18:31:18,795 INFO news titles: []
+2024-05-24 18:31:20,108 INFO 123: мишка1
+2024-05-24 18:31:20,109 INFO ORDER NUMBER: 6
+2024-05-24 18:31:20,109 INFO ORDERS: [{'number': 6, 'customer': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50'}]
+2024-05-24 18:31:20,109 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:31:40,096 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-24 18:33:04,683 INFO 123: мишка1
+2024-05-24 18:33:04,684 INFO ORDER NUMBER: 6
+2024-05-24 18:33:04,685 INFO ORDERS: [{'number': 6, 'customer': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50', 'status': 'Доставлен'}]
+2024-05-24 18:33:04,685 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:33:20,789 INFO 123: мишка1
+2024-05-24 18:33:20,790 INFO ORDER NUMBER: 6
+2024-05-24 18:33:20,790 INFO ORDERS: [{'number': 6, 'customer': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50', 'status': 'Доставлен'}]
+2024-05-24 18:33:20,790 INFO UserOrderListView: employee order list was successfully created
+2024-05-24 18:33:26,299 INFO 123: мишка1
+2024-05-24 18:33:26,300 INFO ORDER NUMBER: 6
+2024-05-24 18:33:26,302 INFO ORDERS: [{'number': 6, 'customer': <MyUser: cust1>, 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50', 'status': 'В обработке '}]
+2024-05-24 18:33:26,302 INFO UserOrderListView: employee order list was successfully created
