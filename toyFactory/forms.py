@@ -178,4 +178,4 @@ class EmployeeProfileForm(forms.ModelForm):
 class CustomerProfileForm(forms.ModelForm):
     class Meta:
         model = MyUser
-        fields = ['image', 'email', 'phone_number']
+        fields = ['email', 'phone_number']

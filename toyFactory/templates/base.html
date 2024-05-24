@@ -21,6 +21,9 @@
             {% if getUserRole == 'customer' %}
                 <a href="{%url 'add_review' %}"><li>Оставить отзыв</li></a>
             {% endif %}
+            {% if not request.user.is_superuser %}
+                <a href="{%url 'profile' %}">Профиль</a><br>
+            {% endif %}
     {% else %}
             <a href="{% url 'register_customer' %}"><li>Регистрация для клиентов</li></a>
             <a href="{% url 'register_employee' %}"><li>Регистрация для сотрудников</li></a>

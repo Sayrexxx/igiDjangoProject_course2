@@ -193,6 +193,22 @@ class LogoutUser(View):
         return redirect('home') 
 
 
+def profile_view(request):
+    name = request.user.username
+    user = get_object_or_404(MyUser, id=request.user.id)
+    context = {
+        'status': getUserRole(name),
+        'photo': user.image.url if user.image and user.role == 'employee' else None,
+        'email': user.email,
+        'age': user.age,
+        'phone_number': user.phone_number,
+        'description': user.description if user.role == 'employee' else '',
+        'username': user.username,
+        'edit_url': reverse('edit_profile'),
+    }
+    logging.info(f'Profile: {name}')
+    return render(request, 'profile.html', context)
+
 def edit_profile_view(request):
     user = request.user
     if not isinstance(user, MyUser):
@@ -362,7 +378,7 @@ class UserOrderListView(View):
                     else:
                         warning_message_text = 'Нет заказов. Перейдите в каталог с товарами\n и найдите для себя что-нибудь интересное'
                 else:
-                    user_orders = Order.objects.all().filter(product = Product.objects.get(employee=current_user))
+                    user_orders = Order.objects.filter(product__employee=current_user)
                     logging.info(f"123: {user_orders.first()}")
                     if user_orders:
                         orders_data = []

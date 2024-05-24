@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+   
+   {% block title %}Profile{% endblock %}
+   
+   {% block content %}
+   <h1>User Profile</h1>
+   
+   {% if role == "employee" %}
+       <div>
+           <img src="{{ photo }}" alt="Profile Photo" style="max-width: 200px;">
+           <p><strong>Email:</strong> {{ email }}</p>
+           <p><strong>Age:</strong> {{ age }}</p>
+           <p><strong>Phone Number:</strong> {{ phone_number }}</p>
+           <p><strong>Description:</strong> {{ description }}</p>
+           <a href="{{ edit_url }}" class="btn btn-primary">Edit Profile</a>
+       </div>
+   {% else %}
+       <div>
+           <img src="{{ photo }}" alt="Profile Photo" style="max-width: 200px;">
+           <p><strong>Username:</strong> {{ username }}</p>
+           <p><strong>Email:</strong> {{ email }}</p>
+           <p><strong>Age:</strong> {{ age }}</p>
+           <p><strong>Phone Number:</strong> {{ phone_number }}</p>
+           <a href="{{ edit_url }}" class="btn btn-primary">Edit Profile</a>
+       </div>
+   {% endif %}
+   
+   {% endblock %}
