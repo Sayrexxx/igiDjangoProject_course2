@@ -1,35 +1,12 @@
-from warnings import WarningMessage
-from django.contrib import messages
-from django.views.decorators.csrf import csrf_protect
-import datetime
-
 from .models import *
 from .forms import *
-
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.shortcuts import get_object_or_404, render, redirect
-
-from django.utils import timezone
-
+from django.http import JsonResponse
 from django.urls import reverse, reverse_lazy
-
-
-
-from django.views import View
-
 from django.db.models import Prefetch
-
 from django.views.generic import *
-from django.core.exceptions import ObjectDoesNotExist
-
 from django.contrib.auth import login, logout, authenticate
-
 from django.contrib.auth.views import LoginView
-
-from django.db.models import F
-
 import requests
-
 import logging
 
 logging.basicConfig(level=logging.INFO, filename='logs.log', filemode='a',
@@ -53,12 +30,12 @@ def about_company(request):
 def news(request):
     all_news = Article.objects.all()
     name = request.user.username
-    
+
     context = {
         'all_news': all_news,
         'getUserRole': getUserRole(name),
     }
-    
+
     logging.info(f'news titles: {[new.title for new in all_news]}')
     return render(request, 'news.html', context)
 
@@ -106,12 +83,12 @@ def random_joke(request):
 def reviews(request):
     all_reviews = Review.objects.all()
     name = request.user.username
-    
+
     context = {
         'object_list': all_reviews,
         'getUserRole': getUserRole(name)
     }
-    
+
     logging.info(f'reviews: {[review.text for review in all_reviews]}')
     return render(request, 'reviews.html', context)
 
@@ -128,7 +105,7 @@ class ReviewCreateView(View):
             form = ReviewForm(request.POST)
             if form.is_valid():
 
-                review = form.save(commit=False)  
+                review = form.save(commit=False)
                 logging.info(f'REQUEST_USER:{request.user}')
                 # Create an instance but don't save to the database yet
                 review.sender = request.user.username  # Associate the review with the logged-in user
@@ -172,7 +149,7 @@ class BaseViewContextMixin:
         context = kwargs
         context['title'] = kwargs.get('title', 'Default Title')
         return context
-    
+
 
 class LoginUser(BaseViewContextMixin, LoginView):
     form_class = LoginUserForm
@@ -190,7 +167,7 @@ class LoginUser(BaseViewContextMixin, LoginView):
 class LogoutUser(View):
     def get(self, request, *args, **kwargs):
         logout(request)
-        return redirect('home') 
+        return redirect('home')
 
 
 def profile_view(request):
@@ -231,7 +208,7 @@ def edit_profile_view(request):
 
 class ProductListView(ListView):
     model = Product
-    
+
     def get_queryset(self):
         return Product.objects.prefetch_related(
                     Prefetch('category', queryset=Category.objects.all().values_list('name'))
@@ -243,10 +220,10 @@ class ProductListView(ListView):
         producer_name = request.GET.get('prod_name')
 
         products = self.filter_products(min_price, max_price, producer_name, category_name)
-            
-            
+
+
         logging.info(f'PRODUCT CATEGORIES: {[product.category.all() for product in products ]}')
-            
+
         return render(request, 'products.html', {'products': products})
 
     @staticmethod
@@ -277,7 +254,7 @@ class ProductListView(ListView):
 
 class OrderCreateView(View):
     warning_message_text = ""
-    
+
     def get(self, request, product_name, *args, **kwargs):
         warning_message_text = ""
         if request.user.is_authenticated and getUserRole(request.user.username) == 'customer' and \
@@ -321,7 +298,7 @@ class OrderCreateView(View):
                         if not Promo.objects.all().filter(code=promo_code).exists():
                             warning_message_text = "Такого промокода нет"
                             return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
-                        
+
                         promo = Promo.objects.get(code=promo_code)
                         order = Order.objects.create(
                             user=MyUser.objects.get(username=request.user.username),
@@ -351,7 +328,7 @@ class UserOrderListView(View):
         warning_message_text = ""
         if request.user.is_authenticated :
             if not request.user.is_superuser:
-                
+
                 current_user = MyUser.objects.get(username=request.user.username)
 
                 if getUserRole(request.user.username) == 'customer':
@@ -368,7 +345,7 @@ class UserOrderListView(View):
                             })
                             logging.info(f"ORDER NUMBER: {order.number}\nORDER DELIVERY POINT: {order.delivery_point}")
                         context = {
-                            'orders': orders_data, 
+                            'orders': orders_data,
                             'getUserRole': getUserRole(current_user.username),
                         }
                         logging.info(f"ORDERS: {orders_data}")
@@ -396,7 +373,7 @@ class UserOrderListView(View):
                             })
                             logging.info(f"ORDER NUMBER: {order.number}")
                         context = {
-                            'orders': orders_data, 
+                            'orders': orders_data,
                             'getUserRole': getUserRole(current_user.username),
                             'STATUS_CHOICES': order.STATUS_CHOICES
                         }
@@ -408,7 +385,7 @@ class UserOrderListView(View):
         else:
             warning_message_text = 'Пожалуйста, авторизуйтесь для получения списка ваших заказов'
         logging.warning(f'UserOrderListView: {warning_message_text}')
-        return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})            
+        return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
 
 
 def cancel_order(request, number):
@@ -432,3 +409,47 @@ def edit_order_status(request, number):
         else:
             return HttpResponseForbidden("Неверный статус")
     return render(request, 'news.html')
+
+
+from django.shortcuts import render
+from django.db.models import Count
+from .models import Order
+import matplotlib.pyplot as plt
+import io
+import urllib, base64
+
+def category_percentage_view(request):
+    # Получаем все заказы
+    all_orders = Order.objects.all()
+
+    # Подсчитываем количество заказов для каждой категории
+    category_counts = all_orders.values('product__category__name').annotate(count=Count('product__category__name'))
+
+    # Подсчитываем общее количество заказов
+    total_orders = all_orders.count()
+
+    # Вычисляем процентное соотношение
+    category_names = []
+    category_percentages = []
+    for category in category_counts:
+        percentage = (category['count'] / total_orders) * 100
+        category_names.append(category['product__category__name'])
+        category_percentages.append(percentage)
+
+    # Создаем диаграмму
+    plt.figure(figsize=(10, 6))
+    plt.pie(category_percentages, labels=category_names, autopct='%1.1f%%', startangle=140)
+    plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+    # Сохраняем диаграмму в буфер
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png')
+    buf.seek(0)
+    string = base64.b64encode(buf.read())
+    uri = urllib.parse.quote(string)
+
+    context = {
+        'data': uri
+    }
+
+    return render(request, 'category_percentage.html', context)

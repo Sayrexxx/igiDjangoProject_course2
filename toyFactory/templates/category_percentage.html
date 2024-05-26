@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block header %}
+    Статистика
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">Процентное соотношение товаров по категориям</h1>
+    <div style="text-align: center;">
+        <img src="data:image/png;base64,{{ data }}" alt="Диаграмма процентного соотношения товаров по категориям">
+    </div>
+{% endblock %}

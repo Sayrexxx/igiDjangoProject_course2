@@ -6710,3 +6710,215 @@ ORDER DELIVERY POINT: brest
 2024-05-24 19:22:05,440 INFO vacancies titles: []
 2024-05-24 19:22:06,166 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
 2024-05-24 19:22:13,053 INFO news titles: []
+2024-05-26 19:08:52,018 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-05-26 19:09:02,121 INFO news titles: []
+2024-05-26 19:09:02,610 WARNING Not Found: /favicon.ico
+2024-05-26 19:09:03,921 ERROR Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 447, in category_percentage_view
+    category_counts = all_orders.values('product__category__name').annotate(count=Count('product__category__name'))
+                                                                                  ^^^^^
+NameError: name 'Count' is not defined
+2024-05-26 19:09:31,038 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-26 19:09:32,083 ERROR Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 448, in category_percentage_view
+    category_counts = all_orders.values('product__category__name').annotate(count=count('product__category__name'))
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: a number is required
+2024-05-26 19:09:33,529 ERROR Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 448, in category_percentage_view
+    category_counts = all_orders.values('product__category__name').annotate(count=count('product__category__name'))
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: a number is required
+2024-05-26 19:09:34,087 ERROR Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 448, in category_percentage_view
+    category_counts = all_orders.values('product__category__name').annotate(count=count('product__category__name'))
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: a number is required
+2024-05-26 19:09:34,378 ERROR Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 448, in category_percentage_view
+    category_counts = all_orders.values('product__category__name').annotate(count=count('product__category__name'))
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: a number is required
+2024-05-26 19:10:08,056 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-26 19:10:10,333 ERROR Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 448, in category_percentage_view
+    category_counts = all_orders.values('product__category__name').annotate(count=Category.objects.all().count)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1600, in _annotate
+    self._validate_values_are_expressions(
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1950, in _validate_values_are_expressions
+    raise TypeError(
+TypeError: QuerySet.annotate() received non-expression(s): <bound method QuerySet.count of <QuerySet [<Category: мягкие игрушки>, <Category: конструкторы>, <Category: настольные игры>, <Category: товары для детей>, <Category: радиоуправляемые игрушки>]>>.
+2024-05-26 19:12:01,581 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-26 19:12:03,947 WARNING Not Found: /favicon.ico
+2024-05-26 19:12:09,620 INFO news titles: []
+2024-05-26 19:12:15,925 INFO news titles: []
+2024-05-26 19:12:58,304 INFO news titles: []
+2024-05-26 19:12:59,219 INFO news titles: []
+2024-05-26 19:13:08,957 INFO news titles: []
+2024-05-26 19:13:10,021 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-26 19:13:25,013 INFO Amount: 10
+2024-05-26 19:13:25,019 INFO created Order object
+2024-05-26 19:13:25,026 INFO news titles: []
+2024-05-26 19:13:34,073 INFO company info: Toy Factory Company
+2024-05-26 19:13:35,229 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-05-26 19:13:45,747 INFO Amount: 4
+2024-05-26 19:13:45,755 INFO created Order object
+2024-05-26 19:13:45,762 INFO news titles: []
+2024-05-26 19:15:41,088 INFO news titles: []
+2024-05-26 19:16:12,210 INFO news titles: []
+2024-05-26 19:31:21,117 INFO news titles: []
+2024-05-26 19:31:21,298 WARNING Not Found: /favicon.ico
+2024-05-26 19:32:32,299 INFO news titles: []
+2024-05-26 19:32:32,512 WARNING Not Found: /favicon.ico
+2024-05-26 19:35:36,490 INFO news titles: []
+2024-05-26 19:35:36,604 WARNING Not Found: /favicon.ico
+2024-05-26 19:45:32,489 INFO news titles: []
+2024-05-26 19:45:32,593 WARNING Not Found: /favicon.ico
+2024-05-26 19:46:46,163 INFO news titles: []
+2024-05-26 19:53:19,959 INFO news titles: []
+2024-05-26 19:56:10,587 INFO news titles: []
+2024-05-26 19:56:10,633 WARNING Not Found: /favicon.ico
+2024-05-26 20:06:51,156 INFO news titles: []
+2024-05-26 20:10:07,476 INFO news titles: []
+2024-05-26 20:10:07,500 WARNING Not Found: /favicon.ico
+2024-05-26 20:23:01,304 INFO news titles: []
+2024-05-26 20:23:01,310 INFO news titles: []
+2024-05-26 20:23:01,311 INFO news titles: []
+2024-05-26 20:23:01,313 INFO news titles: []
+2024-05-26 20:23:01,314 INFO news titles: []
+2024-05-26 23:42:52,087 INFO news titles: []
+2024-05-26 23:42:52,145 WARNING Not Found: /favicon.ico
+2024-05-26 23:42:57,899 INFO vacancies titles: []
+2024-05-26 23:42:58,732 INFO contacts names: ['emp1', 'emp2', 'emp3', 'worker']
+2024-05-26 23:45:58,763 INFO news titles: []
+2024-05-26 23:45:58,767 INFO news titles: []
+2024-05-26 23:45:58,769 INFO news titles: []
+2024-05-26 23:45:58,770 INFO news titles: []
+2024-05-26 23:45:58,772 INFO news titles: []
+2024-05-26 23:46:20,749 INFO news titles: []
+2024-05-26 23:46:20,754 INFO news titles: []
+2024-05-26 23:46:20,756 INFO news titles: []
+2024-05-26 23:46:20,757 INFO news titles: []
+2024-05-26 23:46:20,758 INFO news titles: []
+2024-05-26 23:58:38,125 INFO news titles: []
+2024-05-26 23:58:38,133 INFO news titles: []
+2024-05-26 23:58:38,134 INFO news titles: []
+2024-05-26 23:58:38,136 INFO news titles: []
+2024-05-26 23:58:38,138 INFO news titles: []
+2024-05-26 23:59:02,546 INFO news titles: []
+2024-05-26 23:59:02,551 INFO news titles: []
+2024-05-26 23:59:02,553 INFO news titles: []
+2024-05-26 23:59:02,554 INFO news titles: []
+2024-05-26 23:59:02,555 INFO news titles: []
+2024-05-27 00:00:47,519 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-05-27 00:24:39,648 WARNING UserOrderListView: Пожалуйста, авторизуйтесь для получения списка ваших заказов
+2024-05-27 00:24:40,157 INFO contacts names: []
+2024-05-27 00:24:40,559 ERROR Internal Server Error: /userusername=request.user.username/edit_profile/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 192, in edit_profile_view
+    user = MyUser.objects.get(username=request.user.username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+toyFactory.models.MyUser.DoesNotExist: MyUser matching query does not exist.
+2024-05-27 00:24:40,772 INFO news titles: []
+2024-05-27 00:24:41,081 WARNING Not Found: /profile/
+2024-05-27 00:24:41,286 ERROR Failed to get response from the joke API
+2024-05-27 00:24:41,613 INFO reviews: []
+2024-05-27 00:24:41,715 INFO terms questions: []
+2024-05-27 00:24:41,820 INFO vacancies titles: []
+2024-05-27 00:27:22,664 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-27 00:27:22,976 INFO Profile: testuser
+2024-05-27 00:27:50,296 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-27 00:27:50,611 INFO Profile: testuser
+2024-05-27 00:28:15,052 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-27 00:28:15,367 INFO Profile: testuser
+2024-05-27 00:28:28,560 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-27 00:28:28,874 INFO Profile: testuser
+2024-05-27 00:29:01,010 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-27 00:29:01,320 INFO Profile: testuser
+2024-05-27 00:29:31,004 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-27 00:29:31,113 INFO company info: Toy Factory Company
+2024-05-27 00:29:31,326 INFO Profile: testuser
+2024-05-27 00:29:50,493 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-27 00:29:50,600 INFO company info: Toy Factory Company
+2024-05-27 00:29:50,808 INFO Profile: testuser
+2024-05-27 00:30:59,102 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-27 00:30:59,210 INFO company info: Toy Factory Company
+2024-05-27 00:30:59,434 INFO Profile: testuser
+2024-05-27 00:31:28,701 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-05-27 00:31:28,810 INFO company info: Toy Factory Company
+2024-05-27 00:31:29,022 INFO Profile: testuser
+2024-05-27 00:33:04,391 INFO news titles: []
+2024-05-27 00:34:15,769 INFO Profile: testuser
+2024-05-27 00:34:15,904 INFO news titles: []
+2024-05-27 00:38:02,312 INFO Profile: testuser
+2024-05-27 00:38:02,523 INFO news titles: []
+2024-05-27 00:47:18,742 INFO news titles: []
+2024-05-27 00:47:21,291 INFO Get response successfully
+2024-05-27 00:47:22,888 INFO Got response successfully
+2024-05-27 00:47:24,773 INFO Get response successfully

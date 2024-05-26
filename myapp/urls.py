@@ -23,9 +23,6 @@ from django.conf.urls.static import static
 from toyFactory import views
 from toyFactory.apiUsage import apiViews
 
-from toyFactory import statistic_views
-
-
 from django.contrib.auth.views import LoginView
 
 
@@ -54,15 +51,11 @@ urlpatterns = [
     path('random_joke', apiViews.random_joke, name='random_joke'),
     path('products/', views.ProductListView.as_view(), name='products'),
     re_path(r'orders/(?P<number>\d+)/cancel/', views.cancel_order, name='cancel_order'),   
-    # re_path(r'orders/(?P<number>\d+)/edit_status/(?P<selected_status>\w+)/', views.edit_order_status, name='edit_order_status'),    
     path('edit_order_status/<int:number>/', views.edit_order_status, name='edit_order_status'),
     
     path(r'products/<str:product_name>/order/create/', views.OrderCreateView.as_view(), name='create_order'),
     
-    path('price_list', statistic_views.price_list, name='price_list'),
-    path('demand_analysis', statistic_views.demand_analysis, name='demand_analysis'),
-    path('monthly_sales_volume', statistic_views.monthly_sales_volume, name='monthly_sales_volume'),
-    path('linear_trend', statistic_views.linear_sales_trend, name='linear_trend'),
+    path('statistics/', views.category_percentage_view, name='statistics')
 ]
 
 if settings.DEBUG:
