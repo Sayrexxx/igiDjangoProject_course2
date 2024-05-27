@@ -7,12 +7,17 @@ Use the following instructions to launch the application:
 Create an image:  
 `docker build -t <your_image_name> .`  
   
-(for example: `docker build -t igi .`  , your_image_name must be in lower case, special characters are allowed)
+(for example: `docker build -t igi_image .`  , your_image_name must be in lower case, special characters are allowed)
 
 Create and run the container with the application:  
-`docker run -dp <your_ports> <your_image_name>`  
+`docker run --name <your_container_name> -dp <your_ports> <your_image_name>`  
   
-(for example: `docker run -dp 8000:8000 igi`)
+(for example: `docker run --name igi_container -dp 8000:8000 igi_image`)  
 
+###### Tests are run during the image creation phase
 
-Tests are run during the image creation phase
+### localhost:<your_output_port>   
+
+to see application
+
+### localhost:8000 (for example)
