@@ -6950,3 +6950,21 @@ toyFactory.models.MyUser.DoesNotExist: MyUser matching query does not exist.
 2024-05-27 04:57:20,141 WARNING UserOrderListView: 
 2024-05-27 04:57:25,022 WARNING UserOrderListView: 
 2024-05-27 04:57:25,656 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:15:50,407 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:15:58,098 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:16:02,447 WARNING UserOrderListView: 
+2024-05-28 23:16:04,368 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:16:47,552 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:16:53,080 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:17:30,217 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-05-28 23:17:30,217 INFO ORDER NUMBER: 7
+ORDER DELIVERY POINT: brest
+2024-05-28 23:17:30,217 INFO ORDER NUMBER: 8
+ORDER DELIVERY POINT: minsk
+2024-05-28 23:17:30,217 INFO ORDER NUMBER: 9
+ORDER DELIVERY POINT: minsk
+2024-05-28 23:17:30,218 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке '}, {'number': 7, 'price': 2800.0, 'point': 'brest', 'status': 'В обработке'}, {'number': 8, 'price': 2000.0, 'point': 'minsk', 'status': 'В обработке'}, {'number': 9, 'price': 800.0, 'point': 'minsk', 'status': 'В обработке'}]
+2024-05-28 23:17:30,218 INFO UserOrderListView: customer order list was successfully created
+2024-05-28 23:17:32,079 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:17:37,092 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
