@@ -6,6 +6,11 @@ from django.db.models import Prefetch
 from django.views.generic import *
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.views import LoginView
+from django.db.models import Count
+import matplotlib.pyplot as plt
+import io
+import urllib, base64
+
 import requests
 import logging
 
@@ -356,13 +361,14 @@ class UserOrderListView(View):
                         warning_message_text = 'Нет заказов. Перейдите в каталог с товарами\n и найдите для себя что-нибудь интересное'
                 else:
                     user_orders = Order.objects.filter(product__employee=current_user)
-                    logging.info(f"123: {user_orders.first()}")
                     if user_orders:
                         orders_data = []
                         for order in user_orders:
+                            product_name = order.product.name
                             orders_data.append({
                                 "number": order.number,
                                 "customer": order.user,
+                                "product_name": product_name,
                                 "amount": order.amount,
                                 "price": order.price,
                                 "date_created": order.date_created,
@@ -410,25 +416,11 @@ def edit_order_status(request, number):
             return HttpResponseForbidden("Неверный статус")
     return render(request, 'news.html')
 
-
-from django.shortcuts import render
-from django.db.models import Count
-from .models import Order
-import matplotlib.pyplot as plt
-import io
-import urllib, base64
-
 def category_percentage_view(request):
-    # Получаем все заказы
     all_orders = Order.objects.all()
-
-    # Подсчитываем количество заказов для каждой категории
     category_counts = all_orders.values('product__category__name').annotate(count=Count('product__category__name'))
-
-    # Подсчитываем общее количество заказов
     total_orders = all_orders.count()
 
-    # Вычисляем процентное соотношение
     category_names = []
     category_percentages = []
     for category in category_counts:
@@ -436,12 +428,10 @@ def category_percentage_view(request):
         category_names.append(category['product__category__name'])
         category_percentages.append(percentage)
 
-    # Создаем диаграмму
     plt.figure(figsize=(10, 6))
     plt.pie(category_percentages, labels=category_names, autopct='%1.1f%%', startangle=140)
-    plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.axis('equal')
 
-    # Сохраняем диаграмму в буфер
     buf = io.BytesIO()
     plt.savefig(buf, format='png')
     buf.seek(0)
@@ -453,3 +443,33 @@ def category_percentage_view(request):
     }
 
     return render(request, 'category_percentage.html', context)
+
+def get_all_orders(request):
+    user_orders = Order.objects.all()
+    if user_orders:
+        orders_data = []
+        for order in user_orders:
+            product_name = order.product.name
+            orders_data.append({
+                "number": order.number,
+                "customer": order.user,
+                "product_name": product_name,
+                "amount": order.amount,
+                "price": order.price,
+                "date_created": order.date_created,
+                "delivery_date": order.delivery_date,
+                "delivery_point": order.delivery_point,
+                "promo_code": order.promo_code,
+                "status": order.status
+            })
+            logging.info(f"ORDER NUMBER: {order.number}")
+        context = {
+            'orders': orders_data,
+            'STATUS_CHOICES': order.STATUS_CHOICES
+        }
+        logging.info(f"ORDERS: {orders_data}")
+        return render(request, 'orders.html', context=context)
+    else:
+        warning_message_text = 'Для ваших товаров не найдено ни одного заказа'
+    return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
+
