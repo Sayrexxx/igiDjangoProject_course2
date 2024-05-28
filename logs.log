@@ -6950,3 +6950,17 @@ toyFactory.models.MyUser.DoesNotExist: MyUser matching query does not exist.
 2024-05-27 04:57:20,141 WARNING UserOrderListView: 
 2024-05-27 04:57:25,022 WARNING UserOrderListView: 
 2024-05-27 04:57:25,656 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:20:26,323 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:20:31,657 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:20:33,715 WARNING Not Found: /{%url 'all_orders' %
+2024-05-28 23:21:31,437 WARNING Not Found: /{%url 'all_orders' %
+2024-05-28 23:21:33,559 WARNING Not Found: /{%url 'all_orders' %
+2024-05-28 23:22:27,351 WARNING Not Found: /{%url 'all_orders' %
+2024-05-28 23:22:29,331 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-05-28 23:22:31,480 WARNING UserOrderListView: 
+2024-05-28 23:22:32,564 INFO ORDER NUMBER: 6
+2024-05-28 23:22:32,565 INFO ORDER NUMBER: 7
+2024-05-28 23:22:32,565 INFO ORDER NUMBER: 8
+2024-05-28 23:22:32,566 INFO ORDER NUMBER: 9
+2024-05-28 23:22:32,566 INFO ORDERS: [{'number': 6, 'customer': <MyUser: cust1>, 'product_name': 'мишка1', 'amount': 7, 'price': 420.0, 'date_created': datetime.datetime(2024, 5, 24, 14, 27, 51, 347136, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 28, 14, 26, 32, tzinfo=datetime.timezone.utc), 'delivery_point': 'gomel', 'promo_code': 'qqq50', 'status': 'В обработке '}, {'number': 7, 'customer': <MyUser: cust1>, 'product_name': 'вертолет1', 'amount': 40, 'price': 2800.0, 'date_created': datetime.datetime(2024, 5, 24, 16, 16, 10, 981146, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2025, 5, 27, 16, 12, 47, tzinfo=datetime.timezone.utc), 'delivery_point': 'brest', 'promo_code': 'qqq50', 'status': 'В обработке'}, {'number': 8, 'customer': <MyUser: cust1>, 'product_name': 'лего1', 'amount': 10, 'price': 2000.0, 'date_created': datetime.datetime(2024, 5, 26, 16, 13, 25, 14203, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 30, 16, 12, 1, tzinfo=datetime.timezone.utc), 'delivery_point': 'minsk', 'promo_code': '', 'status': 'В обработке'}, {'number': 9, 'customer': <MyUser: cust1>, 'product_name': 'лего1', 'amount': 4, 'price': 800.0, 'date_created': datetime.datetime(2024, 5, 26, 16, 13, 45, 749001, tzinfo=datetime.timezone.utc), 'delivery_date': datetime.datetime(2024, 5, 30, 16, 12, 1, tzinfo=datetime.timezone.utc), 'delivery_point': 'minsk', 'promo_code': '', 'status': 'В обработке'}]
+2024-05-28 23:22:53,103 WARNING Not Found: /favicon.ico

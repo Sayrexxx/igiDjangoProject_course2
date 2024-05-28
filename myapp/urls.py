@@ -54,6 +54,8 @@ urlpatterns = [
     path('edit_order_status/<int:number>/', views.edit_order_status, name='edit_order_status'),
     
     path(r'products/<str:product_name>/order/create/', views.OrderCreateView.as_view(), name='create_order'),
+
+    path('orders/all/', views.get_all_orders, name='all_orders'),
     
     path('statistics/', views.category_percentage_view, name='statistics')
 ]

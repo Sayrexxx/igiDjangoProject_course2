@@ -4,10 +4,24 @@
 
 {% block content %}
 {% for order in orders %}
-    {% if getUserRole == 'employee' %}
+    {% if getUserRole == 'customer' %}
+        <div>
+            <h2>Номер заказа: {{ order.number }}</h2>
+            <p>Стоимость: ${{ order.price }}</p>
+            <p>Пункт выдачи: {{ order.point }}</p>
+            <p>Статус: {{ order.status }}
+        </div>
+        {% if order.status == "В обработке" %}
+            <form action="{% url 'cancel_order' order.number%}" method="post">
+                {% csrf_token %}
+                <button type="submit">Cancel order</button>
+            </form>
+        {% endif %}
+    {% else %}
         <div>
             <h2>Номер заказа: {{ order.number }} </h2>
             <p>покупатель: {{ order.customer }}</p>
+            <p>название товара: {{ order.product_name }}</p>
             <p>количество: {{ order.amount }}</p>
             <p>стоимость: {{ order.price }}</p>
             <p>дата создания: {{ order.date_created }}</p>
@@ -26,19 +40,6 @@
                 <button type="submit">Сохранить</button>
             </form>
         </div>
-    {% else %}
-        <div>
-            <h2>Номер заказа: {{ order.number }}</h2>
-            <p>Стоимость: ${{ order.price }}</p>
-            <p>Пункт выдачи: {{ order.point }}</p>
-            <p>Статус: {{ order.status }}
-        </div>
-        {% if order.status == "В обработке" %}
-            <form action="{% url 'cancel_order' order.number%}" method="post">
-                {% csrf_token %}
-                <button type="submit">Cancel order</button>
-            </form>
-        {% endif %}
     {% endif %}
 {% endfor %}
 {% endblock content %}
