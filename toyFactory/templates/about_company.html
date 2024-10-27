@@ -1,7 +1,35 @@
 {% extends "base.html" %}
-{% block title %}Company info{% endblock title %}
-{% block header %}Company info{% endblock header %}
+
+{% block title %}About company{% endblock title %}
 
 {% block content %}
-    <p>{{ company_info_text }}</p>
+    <h1>{{ info.name }}</h1>
+
+    {% if info.logo %}
+        <img src="{{ info.logo.url }}" alt="{{ info.name }} Logo" class="company-logo">
+    {% endif %}
+
+    <p>{{ info.description }}</p>
+
+    {% if info.video %}
+        <div class="company-video">
+            <iframe width="560" height="315" src="{{ info.video }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+    {% endif %}
+
+    {% if info.history %}
+        <h2>History</h2>
+        <p>{{ info.history|linebreaks }}</p>
+    {% endif %}
+
+    {% if info.requisites %}
+        <h2>Requisites</h2>
+        <p>{{ info.requisites|linebreaks }}</p>
+    {% endif %}
+
+    {% if info.certificate %}
+        <h2>Certificates</h2>
+        <p>{{ info.certificate|linebreaks }}</p>
+    {% endif %}
 {% endblock content %}
+

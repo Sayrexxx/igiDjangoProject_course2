@@ -27,10 +27,11 @@ from django.contrib.auth.views import LoginView
 
 
 urlpatterns = [
-    path('', views.news, name='home'),
+    path('', views.home, name='home'),
     path('about/', views.about_company, name='about'),
     path('news/', views.news, name='news'),
     path('terms/', views.terms, name='terms'),
+    path('coupons/', views.coupons, name='coupons'),
     path('contacts/', views.contacts, name='contacts'),
     path('vacancies/', views.vacancies, name='vacancies'),
     path('reviews/', views.reviews, name='reviews'),
@@ -53,11 +54,18 @@ urlpatterns = [
     re_path(r'orders/(?P<number>\d+)/cancel/', views.cancel_order, name='cancel_order'),   
     path('edit_order_status/<int:number>/', views.edit_order_status, name='edit_order_status'),
     
-    path(r'products/<str:product_name>/order/create/', views.OrderCreateView.as_view(), name='create_order'),
+    path('products/order/create/', views.OrderCreateView.as_view(), name='create_order'),
 
     path('orders/all/', views.get_all_orders, name='all_orders'),
     
-    path('statistics/', views.category_percentage_view, name='statistics')
+    path('statistics/', views.category_percentage_view, name='statistics'),
+
+    path('add_to_cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
+    path('cart/', views.cart_detail, name='cart_detail'),
+    path('remove_from_cart/<int:cart_id>/', views.remove_from_cart, name='remove_from_cart'),
+    path('checkout/', views.checkout, name='checkout'),
+    path('news/<int:article_id>/', views.article_detail, name='article_detail'),
+
 ]
 
 if settings.DEBUG:

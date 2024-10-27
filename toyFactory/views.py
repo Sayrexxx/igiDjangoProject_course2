@@ -14,6 +14,12 @@ import urllib, base64
 import requests
 import logging
 
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+from django.contrib import messages
+
+
+
 logging.basicConfig(level=logging.INFO, filename='logs.log', filemode='a',
                     format='%(asctime)s %(levelname)s %(message)s')
 
@@ -25,12 +31,22 @@ def getUserRole(name):
             role = MyUser.objects.all().filter(username=name).first().role
             return role
 
-
 def about_company(request):
-    company_info_text = 'Toy Factory Company'
-    logging.info(f'company info: {company_info_text}')
-    return render(request, 'about_company.html', {'company_info_text': company_info_text})
+    info = CompanyInfo.objects.first()
+    logging.info(f'Company info: {info}')
+    return render(request, 'about_company.html', {'info': info})
 
+def home(request):
+    first_of_news = Article.objects.first()
+    name = request.user.username
+
+    context = {
+        'first_of_news': first_of_news,
+        'getUserRole': getUserRole(name),
+    }
+
+    logging.info(f'news titles: {[first_of_news.title]}')
+    return render(request, 'home.html', context)
 
 def news(request):
     all_news = Article.objects.all()
@@ -46,9 +62,12 @@ def news(request):
 
 
 def terms(request):
-    all_terms = Term.objects.all()
-    logging.info(f'terms questions: {[term.question for term in all_terms]}')
-    return render(request, 'terms.html', {'all_terms': all_terms})
+    all_terms = DictionaryOfTerms.objects.all()
+    for term in all_terms:
+        term.summary = term.answer[:20] + "..."
+        term.save()
+    logger.info("Get the questions and answers")
+    return render(request, "terms.html", {"all_terms": all_terms})
 
 
 def contacts(request):
@@ -257,75 +276,111 @@ class ProductListView(ListView):
             return filtered_products
         return products
 
-class OrderCreateView(View):
-    warning_message_text = ""
 
-    def get(self, request, product_name, *args, **kwargs):
+from django.views import View
+from django.shortcuts import render, redirect
+from django.utils import timezone
+from datetime import timedelta
+from .models import MyUser, Product, Cart, Order, Promo
+from .forms import OrderForm  # Убедитесь, что ваш файл форм содержит нужные формы
+import logging
+
+
+from django.shortcuts import render, redirect
+from django.views import View
+from .forms import OrderForm
+from .models import MyUser, Cart, Product, Order, Promo
+import logging
+from django.utils import timezone
+from datetime import timedelta
+
+class OrderCreateView(View):
+    def get(self, request, *args, **kwargs):
         warning_message_text = ""
-        if request.user.is_authenticated and getUserRole(request.user.username) == 'customer' and \
-                Product.objects.filter(name=product_name).exists():
-            product = Product.objects.get(name=product_name)
-            # Initialize the form with available_amount
-            form = OrderForm(available_amount=product.amount)
-            context = {
-                'product': product,
-                'form': form,
-            }
-            return render(request, 'order_form.html', context)
+        user = MyUser.objects.get(username=request.user.username)
+
+        if request.user.is_authenticated and getUserRole(request.user.username) == 'customer':
+            cart_items = Cart.objects.filter(user=user)
+            if not cart_items.exists():
+                warning_message_text = "Ваша корзина пуста. Пожалуйста, добавьте товары."
+                return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
+
+            total_price = sum(item.get_price() for item in cart_items)
+            products_forms = []
+            
+            for item in cart_items:
+                product = item.product
+                form = OrderForm(available_amount=product.amount)
+                products_forms.append({'product': product, 'form': form, 'cart_item': item})
+
+            return render(request, 'cart_detail.html', {
+                'products_forms': products_forms,
+                'total_price': total_price
+            })
         else:
             warning_message_text = 'Пожалуйста, авторизуйтесь, чтобы оформить заказ'
-        logging.warning(f'UserOrderListView: {warning_message_text}')
+        
+        logging.warning(f'OrderCreateView GET: {warning_message_text}')
         return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
 
-    def post(self, request, product_name, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         warning_message_text = ""
-        if request.user.is_authenticated and getUserRole(request.user.username) == 'customer' and \
-                Product.objects.filter(name=product_name).exists():
-            product = Product.objects.get(name=product_name)
-            form = OrderForm(request.POST, available_amount=product.amount)
+        if request.user.is_authenticated and getUserRole(request.user.username) == 'customer':
+            cart_items = Cart.objects.filter(user=request.user)
 
-            if form.is_valid():
-                amount = form.cleaned_data['amount']
-                delivery_date = form.cleaned_data['delivery_date']
-                promo_code = form.cleaned_data['promo_code']
-                delivery_point = form.cleaned_data['delivery_point']
-                if amount <= product.amount:
-                    if not promo_code:
-                        Order.objects.create(
-                            user=MyUser.objects.get(username=request.user.username),
-                            product=product,
-                            amount=amount,
-                            price=amount * product.price,
-                            delivery_date=delivery_date,
-                            delivery_point=delivery_point
-                        )
-                    else:
-                        if not Promo.objects.all().filter(code=promo_code).exists():
+            for item in cart_items:
+                product = item.product
+                form = OrderForm(request.POST, available_amount=product.amount)
+                
+                if form.is_valid():
+                    amount = form.cleaned_data['amount']
+                    delivery_date = form.cleaned_data['delivery_date']
+                    promo_code = form.cleaned_data['promo_code']
+                    delivery_point = form.cleaned_data['delivery_point']
+
+                    price = product.price * amount
+                    
+                    # Проверка на наличие промокода
+                    if promo_code:
+                        try:
+                            promo = Promo.objects.get(code=promo_code)
+                            price *= (100 - promo.discount) / 100
+                        except Promo.DoesNotExist:
                             warning_message_text = "Такого промокода нет"
-                            return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
+                            logging.warning(f'Промокод не найден: {promo_code}')
+                            break
 
-                        promo = Promo.objects.get(code=promo_code)
-                        order = Order.objects.create(
-                            user=MyUser.objects.get(username=request.user.username),
-                            product=product,
-                            amount=amount,
-                            promo_code = promo,
-                            price=amount * product.price * ((100 - promo.discount) / 100),
-                            delivery_date=delivery_date,
-                            delivery_point=delivery_point
-                        )
+                    # Создание заказа
+                    Order.objects.create(
+                        user=request.user,
+                        product=product,
+                        amount=amount,
+                        price=price,
+                        delivery_date=delivery_date,
+                        delivery_point=delivery_point
+                    )
+                    
                     product.amount -= amount
                     product.save()
-                    logging.info('created Order object')
+                    
+                    logging.info('Создан заказ для пользователя %s: %s', request.user.username, product.name)
                     return redirect('news')
+
                 else:
-                    warning_message_text = 'Недостаточно товаров'
-            else:
-                warning_message_text = form.errors
+                    # Получение ошибок формы
+                    warning_message_text = form.errors.as_text()
+                    logging.warning(f'OrderForm validation errors: {warning_message_text}')
+
+            if warning_message_text:
+                logging.warning(f'OrderCreateView POST: {warning_message_text}')
+                return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
+
         else:
             warning_message_text = 'Пожалуйста, авторизуйтесь, чтобы оформить заказ'
-        logging.warning(f'UserOrderListView: {warning_message_text}')
+        
+        logging.warning(f'OrderCreateView POST: {warning_message_text}')
         return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
+
 
 
 class UserOrderListView(View):
@@ -473,3 +528,50 @@ def get_all_orders(request):
         warning_message_text = 'Для ваших товаров не найдено ни одного заказа'
     return render(request, 'warning_message.html', {'warning_message_text': warning_message_text})
 
+def article_detail(request, article_id):
+    article = get_object_or_404(Article, id=article_id)
+    return render(request, 'article_detail.html', {'article': article})
+
+def coupons(request):
+    coupons = Promo.objects.all()
+    logging.info(f'Coupons: {[coupon.code for coupon in coupons]}')
+    return render(request, "coupons.html", {"coupons": coupons})
+
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    user = get_object_or_404(MyUser, id=request.user.id)
+    cart_item, created = Cart.objects.get_or_create(user=user, product=product, defaults={'amount': 1})
+    if not created:
+        cart_item.amount += 1
+        cart_item.save()
+    return redirect('products')
+
+def cart_detail(request):
+    cart_items = Cart.objects.filter(user=request.user)
+    total_price = sum(item.get_price() for item in cart_items)
+    return render(request, 'cart_detail.html', {'cart_items': cart_items, 'total_price': total_price})
+
+@require_POST
+def remove_from_cart(request, cart_id):
+    cart_item = get_object_or_404(Cart, id=cart_id, user=request.user)
+    cart_item.delete()
+    return redirect('cart_detail')
+
+@login_required
+def checkout(request):
+    # Fetch the actual MyUser instance
+    user = MyUser.objects.get(pk=request.user.pk)
+
+    cart_items = Cart.objects.filter(user=user)
+
+    for item in cart_items:
+        product = item.product
+        # Add the user to the session participants
+        session.participants.add(user)
+        session.save()
+
+    # Clear the cart after checkout
+    cart_items.delete()
+
+    messages.success(request, "Вы оформили заказ!")
+    return redirect('registered_trainings_list')

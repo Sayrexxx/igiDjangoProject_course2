@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}Промокоды{% endblock %}
+
+{% block content %}
+    <h2>Действующие промокоды</h2>
+        {% for coupon in coupons %}
+            {% if coupon.is_active %}
+                <p>Скидка: {{ coupon.discount }} процентов</p>
+                <p>Код: {{ coupon.code }}</p>
+            {% endif %}
+        {% endfor %}
+    <h2>Архив</h2>
+        {% for coupon in coupons %}
+            {% if not coupon.is_active %}
+                <p>Скидка: {{ coupon.discount }} процентов</p>
+                <p>Код: {{ coupon.code }}</p>
+            {% endif %}
+        {% endfor %}
+{% endblock %}

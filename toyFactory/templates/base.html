@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,8 @@
     <title>{% block title %}Default title{% endblock title %}</title>
 </head>
 <body>
+    <img src="{% static 'img/toyFactory.png' %}" alt="Logo" height="200" width="200"/><br>    
+
     {% if request.user.is_authenticated %}
         {% load tz %}
         {% get_current_timezone as TIME_ZONE %}
@@ -14,10 +17,12 @@
         Current Time: {{ current_time }}
         <br>
     {% endif %}
-    <a href="{%url 'home' %}">Главная</a>
+    <a href="{%url 'home' %}">Главная</a><br>
+    <a href="{%url 'news' %}">Новости</a>
     {% if request.user.is_authenticated %}
             <li> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
             <a href="{%url 'user_orders'%}">Текущие заказы</a><br>
+            <a href="{%url 'cart_detail'%}"> Корзина</a>
             {% if getUserRole == 'customer' %}
                 <a href="{%url 'add_review' %}"><li>Оставить отзыв</li></a>
             {% endif %}
@@ -35,6 +40,7 @@
     <a href="{%url 'products' %}">Каталог товаров</a><br>
     <a href="{%url 'vacancies' %}">Вакансии</a> | <a href="{%url 'about' %}">О компании</a> | <a href="{%url 'contacts' %}">Контакты продавцов</a><br>
     <a href="{%url 'terms' %}">FAQ</a><br>
+    <a href="{%url 'coupons' %}"> Купоны</a><br>
     <a href="{%url 'privacy_policy' %}">Политика конфиденциальности</a>
     <br><br>
     <a href="{%url 'cat_facts' %}">Факты о котах</a> |

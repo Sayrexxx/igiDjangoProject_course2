@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Ваша корзина</h1>
+<ul>
+    {% for item in cart_items %}
+    <li>
+        <strong>{{ item.product.training_name }}</strong> - Количество: {{ item.amount }}<br>
+        Стоимость: {{ item.get_price }}<br>
+        <form method="post" action="{% url 'remove_from_cart' item.id %}">
+            {% csrf_token %}
+            <button type="submit">Удалить товар</button>
+        </form>
+    </li>
+    {% empty %}
+    <li>Корзина пуста</li>
+    {% endfor %}
+</ul>
+
+{% if cart_items %}
+<p>Итоговая стоимость: {{ total_price }}</p>
+<form method="post" action="{% url 'create_order' %}">
+    {% csrf_token %}
+    <button type="submit">Оформить заказ</button>
+</form>
+{% endif %}
+{% endblock content %}

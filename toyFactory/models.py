@@ -25,20 +25,29 @@ class Article(models.Model):
 
 
 class CompanyInfo(models.Model):
-    text = models.TextField()
+    name = models.CharField(default='', max_length=255, verbose_name="Название компании")
+    description = models.TextField(default='', verbose_name="Описание компании")  # Set a default value
+    logo = models.ImageField(upload_to='logos/', null=True, blank=True, verbose_name="Логотип компании")
+    video = models.URLField(null=True, blank=True, verbose_name="Видео о компании")
+    history = models.TextField(null=True, blank=True, verbose_name="История по годам")
+    requisites = models.TextField(null=True, blank=True, verbose_name="Реквизиты")
+    certificate = models.TextField(null=True, blank=True, verbose_name="Сертификаты")
 
     def __str__(self):
-        return self.text
+        return self.name
 
 
-class Term(models.Model):
-    question = models.CharField(max_length=255)
+class DictionaryOfTerms(models.Model):
+    question = models.CharField(max_length=1000)
     answer = models.TextField()
-    date_added = models.DateField(auto_now_add=True)
+    summary = models.CharField(max_length=40, default='')
+    date = models.DateField(auto_now_add=True)
 
     def __str__(self):
+        """
+        String for representing the DictionaryOfTerms object.
+        """
         return self.question
-
 
 class Vacancy(models.Model):
     title = models.CharField(max_length=100)
@@ -134,6 +143,8 @@ class PickUpPoint(models.Model):
 class Promo(models.Model):
     code = models.CharField(max_length=8)
     discount = models.PositiveSmallIntegerField()
+    is_active = models.BooleanField(default=True)
+
 
     def __str__(self):
         return self.code
@@ -163,3 +174,16 @@ class Order(models.Model):
 
     def __str__(self):
         return self.product.name
+
+
+class Cart(models.Model):
+    user = models.ForeignKey('MyUser', on_delete=models.CASCADE, related_name='carts')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    amount = models.PositiveIntegerField(default=1)
+
+    def get_price(self):
+        if self.product and self.product.price:
+            return (self.amount * self.product.price)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.product.name}"

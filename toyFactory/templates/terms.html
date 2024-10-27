@@ -1,13 +1,26 @@
 {% extends "base.html" %}
 {% block title %}Terms{% endblock title %}
-{% block header %}Часто задаваемые вопросы{% endblock header %}
+{% block header %}Terms{% endblock header %}
 
 {% block content %}
-    {% for term_item in all_terms %}
-        <div>
-            <h2>{{ term_item.question }}</h2>
-            <p>{{ term_item.answer }}</p>
-            <p>{{ term_item.date_added }}</p>
-        </div>
-    {% endfor %}
-{% endblock content %}
+<section translate="yes">
+    <section>
+        {% for term in all_terms%}
+            <article>
+                <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; margin-top: 20px">
+                    <p>Question: {{ term.question }}</p>
+                    <details>
+                        <summary>
+                            "Description
+                        </summary>
+                        <p>Answer: {{ term.answer }}</p>
+                    </details>
+
+                    <p>Date of Publication: <time datetime="{{ term.date }}">{{ term.date }}</time></p>
+                    </a>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+</section>
+{% endblock %}

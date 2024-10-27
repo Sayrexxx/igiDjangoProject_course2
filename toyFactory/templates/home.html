@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% load tz %}
+{% block title %}First of news{% endblock title %}
+{% block header %}First of news{% endblock header %}
+
+{% block content %}
+{% if first_of_news %}
+    <div>
+        <h2>{{ first_of_news.title }}</h2>
+        <p>{{ first_of_news.content }}</p>
+        {% if first_of_news.image.url %}
+            <img src="{{ first_of_news.image.url }}" alt="{{ first_of_news.title }}" height="500" width="500">
+        {% endif %}
+        <p>{{ first_of_news.published_date }}</p>
+    </div>
+{% else %}
+    <p>No news available.</p>
+{% endif %}
+<h1>Наши партнеры</h1>
+
+    <div>
+        <a href="https://github.com/" target="_blank">
+            <img src="{% static 'img/git_logo.png' %}" alt="Logo" height="100" width="100"/>
+        </a>
+        <p>Компания 1</p>
+
+        <a href="https://www.postman.com/" target="_blank">
+            <img src="{% static 'img/postman_logo.png' %}" alt="Logo" height="100" width="100"/>
+        </a>
+        <p>Компания 2</p>
+    </div>
+{% endblock content %}

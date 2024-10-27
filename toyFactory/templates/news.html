@@ -1,15 +1,17 @@
-{% extends "base.html" %}
-{% load tz %}
-{% block title %}News{% endblock title %}
-{% block header %}News{% endblock header %}
+{% extends 'base.html' %}
 
 {% block content %}
-{% for news_item in all_news %}
-    <div>
-        <h2>{{ news_item.title }}</h2>
-        <p>{{ news_item.content }}</p>
-        <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}" height="500" width="500">
-        <p>{{ news_item.published_date }}</p>
+    <h1>Новости</h1>
+    <div class="news-list">
+        {% for article in all_news %}
+            <div class="article-preview">
+                <h2>{{ article.title }}</h2>
+                <img src="{{ article.image.url }}" alt="{{ article.title }}" style="width: 300px; height: auto;">
+                <p>{{ article.content|truncatewords:5 }}...</p>
+                <a href="{% url 'article_detail' article.id %}" class="read-more-btn">Читать далее</a>
+            </div>
+        {% empty %}
+            <p>Статей пока нет.</p>
+        {% endfor %}
     </div>
-{% endfor %}
-{% endblock content %}
+{% endblock %}
