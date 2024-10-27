@@ -66,6 +66,8 @@ urlpatterns = [
     path('add_to_cart/<str:product_name>/', views.AddToCartView.as_view(), name='add_to_cart'),
     path('cart/', views.CartView.as_view(), name='cart_detail'),
     path('remove_from_cart/<int:item_id>/', views.RemoveFromCartView.as_view(), name='remove_from_cart'),
+    path('demonstration/', views.demonstration, name='demonstration'),
+
 ]
 
 if settings.DEBUG:

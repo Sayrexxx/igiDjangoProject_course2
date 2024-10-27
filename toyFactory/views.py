@@ -577,3 +577,7 @@ class RemoveFromCartView(View):
         cart_item = get_object_or_404(CartItem, id=item_id, cart__user=request.user)
         cart_item.delete()
         return redirect('cart_detail')
+    
+
+def demonstration(request):
+    return render(request, 'demonstration.html')

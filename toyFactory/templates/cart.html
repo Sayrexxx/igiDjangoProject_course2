@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Your Cart</h2>
+<h2>Корзина</h2>
 {% if cart and cart.items.exists %}
     <form method="post">
         {% csrf_token %}
@@ -9,18 +9,18 @@
             <li>
                 {{ item.product.name }} - 
                 <input type="number" name="quantity_{{ item.id }}" value="{{ item.quantity }}" min="1" max="{{ item.product.amount }}">
-                <button formaction="{% url 'remove_from_cart' item.id %}" formmethod="post">Remove</button>
+                <button formaction="{% url 'remove_from_cart' item.id %}" formmethod="post">Удалить товар</button>
             </li>
         {% endfor %}
         </ul>
-        <button type="submit">Update Cart</button>
+        <button type="submit">Обновить корзину</button>
     </form>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Checkout</button>
+        <button type="submit">Оформить заказ</button>
     </form>
 {% else %}
-    <p>Your cart is empty.</p>
+    <p>Корзина пуста. Добавьте товары для оформления заказа</p>
 {% endif %}
 {% endblock content %}

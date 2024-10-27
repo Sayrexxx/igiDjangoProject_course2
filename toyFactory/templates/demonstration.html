@@ -1,0 +1,319 @@
+{% extends 'base.html' %} {% load static %} {% block meta %}
+<link rel="icon" href="{% static 'images/favicon.jpg' %}" type="image/jpeg" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Демонстрационная страница с базовыми элементами HTML, включая код, таблицы, медиа-контент и другие компоненты."
+/>
+<meta name="keywords" content="HTML, демонстрация, обучение, пример кода, видео, изображения" />
+<meta property="og:title" content="Демонстрационная страница с элементами HTML" />
+<meta
+  property="og:description"
+  content="Изучите основы HTML на примере этой демонстрационной страницы."
+/>
+<meta property="og:image" content="{% static 'images/social-preview.jpg' %}" />
+<meta property="og:url" content="http://yourwebsite.com/demo-page" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@yourtwitterhandle" />
+<meta name="twitter:title" content="Демонстрационная страница с элементами HTML" />
+<meta
+  name="twitter:description"
+  content="Изучите основы HTML на примере этой демонстрационной страницы."
+/>
+<meta name="twitter:image" content="{% static 'images/twitter-preview.jpg' %}" />
+{% endblock %} {% block title %}Демонстрационная страница с элементами HTML{% endblock %} 
+{% block content %}
+<article itemscope itemtype="http://schema.org/WebPage">
+  <h2 itemprop="name">Демонстрационная страница с элементами HTML</h2>
+
+  <!-- Вертикальная навигация -->
+  <h3>Вертикальная навигация:</h3>
+  <nav>
+    <ul>
+      <li><a href="#home">Главная</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#contact">Контакты</a></li>
+      <li><a href="#about">О нас</a></li>
+    </ul>
+  </nav>
+
+  <!-- Дата публикации страницы -->
+  <p>
+    Эта страница была опубликована:
+    <time datetime="2024-10-27">27 октября 2024 года</time>
+    .
+  </p>
+
+  <!-- Обычная ссылка -->
+  <p>
+    Перейти на
+    <a href="https://www.example.com">другую страницу</a>
+    .
+  </p>
+
+  <!-- Якорная ссылка -->
+  <p>
+    Перейти к
+    <a href="#section1">секции 1</a>
+  </p>
+
+  <!-- Ссылка для скачивания документа -->
+  <p>
+    Скачать документ:
+    <a href="{% static 'documents/example.pdf' %}" download>Скачать PDF</a>
+    .
+  </p>
+
+  <!-- Внешняя ссылка (откроется в новой вкладке) -->
+  <p>
+    Перейти на внешний ресурс:
+    <a href="https://www.google.com" target="_blank">Google</a>
+    .
+  </p>
+
+  <!-- Листинг кода -->
+  <div itemprop="exampleOfWork" itemtype="http://schema.org/SoftwareSourceCode">
+    <pre><code itemprop="text">
+    # Пример листинга Python
+    <strong>def hello_world():</strong>
+        print("Hello, World!")
+    </code></pre>
+  </div>
+
+  <!-- Стихотворение с фиксированным переводом строки -->
+  <h3>Четверостишие:</h3>
+  <pre>
+        Мелькнула тень, и мир замер,
+        В ночи струится свет вдали.
+        Прошло мгновенье - и вдруг снова
+        Заговорили ветры дней.
+    </pre
+  >
+  Самое длинное слово из химии:
+  <br />
+  метбьтывиадлоиывалодитоксихлор
+  <wbr />
+  диэтидлрывпрадрыиадлрывиадыраиываламино
+  <wbr />
+  метюлоыиваил
+  <wbr />
+  бутил
+  <wbr />
+  амино
+  <wbr />
+  акридин
+
+  <h3>Форма:</h3>
+  <form action="/submit" method="post">
+    <label for="name">Имя:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      minlength="2"
+      maxlength="30"
+      placeholder="Введите ваше имя"
+    />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Введите ваш email" />
+
+    <label for="password">Пароль:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      required
+      minlength="8"
+      placeholder="Введите пароль"
+    />
+
+    <label for="age">Возраст:</label>
+    <input
+      type="number"
+      id="age"
+      name="age"
+      required
+      min="18"
+      max="100"
+      placeholder="Введите ваш возраст"
+    />
+
+    <label for="country">Страна:</label>
+    <select id="country" name="country" required>
+      <option value="">Выберите страну</option>
+      <option value="ru">Россия</option>
+      <option value="us">США</option>
+      <option value="de">Германия</option>
+    </select>
+
+    <label for="dob">Дата рождения:</label>
+    <input type="date" id="dob" name="dob" required />
+
+    <label for="subscribe">Подписаться на новости</label>
+    <input type="checkbox" id="subscribe" name="subscribe" />
+
+    <p>Ваш пол:</p>
+    <label>
+      <input type="radio" name="gender" value="male" required />
+      Мужской
+    </label>
+    <label>
+      <input type="radio" name="gender" value="female" required />
+      Женский
+    </label>
+
+    <label for="website">Вебсайт:</label>
+    <input type="url" id="website" name="website" placeholder="https://example.com" />
+
+    <label for="resume">Загрузить резюме:</label>
+    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" />
+
+    <label for="comments">Комментарии:</label>
+    <textarea
+      id="comments"
+      name="comments"
+      rows="4"
+      cols="50"
+      placeholder="Ваши комментарии"
+    ></textarea>
+
+    <button type="submit">Отправить</button>
+
+    <button type="reset">Очистить</button>
+  </form>
+
+  <!-- Сокращения и определения -->
+  <dl>
+    <dt><abbr title="Hypertext Markup Language">HTML</abbr></dt>
+    <dd itemprop="about">Язык разметки, используемый для создания и представления веб-страниц.</dd>
+
+    <dt><abbr title="Cascading Style Sheets">CSS</abbr></dt>
+    <dd itemprop="about">
+      <dfn>CSS</dfn>
+      (Cascading Style Sheets) — Язык стилей, который используется для описания внешнего вида и
+      форматирования документа, написанного на языке разметки.
+    </dd>
+
+    <dt><abbr title="JavaScript">JS</abbr></dt>
+    <dd itemprop="about">
+      <dfn>JavaScript</dfn>
+      — Язык программирования, который используется для создания интерактивных эффектов внутри
+      веб-браузеров.
+    </dd>
+  </dl>
+
+  <!-- Цитаты -->
+  <div itemprop="citation" itemscope itemtype="http://schema.org/CreativeWork">
+    <blockquote itemprop="text">
+      <strong>
+        "Это блоковая цитата, которая может занимать несколько строк текста и используется для
+        выделения более длинных цитат из текста."
+      </strong>
+    </blockquote>
+    <p itemprop="author">
+      Как сказал кто-то важный:
+      <q itemprop="text"><mark>Я знаю, что ничего не знаю.</mark></q>
+    </p>
+  </div>
+
+  <!-- Пример вложенного списка -->
+  <h3>Пример вложенного списка:</h3>
+  <ul type="square">
+    <li>
+      Элемент 1
+      <ul>
+        <li>Подэлемент 1.1</li>
+        <li>Подэлемент 1.2</li>
+      </ul>
+    </li>
+    <li>Элемент 2</li>
+  </ul>
+
+  <!-- Фигуры и подписи -->
+  <figure itemscope itemtype="http://schema.org/ImageObject">
+    <img
+      src="{% static 'images/git_logo.png' %}"
+      alt="Пример изображения"
+      width="30%"
+      itemprop="contentUrl"
+    />
+    <figcaption itemprop="description">
+      Это описание к
+      <strong>изображению</strong>
+      .
+    </figcaption>
+  </figure>
+
+  <!-- Якорь секции -->
+  <h3 id="section1">Секция 1</h3>
+  <p>Это пример текста для секции 1, куда можно перейти через якорную ссылку.</p>
+
+  <!-- Таблица -->
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th id="th-name">Имя</th>
+        <th id="th-age">Возраст</th>
+        <th id="th-city" colspan="2">Местоположение</th>
+      </tr>
+      <tr>
+        <th id="th-country">Страна</th>
+        <th id="th-city-name">Город</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td headers="th-name">Алексей</td>
+        <td headers="th-age">31</td>
+        <td headers="th-country th-city-name" colspan="2">Россия, Москва</td>
+      </tr>
+      <tr>
+        <td headers="th-name">Мария</td>
+        <td headers="th-age">27</td>
+        <td headers="th-country">Россия</td>
+        <td headers="th-city-name">Санкт-Петербург</td>
+      </tr>
+      <tr>
+        <td headers="th-name">Иван</td>
+        <td headers="th-age">35</td>
+        <td headers="th-country">Россия</td>
+        <td headers="th-city-name">Новосибирск</td>
+      </tr>
+      <tr>
+        <td headers="th-name">Джон</td>
+        <td headers="th-age">40</td>
+        <td headers="th-country">США</td>
+        <td headers="th-city-name">Нью-Йорк</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Iframe, видео и аудио -->
+  <iframe
+    itemprop="video"
+    itemscope
+    itemtype="http://schema.org/VideoObject"
+    src="https://www.youtube.com/embed/X23kjQWSyPQ"
+    style="border: none; width: 30%; height: 315px"
+  ></iframe>
+  <video
+    itemprop="video"
+    itemscope
+    itemtype="http://schema.org/VideoObject"
+    controls
+    width="30%"
+    height="360"
+  >
+    <source src="{% static 'video/sample-5s.mp4' %}" type="video/mp4" itemprop="contentUrl" />
+    Ваш браузер не поддерживает видео.
+  </video>
+
+  <audio itemprop="audio" itemscope itemtype="http://schema.org/AudioObject" controls>
+    <source src="{% static 'audio/sample-6s.mp3' %}" type="audio/mpeg" itemprop="contentUrl" />
+    Ваш браузер не поддерживает аудио.
+  </audio>
+</article>
+{% endblock %}
