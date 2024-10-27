@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Your Cart</h2>
+{% if cart and cart.items.exists %}
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+        {% for item in cart.items.all %}
+            <li>
+                {{ item.product.name }} - 
+                <input type="number" name="quantity_{{ item.id }}" value="{{ item.quantity }}" min="1" max="{{ item.product.amount }}">
+                <button formaction="{% url 'remove_from_cart' item.id %}" formmethod="post">Remove</button>
+            </li>
+        {% endfor %}
+        </ul>
+        <button type="submit">Update Cart</button>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Checkout</button>
+    </form>
+{% else %}
+    <p>Your cart is empty.</p>
+{% endif %}
+{% endblock content %}

@@ -176,14 +176,11 @@ class Order(models.Model):
         return self.product.name
 
 
+
 class Cart(models.Model):
-    user = models.ForeignKey('MyUser', on_delete=models.CASCADE, related_name='carts')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, related_name='items', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    amount = models.PositiveIntegerField(default=1)
-
-    def get_price(self):
-        if self.product and self.product.price:
-            return (self.amount * self.product.price)
-
-    def __str__(self):
-        return f"{self.user.username} - {self.product.name}"
+    quantity = models.PositiveIntegerField(default=1)

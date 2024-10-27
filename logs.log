@@ -8474,3 +8474,976 @@ ORDER DELIVERY POINT: minsk
   * This field is required.
 * delivery_point
   * This field is required.
+2024-10-27 13:59:09,874 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 13:59:09,959 WARNING Not Found: /favicon.ico
+2024-10-27 13:59:15,060 INFO Coupons: ['qwe20', 'qqq50', 'rtyeyye', 'zxc40', 'summer30']
+2024-10-27 13:59:23,255 INFO Get response successfully
+2024-10-27 13:59:29,033 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 13:59:41,708 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 13:59:43,755 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-10-27 13:59:43,755 INFO ORDER NUMBER: 7
+ORDER DELIVERY POINT: brest
+2024-10-27 13:59:43,755 INFO ORDER NUMBER: 8
+ORDER DELIVERY POINT: minsk
+2024-10-27 13:59:43,755 INFO ORDER NUMBER: 9
+ORDER DELIVERY POINT: minsk
+2024-10-27 13:59:43,756 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке '}, {'number': 7, 'price': 2800.0, 'point': 'brest', 'status': 'В обработке'}, {'number': 8, 'price': 2000.0, 'point': 'minsk', 'status': 'Отменён'}, {'number': 9, 'price': 800.0, 'point': 'minsk', 'status': 'В обработке'}]
+2024-10-27 13:59:43,756 INFO UserOrderListView: customer order list was successfully created
+2024-10-27 13:59:49,356 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 13:59:49,357 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 13:59:49,358 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 13:59:49,358 WARNING OrderCreateView POST: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 13:59:52,958 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:06:13,467 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 14:06:23,589 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:06:23,591 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:06:23,592 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:06:23,592 WARNING OrderCreateView POST: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:06:26,624 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:07:10,361 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:07:14,027 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:07:15,956 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:07:18,892 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:07:18,893 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:07:18,893 WARNING OrderCreateView POST: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:08:32,095 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:08:36,467 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:08:36,468 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:08:36,468 WARNING OrderCreateView POST: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:08:37,733 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:08:40,759 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:08:40,760 WARNING OrderForm validation errors: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:08:40,760 WARNING OrderCreateView POST: * amount
+  * This field is required.
+* delivery_date
+  * This field is required.
+* delivery_point
+  * This field is required.
+2024-10-27 14:08:42,331 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:12:04,816 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 14:18:15,984 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-10-27 14:19:15,031 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 14:19:39,828 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 14:20:27,737 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 14:21:05,596 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-10-27 14:23:39,282 WARNING Not Found: /favicon.ico
+2024-10-27 14:24:07,786 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/admin.py changed, reloading.
+2024-10-27 14:24:11,079 ERROR Internal Server Error: /admin/toyFactory/cart/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: toyFactory_cart.created_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+                                                           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: toyFactory_cart.created_at
+2024-10-27 14:24:23,600 ERROR Internal Server Error: /admin/toyFactory/cartitem/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: toyFactory_cartitem
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/paginator.py", line 93, in count
+    return c()
+           ^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/lib/python3/dist-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/lib/python3/dist-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: toyFactory_cartitem
+2024-10-27 14:40:24,189 WARNING Not Found: /favicon.ico
+2024-10-27 14:40:29,534 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:40:29,556 ERROR Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 49, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'cart_detail' not found. 'cart_detail' is not a valid view function or pattern name.
+2024-10-27 14:41:04,851 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-10-27 14:41:06,821 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:41:09,081 ERROR Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 531, in get
+    cart = Cart.objects.get(user=request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+toyFactory.models.Cart.DoesNotExist: Cart matching query does not exist.
+2024-10-27 14:41:15,416 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:41:23,162 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:41:24,889 ERROR Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 531, in get
+    cart = Cart.objects.get(user=request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+toyFactory.models.Cart.DoesNotExist: Cart matching query does not exist.
+2024-10-27 14:41:40,997 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:41:49,289 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:41:51,314 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:42:33,416 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:42:34,332 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:42:43,919 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:42:47,023 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:46:57,898 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-10-27 14:47:01,579 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-10-27 14:48:15,674 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 14:48:42,550 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-10-27 14:49:06,306 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 14:49:46,407 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:49:48,102 ERROR Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 516, in get
+    return render(request, 'empty_cart.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: empty_cart.html
+2024-10-27 14:51:08,815 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 14:53:49,677 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:54:11,680 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:54:13,612 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:54:16,972 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:54:18,565 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:54:27,646 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:54:30,156 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:54:33,381 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:54:34,836 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:54:35,249 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:54:35,405 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:54:35,857 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси', 'Скоро в продаже: новинки сезона игрушек!', 'Большая распродажа: скидки на любимые игрушки!', 'Тематическая неделя: игры на свежем воздухе!']
+2024-10-27 14:54:40,787 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:54:45,295 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:58:43,699 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 14:59:41,745 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 14:59:49,122 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 14:59:52,708 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 14:59:53,943 ERROR Internal Server Error: /add_to_cart/1/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/auth/decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+                 ^^^^^^^^^^^^
+AttributeError: 'OrderCreateView' object has no attribute 'user'
+2024-10-27 15:00:43,762 INFO Company info: ToyFactory
+2024-10-27 15:00:48,922 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:00:51,724 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси', 'Скоро в продаже: новинки сезона игрушек!', 'Большая распродажа: скидки на любимые игрушки!', 'Тематическая неделя: игры на свежем воздухе!']
+2024-10-27 15:00:52,086 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси', 'Скоро в продаже: новинки сезона игрушек!', 'Большая распродажа: скидки на любимые игрушки!', 'Тематическая неделя: игры на свежем воздухе!']
+2024-10-27 15:00:56,227 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси', 'Скоро в продаже: новинки сезона игрушек!', 'Большая распродажа: скидки на любимые игрушки!', 'Тематическая неделя: игры на свежем воздухе!']
+2024-10-27 15:01:12,103 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:01:27,833 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-10-27 15:01:27,833 INFO ORDER NUMBER: 7
+ORDER DELIVERY POINT: brest
+2024-10-27 15:01:27,833 INFO ORDER NUMBER: 8
+ORDER DELIVERY POINT: minsk
+2024-10-27 15:01:27,833 INFO ORDER NUMBER: 9
+ORDER DELIVERY POINT: minsk
+2024-10-27 15:01:27,834 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке '}, {'number': 7, 'price': 2800.0, 'point': 'brest', 'status': 'В обработке'}, {'number': 8, 'price': 2000.0, 'point': 'minsk', 'status': 'Отменён'}, {'number': 9, 'price': 800.0, 'point': 'minsk', 'status': 'В обработке'}]
+2024-10-27 15:01:27,834 INFO UserOrderListView: customer order list was successfully created
+2024-10-27 15:12:15,049 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:12:15,137 WARNING Not Found: /favicon.ico
+2024-10-27 15:12:40,626 ERROR Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'SimpleLazyObject'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 550, in get
+    cart = Cart.objects.filter(user=request.user).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7020c0977b90>>.
+2024-10-27 15:12:56,117 WARNING UserOrderListView: Пожалуйста, авторизуйтесь для получения списка ваших заказов
+2024-10-27 15:13:08,796 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:13:11,636 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-10-27 15:13:11,636 INFO ORDER NUMBER: 7
+ORDER DELIVERY POINT: brest
+2024-10-27 15:13:11,636 INFO ORDER NUMBER: 8
+ORDER DELIVERY POINT: minsk
+2024-10-27 15:13:11,636 INFO ORDER NUMBER: 9
+ORDER DELIVERY POINT: minsk
+2024-10-27 15:13:11,638 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке '}, {'number': 7, 'price': 2800.0, 'point': 'brest', 'status': 'В обработке'}, {'number': 8, 'price': 2000.0, 'point': 'minsk', 'status': 'Отменён'}, {'number': 9, 'price': 800.0, 'point': 'minsk', 'status': 'В обработке'}]
+2024-10-27 15:13:11,638 INFO UserOrderListView: customer order list was successfully created
+2024-10-27 15:13:14,456 INFO vacancies titles: ['Менеджер в пункт выдачи', 'Грузчик на склад', 'Управляющий холдингом']
+2024-10-27 15:13:15,170 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:13:16,517 WARNING UserOrderListView: Пожалуйста, авторизуйтесь, чтобы оформить заказ
+2024-10-27 15:13:18,808 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:13:55,093 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:13:56,646 WARNING UserOrderListView: Пожалуйста, авторизуйтесь, чтобы оформить заказ
+2024-10-27 15:14:00,657 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:14:03,158 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:14:29,595 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:14:31,420 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-10-27 15:14:34,579 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:14:36,146 WARNING UserOrderListView: Пожалуйста, авторизуйтесь, чтобы оформить заказ
+2024-10-27 15:14:38,184 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:14:55,216 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:14:56,434 WARNING UserOrderListView: <ul class="errorlist"><li>amount<ul class="errorlist"><li>This field is required.</li></ul></li><li>delivery_date<ul class="errorlist"><li>This field is required.</li></ul></li><li>delivery_point<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2024-10-27 15:15:59,379 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:16:07,540 WARNING UserOrderListView: <ul class="errorlist"><li>amount<ul class="errorlist"><li>This field is required.</li></ul></li><li>delivery_date<ul class="errorlist"><li>This field is required.</li></ul></li><li>delivery_point<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2024-10-27 15:37:37,225 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:37:44,245 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси', 'Скоро в продаже: новинки сезона игрушек!', 'Большая распродажа: скидки на любимые игрушки!', 'Тематическая неделя: игры на свежем воздухе!']
+2024-10-27 15:37:48,803 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси', 'Скоро в продаже: новинки сезона игрушек!', 'Большая распродажа: скидки на любимые игрушки!', 'Тематическая неделя: игры на свежем воздухе!']
+2024-10-27 15:37:55,731 INFO Company info: ToyFactory
+2024-10-27 15:37:57,697 INFO contacts names: ['emp1', 'emp2', 'emp3']
+2024-10-27 15:37:58,663 INFO vacancies titles: ['Менеджер в пункт выдачи', 'Грузчик на склад', 'Управляющий холдингом']
+2024-10-27 15:37:59,593 INFO Get the questions and answers
+2024-10-27 15:38:00,916 INFO Coupons: ['qwe20', 'qqq50', 'rtyeyye', 'zxc40', 'summer30']
+2024-10-27 15:38:13,143 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:38:21,725 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-10-27 15:38:23,611 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:38:27,035 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-10-27 15:38:29,903 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:38:34,592 WARNING UserOrderListView: <ul class="errorlist"><li>amount<ul class="errorlist"><li>This field is required.</li></ul></li><li>delivery_date<ul class="errorlist"><li>This field is required.</li></ul></li><li>delivery_point<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+2024-10-27 15:40:05,786 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 15:40:12,372 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:40:13,749 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:40:15,355 ERROR Internal Server Error: /add_to_cart/мишка1/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/contrib/auth/decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+                 ^^^^^^^^^^^^
+AttributeError: 'OrderCreateView' object has no attribute 'user'
+2024-10-27 15:42:23,784 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 15:42:29,445 ERROR Internal Server Error: /add_to_cart/мишка1/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 571, in post
+    return redirect('cart')  # Перенаправление на страницу корзины
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'cart' not found. 'cart' is not a valid view function or pattern name.
+2024-10-27 15:42:48,600 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 15:42:58,059 WARNING UserOrderListView: Нет заказов. Перейдите в каталог с товарами
+ и найдите для себя что-нибудь интересное
+2024-10-27 15:43:01,240 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:43:04,767 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:44:26,846 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 15:44:28,437 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:44:30,021 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:45:53,073 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 15:45:57,717 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:45:58,875 INFO Updated existing CartItem for мишка1
+2024-10-27 15:45:58,877 INFO CartItem saved with quantity 5
+2024-10-27 15:49:27,122 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:49:29,620 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:49:31,465 INFO Updated existing CartItem for мишка1
+2024-10-27 15:49:31,467 INFO CartItem saved with quantity 6
+2024-10-27 15:49:42,300 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:50:04,883 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:50:13,295 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 15:50:17,235 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 15:50:18,754 INFO Created new CartItem for мишка1
+2024-10-27 15:50:18,756 INFO CartItem saved with quantity 2
+2024-10-27 16:02:56,222 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:03:00,514 INFO Created new CartItem for вертолет1
+2024-10-27 16:03:00,516 INFO CartItem saved with quantity 2
+2024-10-27 16:03:07,592 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:03:09,158 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:11:14,922 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/models.py changed, reloading.
+2024-10-27 16:12:37,388 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:12:37,433 WARNING Not Found: /favicon.ico
+2024-10-27 16:12:39,129 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-10-27 16:12:39,129 INFO ORDER NUMBER: 7
+ORDER DELIVERY POINT: brest
+2024-10-27 16:12:39,129 INFO ORDER NUMBER: 8
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:12:39,129 INFO ORDER NUMBER: 9
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:12:39,130 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке '}, {'number': 7, 'price': 2800.0, 'point': 'brest', 'status': 'В обработке'}, {'number': 8, 'price': 2000.0, 'point': 'minsk', 'status': 'Отменён'}, {'number': 9, 'price': 800.0, 'point': 'minsk', 'status': 'В обработке'}]
+2024-10-27 16:12:39,130 INFO UserOrderListView: customer order list was successfully created
+2024-10-27 16:13:24,916 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:15:07,202 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-10-27 16:15:10,456 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:15:15,174 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:15:21,477 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:15:22,687 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:15:32,530 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:15:37,845 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:15:51,568 INFO Amount: 5
+2024-10-27 16:15:51,581 ERROR Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 574, in post
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/forms/forms.py", line 201, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/forms/forms.py", line 196, in errors
+    self.full_clean()
+  File "/usr/lib/python3/dist-packages/django/forms/forms.py", line 433, in full_clean
+    self._clean_fields()
+  File "/usr/lib/python3/dist-packages/django/forms/forms.py", line 448, in _clean_fields
+    value = getattr(self, "clean_%s" % name)()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py", line 152, in clean_amount
+    if amount > self.available_amount:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'int' and 'NoneType'
+2024-10-27 16:17:53,007 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:18:16,832 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:18:31,532 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:19:14,473 INFO /home/sayrex/PythonProjects/djangoProject/myapp/myapp/urls.py changed, reloading.
+2024-10-27 16:19:18,408 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:20:50,989 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:20:53,115 ERROR Internal Server Error: /add_to_cart/вертолет1/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 556, in post
+    return render(request, 'product_list.html', {'error': 'Товара нет в наличии', 'products': Product.objects.all()})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: product_list.html
+2024-10-27 16:23:08,709 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:23:17,333 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:23:18,998 WARNING UserOrderListView: Товара нет в наличии, пожалуйста, выберите другой
+2024-10-27 16:23:21,216 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:23:23,239 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:26:08,618 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/forms.py changed, reloading.
+2024-10-27 16:26:27,376 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:27:19,930 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:28:26,867 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:28:29,880 WARNING UserOrderListView: Товара нет в наличии, пожалуйста, выберите другой
+2024-10-27 16:28:31,351 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:28:32,761 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:28:37,764 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:28:54,725 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:29:00,732 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:29:03,877 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:29:07,923 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:29:18,523 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:29:26,046 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:30:03,076 ERROR Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 600, in post
+    Order.objects.create(
+  File "/usr/lib/python3/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/usr/lib/python3/dist-packages/django/db/models/fields/related_descriptors.py", line 266, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <User: cust1>>": "Order.user" must be a "MyUser" instance.
+2024-10-27 16:30:52,039 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:31:00,522 ERROR Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 612, in post
+    return redirect('order_success')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order_success' not found. 'order_success' is not a valid view function or pattern name.
+2024-10-27 16:31:13,065 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-10-27 16:31:13,065 INFO ORDER NUMBER: 7
+ORDER DELIVERY POINT: brest
+2024-10-27 16:31:13,065 INFO ORDER NUMBER: 8
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:31:13,065 INFO ORDER NUMBER: 9
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:31:13,065 INFO ORDER NUMBER: 10
+ORDER DELIVERY POINT: vitebsk
+2024-10-27 16:31:13,065 INFO ORDER NUMBER: 11
+ORDER DELIVERY POINT: vitebsk
+2024-10-27 16:31:13,067 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке '}, {'number': 7, 'price': 2800.0, 'point': 'brest', 'status': 'В обработке'}, {'number': 8, 'price': 2000.0, 'point': 'minsk', 'status': 'Отменён'}, {'number': 9, 'price': 800.0, 'point': 'minsk', 'status': 'В обработке'}, {'number': 10, 'price': 1200.0, 'point': 'vitebsk', 'status': 'В обработке'}, {'number': 11, 'price': 1000.0, 'point': 'vitebsk', 'status': 'В обработке'}]
+2024-10-27 16:31:13,067 INFO UserOrderListView: customer order list was successfully created
+2024-10-27 16:31:21,920 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:31:53,390 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:31:56,681 WARNING UserOrderListView: Товара нет в наличии, пожалуйста, выберите другой
+2024-10-27 16:31:58,857 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:32:03,750 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:32:45,758 ERROR Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py", line 612, in post
+    return redirect('order_success')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order_success' not found. 'order_success' is not a valid view function or pattern name.
+2024-10-27 16:32:50,637 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-10-27 16:32:50,637 INFO ORDER NUMBER: 7
+ORDER DELIVERY POINT: brest
+2024-10-27 16:32:50,637 INFO ORDER NUMBER: 8
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:32:50,637 INFO ORDER NUMBER: 9
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:32:50,637 INFO ORDER NUMBER: 10
+ORDER DELIVERY POINT: vitebsk
+2024-10-27 16:32:50,637 INFO ORDER NUMBER: 11
+ORDER DELIVERY POINT: vitebsk
+2024-10-27 16:32:50,637 INFO ORDER NUMBER: 12
+ORDER DELIVERY POINT: mogilev
+2024-10-27 16:32:50,637 INFO ORDER NUMBER: 13
+ORDER DELIVERY POINT: mogilev
+2024-10-27 16:32:50,638 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке '}, {'number': 7, 'price': 2800.0, 'point': 'brest', 'status': 'В обработке'}, {'number': 8, 'price': 2000.0, 'point': 'minsk', 'status': 'Отменён'}, {'number': 9, 'price': 800.0, 'point': 'minsk', 'status': 'В обработке'}, {'number': 10, 'price': 1200.0, 'point': 'vitebsk', 'status': 'В обработке'}, {'number': 11, 'price': 1000.0, 'point': 'vitebsk', 'status': 'В обработке'}, {'number': 12, 'price': 320.0, 'point': 'mogilev', 'status': 'В обработке'}, {'number': 13, 'price': 672.0, 'point': 'mogilev', 'status': 'В обработке'}]
+2024-10-27 16:32:50,638 INFO UserOrderListView: customer order list was successfully created
+2024-10-27 16:33:28,889 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:34:18,800 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:34:40,509 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:34:47,856 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:34:51,302 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:35:39,302 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:35:41,962 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-10-27 16:35:41,962 INFO ORDER NUMBER: 7
+ORDER DELIVERY POINT: brest
+2024-10-27 16:35:41,963 INFO ORDER NUMBER: 8
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:35:41,963 INFO ORDER NUMBER: 9
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:35:41,963 INFO ORDER NUMBER: 10
+ORDER DELIVERY POINT: vitebsk
+2024-10-27 16:35:41,963 INFO ORDER NUMBER: 11
+ORDER DELIVERY POINT: vitebsk
+2024-10-27 16:35:41,963 INFO ORDER NUMBER: 12
+ORDER DELIVERY POINT: mogilev
+2024-10-27 16:35:41,963 INFO ORDER NUMBER: 13
+ORDER DELIVERY POINT: mogilev
+2024-10-27 16:35:41,963 INFO ORDER NUMBER: 14
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:35:41,963 INFO ORDER NUMBER: 15
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:35:41,964 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке '}, {'number': 7, 'price': 2800.0, 'point': 'brest', 'status': 'В обработке'}, {'number': 8, 'price': 2000.0, 'point': 'minsk', 'status': 'Отменён'}, {'number': 9, 'price': 800.0, 'point': 'minsk', 'status': 'В обработке'}, {'number': 10, 'price': 1200.0, 'point': 'vitebsk', 'status': 'В обработке'}, {'number': 11, 'price': 1000.0, 'point': 'vitebsk', 'status': 'В обработке'}, {'number': 12, 'price': 320.0, 'point': 'mogilev', 'status': 'В обработке'}, {'number': 13, 'price': 672.0, 'point': 'mogilev', 'status': 'В обработке'}, {'number': 14, 'price': 1320.0, 'point': 'minsk', 'status': 'В обработке'}, {'number': 15, 'price': 216.0, 'point': 'minsk', 'status': 'В обработке'}]
+2024-10-27 16:35:41,964 INFO UserOrderListView: customer order list was successfully created
+2024-10-27 16:37:21,138 INFO /home/sayrex/PythonProjects/djangoProject/myapp/toyFactory/views.py changed, reloading.
+2024-10-27 16:37:26,536 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:37:31,690 INFO PRODUCT CATEGORIES: [<QuerySet [<Category: мягкие игрушки>]>, <QuerySet [<Category: конструкторы>]>, <QuerySet [<Category: товары для детей>, <Category: радиоуправляемые игрушки>]>]
+2024-10-27 16:38:05,213 WARNING UserOrderListView: Такого промокода не существует или он уже недействителен
+2024-10-27 16:38:23,606 INFO news titles: ['Добавлены новые точки самовывоза в городах Беларуси']
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 6
+ORDER DELIVERY POINT: gomel
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 7
+ORDER DELIVERY POINT: brest
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 8
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 9
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 10
+ORDER DELIVERY POINT: vitebsk
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 11
+ORDER DELIVERY POINT: vitebsk
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 12
+ORDER DELIVERY POINT: mogilev
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 13
+ORDER DELIVERY POINT: mogilev
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 14
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 15
+ORDER DELIVERY POINT: minsk
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 16
+ORDER DELIVERY POINT: grodno
+2024-10-27 16:38:25,512 INFO ORDER NUMBER: 17
+ORDER DELIVERY POINT: grodno
+2024-10-27 16:38:25,514 INFO ORDERS: [{'number': 6, 'price': 420.0, 'point': 'gomel', 'status': 'В обработке '}, {'number': 7, 'price': 2800.0, 'point': 'brest', 'status': 'В обработке'}, {'number': 8, 'price': 2000.0, 'point': 'minsk', 'status': 'Отменён'}, {'number': 9, 'price': 800.0, 'point': 'minsk', 'status': 'В обработке'}, {'number': 10, 'price': 1200.0, 'point': 'vitebsk', 'status': 'В обработке'}, {'number': 11, 'price': 1000.0, 'point': 'vitebsk', 'status': 'В обработке'}, {'number': 12, 'price': 320.0, 'point': 'mogilev', 'status': 'В обработке'}, {'number': 13, 'price': 672.0, 'point': 'mogilev', 'status': 'В обработке'}, {'number': 14, 'price': 1320.0, 'point': 'minsk', 'status': 'В обработке'}, {'number': 15, 'price': 216.0, 'point': 'minsk', 'status': 'В обработке'}, {'number': 16, 'price': 560.0, 'point': 'grodno', 'status': 'В обработке'}, {'number': 17, 'price': 168.0, 'point': 'grodno', 'status': 'В обработке'}]
+2024-10-27 16:38:25,514 INFO UserOrderListView: customer order list was successfully created

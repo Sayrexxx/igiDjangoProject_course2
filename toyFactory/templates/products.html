@@ -18,7 +18,7 @@
                 <button type="submit">Buy</button>
             </form>
         {% endcomment %}
-        <form method="post" action="{% url 'add_to_cart' product.id %}">
+        <form method="post" action="{% url 'add_to_cart' product.name %}">
             {% csrf_token %}
             <button type="submit">Добавить в корзину</button>
         </form>

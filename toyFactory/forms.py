@@ -128,30 +128,19 @@ class LoginUserForm(AuthenticationForm):
 from django.forms import ModelForm
 
 
-class OrderForm(ModelForm):    
+class OrderForm(ModelForm):
     promo_code = forms.CharField(max_length=8, required=False)
     delivery_point = forms.ChoiceField(
         choices=[(address, address) for address in PickUpPoint.objects.values_list('address', flat=True)],
         label='Выберите пункт самовывоза'
     )
+    
     class Meta:
         model = Order
-        fields = ['amount', 'delivery_date', 'delivery_point', 'promo_code']
+        fields = ['delivery_date', 'delivery_point', 'promo_code']
         widgets = {
-            'amount': forms.NumberInput(attrs={'min': 1}),  # Minimum quantity validation
             'delivery_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
         }
-
-    def __init__(self, *args, **kwargs):
-        self.available_amount = kwargs.pop('available_amount', None)  # Remove from kwargs
-        super().__init__(*args, **kwargs)
-
-    def clean_amount(self):
-        amount = self.cleaned_data['amount']
-        logging.info(f"Amount: {amount}")  # Add this line for debugging
-        if amount > self.available_amount:
-            raise ValidationError(f"Выберите количество, не превосходящее {self.available_amount}.")
-        return amount
 
     def clean_delivery_date(self):
         delivery_date = self.cleaned_data['delivery_date']
@@ -167,7 +156,6 @@ class OrderForm(ModelForm):
         if promo_code and len(promo_code) > 8:
             raise ValidationError("Длина промокода не может превышать 8 символов")
         return promo_code
-        
 
 class EmployeeProfileForm(forms.ModelForm):
     class Meta:
@@ -179,3 +167,23 @@ class CustomerProfileForm(forms.ModelForm):
     class Meta:
         model = MyUser
         fields = ['email', 'phone_number']
+
+
+from django import forms
+
+class CartForm(forms.Form):
+    delivery_point = forms.ChoiceField(
+        choices=[(address, address) for address in PickUpPoint.objects.values_list('address', flat=True)],
+        label='Выберите пункт самовывоза'
+    )
+    delivery_date = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}))
+    promo_code = forms.CharField(max_length=8, required=False)
+
+    def clean_delivery_date(self):
+        delivery_date = self.cleaned_data['delivery_date']
+        user_time_zone = timezone.get_current_timezone()
+        delivery_date_user_tz = timezone.localtime(delivery_date, user_time_zone)
+    
+        if delivery_date_user_tz < timezone.now() + timedelta(days=3):
+            raise forms.ValidationError("Заказ можно будет забрать МИНИМУМ через 3 дня")
+        return delivery_date_user_tz
